@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DigitalSchema.Chips"
+             xmlns:y="clr-namespace:DigitalSchema"
+             x:Class="DigitalSchema.MainPage"
+             x:DataType="y:MainViewModel">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ScrollView Grid.Column="0" BackgroundColor="#2E3137">
+            <VerticalStackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Switch Grid.Column="0" Grid.Row="0"/>
+                    <Switch Grid.Column="0" Grid.Row="1"/>
+                    <Switch Grid.Column="0" Grid.Row="2"/>
+                    <Switch Grid.Column="0" Grid.Row="3"/>
+                    <Switch Grid.Column="1" Grid.Row="0"/>
+                    <Switch Grid.Column="1" Grid.Row="1"/>
+                    <Switch Grid.Column="1" Grid.Row="2"/>
+                    <Switch Grid.Column="1" Grid.Row="3"/>
+                </Grid>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout>
+                        <Ellipse Fill="Snow" WidthRequest="40" HeightRequest="40"></Ellipse>
+                        <Ellipse Fill="Snow" WidthRequest="40" HeightRequest="40"></Ellipse>
+                        <Ellipse Fill="Snow" WidthRequest="40" HeightRequest="40"></Ellipse>
+                        <Ellipse Fill="Snow" WidthRequest="40" HeightRequest="40"></Ellipse>
+                        <Label Text="A 1-4"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Ellipse Fill="Snow" WidthRequest="40" HeightRequest="40"></Ellipse>
+                        <Ellipse Fill="Snow" WidthRequest="40" HeightRequest="40"></Ellipse>
+                        <Ellipse Fill="Snow" WidthRequest="40" HeightRequest="40"></Ellipse>
+                        <Ellipse Fill="Snow" WidthRequest="40" HeightRequest="40"></Ellipse>
+                        <Label Text="B 1-4"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+        
+        <ScrollView Grid.Column="1" BackgroundColor="#343A3F" Orientation="Both">
+            <AbsoluteLayout>
+                <!-- Первый столбец микропроцессоров -->
+                <local:ChipAndKE Margin="30" x:Name="ChipKE1"
+                         AbsoluteLayout.LayoutBounds="0, 0, AutoSize, AutoSize"
+                         AbsoluteLayout.LayoutFlags="None"/>
+
+                <local:ChipAndKE Margin="30" x:Name="ChipKE2"
+                         AbsoluteLayout.LayoutBounds="0, 150, AutoSize, AutoSize"
+                         AbsoluteLayout.LayoutFlags="None"/>
+                
+                <local:NewPage1 Margin="30" x:Name="ChipOne"
+                        AbsoluteLayout.LayoutBounds="0, 300, AutoSize, AutoSize"
+                        AbsoluteLayout.LayoutFlags="None"/>
+
+                <local:NewPage1 Margin="30" x:Name="ChipTwo"
+                        AbsoluteLayout.LayoutBounds="0, 450, AutoSize, AutoSize"
+                        AbsoluteLayout.LayoutFlags="None"/>
+                
+                <local:ChipTT Margin="30" x:Name="ChipTT1"
+                        AbsoluteLayout.LayoutBounds="0, 600, AutoSize, AutoSize"
+                        AbsoluteLayout.LayoutFlags="None"/>
+            </AbsoluteLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

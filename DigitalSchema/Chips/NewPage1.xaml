@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:y="clr-namespace:DigitalSchema"
+             x:Class="DigitalSchema.Chips.NewPage1"
+             x:DataType="y:MainViewModel">
+    
+    <Grid HeightRequest="100">
+        <Border Stroke="#D4D4D4" 
+               Padding="20"
+               HorizontalOptions="Center"
+               BackgroundColor="Transparent">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="5" />
+            </Border.StrokeShape>
+
+            <Label Text="&amp;" 
+                FontSize="18" 
+                FontAttributes="Bold" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Start"/>
+        </Border>
+
+        <Ellipse Stroke="#D4D4D4" 
+                 WidthRequest="10" 
+                 HeightRequest="10" 
+                 HorizontalOptions="Start" 
+                 VerticalOptions="Start"
+                 Margin="-15,10,0,0"/>
+        <Ellipse Stroke="#D4D4D4" 
+                 WidthRequest="10" 
+                 HeightRequest="10" 
+                 HorizontalOptions="Start" 
+                 VerticalOptions="Center"
+                 Margin="-15,25,0,0"/>
+        <Ellipse Stroke="#D4D4D4"  
+                 WidthRequest="10" 
+                 HeightRequest="10" 
+                 HorizontalOptions="Start" 
+                 VerticalOptions="Center"
+                 Margin="-15,0,0,25"/>
+        <Ellipse Stroke="#D4D4D4" 
+                 WidthRequest="10" 
+                 HeightRequest="10" 
+                 HorizontalOptions="Start" 
+                 VerticalOptions="End"
+                 Margin="-15,0,0,10"/>
+
+        <Ellipse Stroke="#D4D4D4"  
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="End" 
+             VerticalOptions="Center"
+             Margin="0,25,-15,0"/>
+        <Ellipse Stroke="#D4D4D4" 
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="End" 
+             VerticalOptions="Center"
+             Margin="0,0,-15,25"/>
+
+        <Ellipse Fill="#D4D4D4"
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="End" 
+             VerticalOptions="Center"
+             Margin="0,25,-4,0"/>
+        <Ellipse Fill="#D4D4D4" 
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="End" 
+             VerticalOptions="Center"
+             Margin="0,0,-4,25"/>
+
+    </Grid>
+</ContentView>

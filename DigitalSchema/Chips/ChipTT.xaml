@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:y="clr-namespace:DigitalSchema"
+             x:Class="DigitalSchema.Chips.ChipTT"
+             x:DataType="y:MainViewModel">
+    <Grid HeightRequest="320">
+        <HorizontalStackLayout>
+            <VerticalStackLayout>
+                <Border Stroke="#D4D4D4" 
+                Padding="20,5,20,5"
+                HeightRequest="40"
+                HorizontalOptions="Center"
+                BackgroundColor="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5" />
+                    </Border.StrokeShape>
+
+                    <Label Text="S" 
+                 FontSize="18" 
+                 FontAttributes="Bold" 
+                 HorizontalOptions="Center" 
+                 VerticalOptions="Start"/>
+                </Border>
+
+                <Border Stroke="#D4D4D4" 
+                Padding="20,5,20,5"
+                HeightRequest="100"
+                HorizontalOptions="Center"
+                BackgroundColor="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5" />
+                    </Border.StrokeShape>
+
+                    <Label Text="&amp;&#13; J" 
+                     FontSize="18" 
+                     FontAttributes="Bold" 
+                     HorizontalOptions="Center" 
+                     VerticalOptions="Start"/>
+                </Border>
+
+                <Border Stroke="#D4D4D4" 
+                Padding="20,5,20,5"
+                HeightRequest="40"
+                HorizontalOptions="Center"
+                BackgroundColor="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5" />
+                    </Border.StrokeShape>
+
+                    <Label Text="C" 
+                 FontSize="18" 
+                 FontAttributes="Bold" 
+                 HorizontalOptions="Center" 
+                 VerticalOptions="Start"/>
+                </Border>
+
+                <Border Stroke="#D4D4D4" 
+                Padding="20,5,20,5"
+                HeightRequest="100"
+                HorizontalOptions="Center"
+                BackgroundColor="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5" />
+                    </Border.StrokeShape>
+
+                    <Label Text="&amp;&#13;K" 
+                     FontSize="18" 
+                     FontAttributes="Bold" 
+                     HorizontalOptions="Center" 
+                     VerticalOptions="Start"/>
+                </Border>
+
+                <Border Stroke="#D4D4D4" 
+                Padding="20,5,20,5"
+                HeightRequest="40"
+                HorizontalOptions="Center"
+                BackgroundColor="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5" />
+                    </Border.StrokeShape>
+
+                    <Label Text="R" 
+                 FontSize="18" 
+                 FontAttributes="Bold" 
+                 HorizontalOptions="Center" 
+                 VerticalOptions="Start"/>
+                </Border>
+
+            </VerticalStackLayout>
+            
+            <Border Stroke="#D4D4D4" 
+           Padding="10"
+           Margin="1,0,0,0"
+           HorizontalOptions="Center"
+           BackgroundColor="Transparent">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="5" />
+                </Border.StrokeShape>
+
+                <Label Text="TT" 
+            FontSize="18" 
+            FontAttributes="Bold" 
+            HorizontalOptions="Center" 
+            VerticalOptions="Center"/>
+            </Border>
+        </HorizontalStackLayout>
+
+        <Ellipse Fill="#D4D4D4" 
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="End" 
+             VerticalOptions="End"
+             Margin="0,0,-4,25"/>
+
+        <Ellipse Fill="#D4D4D4" 
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="End" 
+             VerticalOptions="End"
+             Margin="0,0,-4,50"/>
+        <!--Отрицание S-->
+        <Ellipse Fill="#D4D4D4" 
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="Start" 
+             VerticalOptions="Start"
+             Margin="-2,15,0,0"/>
+
+        <!--Отрицание R-->
+        <Ellipse Fill="#D4D4D4"
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="Start" 
+             VerticalOptions="End"
+             Margin="-2,0,0,15"/>
+
+        <!--S-->
+        <Ellipse Stroke="#D4D4D4" 
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="Start" 
+             VerticalOptions="Start"
+             Margin="-15,15,0,0"/>
+
+        <!--J-->
+        <Ellipse Stroke="#D4D4D4" 
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="Start" 
+             VerticalOptions="Start"
+             Margin="-15,55,0,0"/>
+
+        <Ellipse Stroke="#D4D4D4" 
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="Start" 
+             VerticalOptions="Start"
+             Margin="-15,80,0,0"/>
+
+        <Ellipse Stroke="#D4D4D4" 
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="Start" 
+             VerticalOptions="Start"
+             Margin="-15,105,0,0"/>
+
+        <!--C-->
+        <Ellipse Stroke="#D4D4D4" 
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="Start" 
+             VerticalOptions="Center"
+             Margin="-15,0,0,0"/>
+
+        <!--S-->
+        <Ellipse Stroke="#D4D4D4" 
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="Start" 
+             VerticalOptions="Start"
+             Margin="-15,15,0,0"/>
+
+        <!--K-->
+        <Ellipse Stroke="#D4D4D4" 
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="Start" 
+             VerticalOptions="End"
+             Margin="-15,0,0,55"/>
+
+        <Ellipse Stroke="#D4D4D4" 
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="Start" 
+             VerticalOptions="End"
+             Margin="-15,0,0,80"/>
+
+        <Ellipse Stroke="#D4D4D4" 
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="Start" 
+             VerticalOptions="End"
+             Margin="-15,0,0,105"/>
+
+        <!--R-->
+        <Ellipse Stroke="#D4D4D4" 
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="Start" 
+             VerticalOptions="End"
+             Margin="-15,0,0,15"/>
+
+        <!--Выводы-->
+        <Ellipse Stroke="#D4D4D4"  
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="End" 
+             VerticalOptions="Start"
+             Margin="0,25,-15,0"/>
+
+        <Ellipse Stroke="#D4D4D4"  
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="End" 
+             VerticalOptions="Start"
+             Margin="0,50,-15,0"/>
+
+        <Ellipse Stroke="#D4D4D4" 
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="End" 
+             VerticalOptions="End"
+             Margin="0,0,-15,25"/>
+
+        <Ellipse Stroke="#D4D4D4" 
+             WidthRequest="10" 
+             HeightRequest="10" 
+             HorizontalOptions="End" 
+             VerticalOptions="End"
+             Margin="0,0,-15,50"/>
+
+    </Grid>
+</ContentView>
