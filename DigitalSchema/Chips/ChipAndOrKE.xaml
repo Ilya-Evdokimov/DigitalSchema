@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DigitalSchema.Chips.ChipAndOrKE"
+             xmlns:y="clr-namespace:DigitalSchema"
+             x:DataType="y:MainViewModel">
+    <Grid HeightRequest="270">
+        <HorizontalStackLayout>
+            <VerticalStackLayout>
+                <Border Stroke="#D4D4D4" 
+                    Padding="20,5,20,5"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="5" />
+                        </Border.StrokeShape>
+
+                    <Label Text="&amp;" 
+                     FontSize="18" 
+                     FontAttributes="Bold" 
+                     HorizontalOptions="Center" 
+                     VerticalOptions="Start"/>
+                </Border>
+
+                <Border Stroke="#D4D4D4" 
+                    Padding="20,5,20,5"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5" />
+                    </Border.StrokeShape>
+
+                    <Label Text="&amp;" 
+                     FontSize="18" 
+                     FontAttributes="Bold" 
+                     HorizontalOptions="Center" 
+                     VerticalOptions="Start"/>
+                </Border>
+
+                <Border Stroke="#D4D4D4" 
+                    Padding="20,5,20,5"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5" />
+                    </Border.StrokeShape>
+
+                    <Label Text="&amp;" 
+                     FontSize="18" 
+                     FontAttributes="Bold" 
+                     HorizontalOptions="Center" 
+                     VerticalOptions="Start"/>
+                </Border>
+
+                <Border Stroke="#D4D4D4" 
+                    Padding="20,5,20,5"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5" />
+                    </Border.StrokeShape>
+
+                    <Label Text="&amp;" 
+                     FontSize="18" 
+                     FontAttributes="Bold" 
+                     HorizontalOptions="Center" 
+                     VerticalOptions="Start"/>
+                </Border>
+
+                <Border Stroke="#D4D4D4" 
+                    Padding="20,5,20,5"
+                    HeightRequest="70"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5" />
+                    </Border.StrokeShape>
+
+                    <Label Text="K&#13;E" 
+                     FontSize="18" 
+                     FontAttributes="Bold" 
+                     HorizontalOptions="Center" 
+                     VerticalOptions="Start"/>
+                </Border>
+                
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <Border Stroke="#D4D4D4" 
+                       Padding="20,5,20,5"
+                       HeightRequest="135"
+                       HorizontalOptions="Center"
+                       BackgroundColor="Transparent">
+                   <Border.StrokeShape>
+                       <RoundRectangle CornerRadius="5" />
+                   </Border.StrokeShape>
+
+                   <Label Text="1" 
+                        FontSize="18" 
+                        FontAttributes="Bold" 
+                        HorizontalOptions="Center" 
+                        VerticalOptions="Start"/>
+               </Border>
+
+            <Border Stroke="#D4D4D4" 
+                       Padding="20,5,20,5"
+                       HeightRequest="135"
+                       HorizontalOptions="Center"
+                       BackgroundColor="Transparent">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="5" />
+                </Border.StrokeShape>
+
+                <Label Text="1" 
+                        FontSize="18" 
+                        FontAttributes="Bold" 
+                        HorizontalOptions="Center" 
+                        VerticalOptions="Start"/>
+            </Border>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+
+        <Ellipse Fill="#D4D4D4" 
+     WidthRequest="10" 
+     HeightRequest="10" 
+     HorizontalOptions="End" 
+     VerticalOptions="End"
+     Margin="0,0,-4,70"/>
+
+        <Ellipse Fill="#D4D4D4" 
+     WidthRequest="10" 
+     HeightRequest="10" 
+     HorizontalOptions="End" 
+     VerticalOptions="End"
+     Margin="0,0,-4,40"/>
+
+        <Ellipse Fill="#D4D4D4" 
+     WidthRequest="10" 
+     HeightRequest="10" 
+     HorizontalOptions="End" 
+     VerticalOptions="Start"
+     Margin="0,70,-4,0"/>
+
+        <Ellipse Fill="#D4D4D4" 
+     WidthRequest="10" 
+     HeightRequest="10" 
+     HorizontalOptions="End" 
+     VerticalOptions="Start"
+     Margin="0,40,-4,0"/>
+
+    </Grid>
+                
+</ContentView>

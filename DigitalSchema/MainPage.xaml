@@ -56,25 +56,36 @@
         <ScrollView Grid.Column="1" BackgroundColor="#343A3F" Orientation="Both">
             <AbsoluteLayout>
                 <!-- Первый столбец микропроцессоров -->
-                <local:ChipAndKE Margin="30" x:Name="ChipKE1"
+                <local:ChipAndKE Margin="50" x:Name="ChipKE1"
                          AbsoluteLayout.LayoutBounds="0, 0, AutoSize, AutoSize"
                          AbsoluteLayout.LayoutFlags="None"/>
 
-                <local:ChipAndKE Margin="30" x:Name="ChipKE2"
-                         AbsoluteLayout.LayoutBounds="0, 150, AutoSize, AutoSize"
+                <local:ChipAndKE Margin="50" x:Name="ChipKE2"
+                         AbsoluteLayout.LayoutBounds="0, 200, AutoSize, AutoSize"
                          AbsoluteLayout.LayoutFlags="None"/>
                 
-                <local:NewPage1 Margin="30" x:Name="ChipOne"
-                        AbsoluteLayout.LayoutBounds="0, 300, AutoSize, AutoSize"
+                <local:NewPage1 Margin="50" x:Name="ChipOne"
+                        AbsoluteLayout.LayoutBounds="0, 400, AutoSize, AutoSize"
                         AbsoluteLayout.LayoutFlags="None"/>
 
-                <local:NewPage1 Margin="30" x:Name="ChipTwo"
-                        AbsoluteLayout.LayoutBounds="0, 450, AutoSize, AutoSize"
-                        AbsoluteLayout.LayoutFlags="None"/>
-                
-                <local:ChipTT Margin="30" x:Name="ChipTT1"
+                <local:NewPage1 Margin="50" x:Name="ChipTwo"
                         AbsoluteLayout.LayoutBounds="0, 600, AutoSize, AutoSize"
                         AbsoluteLayout.LayoutFlags="None"/>
+                
+                <local:ChipTT Margin="50" x:Name="ChipTT1"
+                        AbsoluteLayout.LayoutBounds="0, 800, AutoSize, AutoSize"
+                        AbsoluteLayout.LayoutFlags="None"/>
+
+                <!-- Второй столбец микропроцессоров -->
+                
+                <local:ChipAndOrKE Margin="50" x:Name="ChipAndOrKE1"
+                        AbsoluteLayout.LayoutBounds="300, 0, AutoSize, AutoSize"
+                        AbsoluteLayout.LayoutFlags="None"/>
+
+                <local:Chip3And Margin="50" x:Name="Chip3And1"
+                        AbsoluteLayout.LayoutBounds="300, 400, AutoSize, AutoSize"
+                        AbsoluteLayout.LayoutFlags="None"/>
+
             </AbsoluteLayout>
         </ScrollView>
     </Grid>
