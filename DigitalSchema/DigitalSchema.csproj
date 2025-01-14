@@ -66,6 +66,9 @@
 	  <MauiXaml Update="Chips\Chip3And.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Chips\Chip4AndTwo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Chips\ChipAndKE.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
