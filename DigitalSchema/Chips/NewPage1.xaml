@@ -21,12 +21,18 @@
                 VerticalOptions="Start"/>
         </Border>
 
-        <Ellipse Stroke="#D4D4D4" 
+        <Ellipse x:Name="In_1"
+                 Stroke="#D4D4D4" 
                  WidthRequest="10" 
                  HeightRequest="10" 
                  HorizontalOptions="Start" 
                  VerticalOptions="Start"
-                 Margin="-15,10,0,0"/>
+                 Margin="-15,10,0,0">
+            <Ellipse.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnEllipseTapped" />
+            </Ellipse.GestureRecognizers>
+        </Ellipse>
+
         <Ellipse Stroke="#D4D4D4" 
                  WidthRequest="10" 
                  HeightRequest="10" 

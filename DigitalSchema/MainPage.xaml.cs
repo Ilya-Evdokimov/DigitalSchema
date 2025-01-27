@@ -14,7 +14,23 @@ namespace DigitalSchema
     }
     class MainViewModel:INotifyPropertyChanged
     {
-        public MainViewModel() { }
+        private bool[] _switchStates;
+        public bool[] SwitchStates
+        {
+            get => _switchStates;
+            set
+            {
+                if (_switchStates != value)
+                {
+                    _switchStates = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        public MainViewModel() 
+        {
+            SwitchStates = new bool[8];
+        }
 
 
         public event PropertyChangedEventHandler? PropertyChanged;
