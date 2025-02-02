@@ -79,6 +79,28 @@
                         AbsoluteLayout.LayoutBounds="0, 800, AutoSize, AutoSize"
                         AbsoluteLayout.LayoutFlags="None"/>
 
+                <Ellipse Stroke="#D4D4D4"
+                         WidthRequest="10" 
+                         HeightRequest="10"
+                         AbsoluteLayout.LayoutBounds="120, 1230, AutoSize, AutoSize"
+                         AbsoluteLayout.LayoutFlags="None"/>
+                <Ellipse Stroke="#D4D4D4"
+                         WidthRequest="10" 
+                         HeightRequest="10"
+                         AbsoluteLayout.LayoutBounds="150, 1230, AutoSize, AutoSize"
+                         AbsoluteLayout.LayoutFlags="None"/>
+                <Ellipse Stroke="#D4D4D4"
+                         WidthRequest="10" 
+                         HeightRequest="10"
+                         AbsoluteLayout.LayoutBounds="180, 1230, AutoSize, AutoSize"
+                         AbsoluteLayout.LayoutFlags="None"/>
+                <Ellipse Stroke="#D4D4D4"
+                         WidthRequest="10" 
+                         HeightRequest="10"
+                         Margin="0,0,0,50"
+                         AbsoluteLayout.LayoutBounds="210, 1230, AutoSize, AutoSize"
+                         AbsoluteLayout.LayoutFlags="None"/>
+
                 <!-- Второй столбец микропроцессоров -->
                 
                 <local:ChipAndOrKE Margin="50" x:Name="ChipAndOrKE1"

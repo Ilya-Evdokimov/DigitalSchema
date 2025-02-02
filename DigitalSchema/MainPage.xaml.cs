@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using DigitalSchema.Chips;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace DigitalSchema
