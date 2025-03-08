@@ -1,3 +1,4 @@
+using Microsoft.Maui.Controls.Shapes;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -6,9 +7,9 @@ namespace DigitalSchema.Chips
     public partial class NewPage1 : ContentView, INotifyPropertyChanged
     {
         private Color _InputValues_01 = Colors.Transparent;
-        private Color _InputValues_02 = Colors.Red;
-        private Color _InputValues_03 = Colors.Red;
-        private Color _InputValues_04 = Colors.Red;
+        private Color _InputValues_02 = Colors.Transparent;
+        private Color _InputValues_03 = Colors.Transparent;
+        private Color _InputValues_04 = Colors.Transparent;
         private Color _OutputValues;
 
         public Color InputValues_01
@@ -51,31 +52,43 @@ namespace DigitalSchema.Chips
                 ProcessedValues_NewPage1();
             }
         }
+        public event EventHandler<Color> ColorChanged;
         public Color OutputValues
         {
             get => _OutputValues;
             set
             {
-                _OutputValues = value;
-                OnPropertyChanged();
+                if (_OutputValues != value)
+                {
+                    _OutputValues = value;
+                    OnPropertyChanged();
+                    ColorChanged?.Invoke(this, value);
+                }
             }
         }
+
         public void ProcessedValues_NewPage1()
         {
-            int OutputValuesFloat = DigitalConverter(InputValues_01) * DigitalConverter(InputValues_02) * DigitalConverter(InputValues_03) * DigitalConverter(InputValues_04);
-            OutputValues = OutputValuesFloat == 1 ? Colors.Transparent : Colors.Red;
+            int outputValue = DigitalConverter(InputValues_01) * DigitalConverter(InputValues_02) * DigitalConverter(InputValues_03) * DigitalConverter(InputValues_04);
+            OutputValues = outputValue == 1 ? Colors.Transparent : Colors.Red;
         }
 
-        public int DigitalConverter(Color InputValues)
+        public int DigitalConverter(Color inputValues)
         {
-            return InputValues == Colors.Transparent ? 0 : 1;
+            return inputValues == Colors.Transparent ? 0 : 1;
         }
+
+        public event EventHandler<Ellipse> EllipseTapped;
+
         public void OnEllipseTapped(object sender, EventArgs e)
         {
-            if (sender is View view && view.GestureRecognizers.FirstOrDefault() is TapGestureRecognizer tapGesture)
+            if (sender is Ellipse ellipse)
             {
-                string propertyName = tapGesture.CommandParameter as string;
+                EllipseTapped?.Invoke(this, ellipse);
+            }
 
+            if (e is TappedEventArgs tapEventArgs && tapEventArgs.Parameter is string propertyName)
+            {
                 switch (propertyName)
                 {
                     case "s_InputValues_01":
@@ -95,12 +108,24 @@ namespace DigitalSchema.Chips
                 }
             }
         }
+
+        public event EventHandler<Ellipse> ExitEllipseTapped;
+
+        public void OnExitEllipseTapped(object sender, EventArgs e)
+        {
+            if (sender is Ellipse ellipse)
+            {
+                ExitEllipseTapped?.Invoke(this, ellipse);
+            }
+        }
+
         public NewPage1()
         {
             InitializeComponent();
             BindingContext = this;
             ProcessedValues_NewPage1();
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)

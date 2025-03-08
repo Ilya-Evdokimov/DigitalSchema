@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:DigitalSchema.Chips"
              xmlns:y="clr-namespace:DigitalSchema"
              x:Class="DigitalSchema.MainPage"
-             x:DataType="y:MainViewModel">
+             x:DataType="y:MainPage">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -25,14 +25,14 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Switch IsToggled="{Binding SwitchStates[0], Mode=TwoWay}" Grid.Column="0" Grid.Row="0"/>
-                    <Switch IsToggled="{Binding SwitchStates[1], Mode=TwoWay}" Grid.Column="0" Grid.Row="1"/>
-                    <Switch IsToggled="{Binding SwitchStates[2], Mode=TwoWay}" Grid.Column="0" Grid.Row="2"/>
-                    <Switch IsToggled="{Binding SwitchStates[3], Mode=TwoWay}" Grid.Column="0" Grid.Row="3"/>
-                    <Switch IsToggled="{Binding SwitchStates[4], Mode=TwoWay}" Grid.Column="1" Grid.Row="0"/>
-                    <Switch IsToggled="{Binding SwitchStates[5], Mode=TwoWay}" Grid.Column="1" Grid.Row="1"/>
-                    <Switch IsToggled="{Binding SwitchStates[6], Mode=TwoWay}" Grid.Column="1" Grid.Row="2"/>
-                    <Switch IsToggled="{Binding SwitchStates[7], Mode=TwoWay}" Grid.Column="1" Grid.Row="3"/>
+                    <Switch IsToggled="{Binding Switch1, Mode=TwoWay}" Grid.Column="0" Grid.Row="0"/>
+                    <Switch IsToggled="{Binding Switch2, Mode=TwoWay}" Grid.Column="0" Grid.Row="1"/>
+                    <Switch IsToggled="{Binding Switch3, Mode=TwoWay}" Grid.Column="0" Grid.Row="2"/>
+                    <Switch IsToggled="{Binding Switch4, Mode=TwoWay}" Grid.Column="0" Grid.Row="3"/>
+                    <Switch IsToggled="False" Grid.Column="1" Grid.Row="0"/>
+                    <Switch IsToggled="False" Grid.Column="1" Grid.Row="1"/>
+                    <Switch IsToggled="False" Grid.Column="1" Grid.Row="2"/>
+                    <Switch IsToggled="False" Grid.Column="1" Grid.Row="3"/>
                 </Grid>
                 <VerticalStackLayout>
                     <HorizontalStackLayout>
@@ -50,6 +50,8 @@
                         <Label Text="B 1-4"/>
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
+                <Label Text="Режим редактирования:"/>
+                <Switch IsToggled="{Binding Editing, Mode=TwoWay}"/>
             </VerticalStackLayout>
         </ScrollView>
         
@@ -63,7 +65,7 @@
                          AbsoluteLayout.LayoutBounds="0, 0, AutoSize, AutoSize"
                          AbsoluteLayout.LayoutFlags="None"/>
 
-                <local:ChipAndKE Margin="50" x:Name="ChipKE2"
+                <local:ChipAndKE Margin="50" x:Name="ChipKE2" 
                          AbsoluteLayout.LayoutBounds="0, 200, AutoSize, AutoSize"
                          AbsoluteLayout.LayoutFlags="None"/>
                 

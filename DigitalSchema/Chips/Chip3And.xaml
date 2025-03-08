@@ -22,7 +22,7 @@
                 VerticalOptions="Start"/>
             </Border>
 
-            <Ellipse Stroke="#D4D4D4" 
+            <Ellipse Stroke="#D4D4D4"
                  WidthRequest="10" 
                  HeightRequest="10" 
                  HorizontalOptions="Start" 
