@@ -91,7 +91,7 @@
             <VerticalStackLayout>
                 <Border Stroke="#D4D4D4" 
                        Padding="20,5,20,5"
-                       HeightRequest="135"
+                       HeightRequest="100"
                        HorizontalOptions="Center"
                        BackgroundColor="Transparent">
                    <Border.StrokeShape>
@@ -107,7 +107,7 @@
 
             <Border Stroke="#D4D4D4" 
                        Padding="20,5,20,5"
-                       HeightRequest="135"
+                       HeightRequest="170"
                        HorizontalOptions="Center"
                        BackgroundColor="Transparent">
                 <Border.StrokeShape>

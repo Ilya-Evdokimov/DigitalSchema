@@ -137,7 +137,7 @@
 
                 <!-- Четвертый столбец микропроцессоров -->
 
-                <local:Chip4AndTwo Margin="50" x:Name="Chip4AndTwo3"
+                <local:Chip3ORTwo Margin="50" x:Name="Chip3OrTwo2"
                        AbsoluteLayout.LayoutBounds="900, 0, AutoSize, AutoSize"
                        AbsoluteLayout.LayoutFlags="None"/>
 
@@ -147,6 +147,20 @@
 
                 <local:ChipTT Margin="50" x:Name="ChipTT4"
                        AbsoluteLayout.LayoutBounds="900, 800, AutoSize, AutoSize"
+                       AbsoluteLayout.LayoutFlags="None"/>
+
+                <!-- Вторая часть - Пятый (1) столбец микропроцессоров -->
+
+                <local:Chip2XOR Margin="50" x:Name="Chip2XOR"
+                       AbsoluteLayout.LayoutBounds="1200, 400, AutoSize, AutoSize"
+                       AbsoluteLayout.LayoutFlags="None"/>
+                
+                <local:ChipSmalTT Margin="50" x:Name="ChipSTT1"
+                       AbsoluteLayout.LayoutBounds="1200, 800, AutoSize, AutoSize"
+                       AbsoluteLayout.LayoutFlags="None"/>
+
+                <local:ChipSmalTT Margin="50" x:Name="ChipSTT2"
+                       AbsoluteLayout.LayoutBounds="1200, 1000, AutoSize, AutoSize"
                        AbsoluteLayout.LayoutFlags="None"/>
 
             </AbsoluteLayout>
