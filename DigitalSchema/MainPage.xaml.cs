@@ -91,6 +91,10 @@ namespace DigitalSchema
             ChipTwo2.EllipseTapped += OnEllipseTapped;
             ChipTwo2.ExitEllipseTapped += OnExitEllipseTapped;
             ChipTwo2.ColorChanged += OnEllipseColorChanged;
+
+            Chip3And1.EllipseTapped += OnEllipseTapped;
+            Chip3And1.ExitEllipseTapped += OnExitEllipseTapped;
+            Chip3And1.ColorChanged += OnEllipseColorChanged;
         }
 
         private void OnEllipseColorChanged(object sender, Color newColor)
