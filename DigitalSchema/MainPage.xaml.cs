@@ -12,6 +12,7 @@ namespace DigitalSchema
         public Dictionary<Ellipse, Label> bindingLabels = new Dictionary<Ellipse, Label>(); // Визуальная часть привязки
         public Ellipse? SelectedEllipse { get; set; }
 
+        private int number;
         private bool _editing;
         public bool Editing
         {
@@ -78,6 +79,8 @@ namespace DigitalSchema
         {
             InitializeComponent();
             BindingContext = this;
+            number = 0;
+
             ChipOne.EllipseTapped += OnEllipseTapped;
             ChipOne.ExitEllipseTapped += OnExitEllipseTapped;
             ChipOne.ColorChanged += OnEllipseColorChanged;
@@ -95,6 +98,13 @@ namespace DigitalSchema
             Chip3And1.EllipseTapped += OnEllipseTapped;
             Chip3And1.ExitEllipseTapped += OnExitEllipseTapped;
             Chip3And1.ColorChanged += OnEllipseColorChanged;
+            Chip3And2.EllipseTapped += OnEllipseTapped;
+            Chip3And2.ExitEllipseTapped += OnExitEllipseTapped;
+            Chip3And2.ColorChanged += OnEllipseColorChanged;
+
+            Chip3OrTwo2.EllipseTapped += OnEllipseTapped;
+            Chip3OrTwo2.ExitEllipseTapped += OnExitEllipseTapped;
+            Chip3OrTwo2.ColorChanged += OnEllipseColorChanged;
         }
 
         private void OnEllipseColorChanged(object sender, Color newColor)
@@ -115,14 +125,14 @@ namespace DigitalSchema
 
                     ellipse.Fill = SelectedEllipse.Fill;
                     Commutation[SelectedEllipse] = ellipse;
-                    SelectedEllipse = null;
 
                     // Создаем новый Label
                     var label = new Label
                     {
-                        Text = "ABC", 
-                        TextColor = Colors.White,
-                        FontSize = 12,
+                        Text = "I"+number, 
+                        TextColor = Colors.GreenYellow,
+                        FontAttributes = FontAttributes.Bold,
+                        FontSize = 16,
                         VerticalOptions = ellipse.VerticalOptions,
                         HorizontalOptions = ellipse.HorizontalOptions
                     };
@@ -134,9 +144,33 @@ namespace DigitalSchema
                     {
                         // Добавляем Label в Grid
                         grid.Children.Add(label);
-                        label.Margin = new Thickness(ellipse.Margin.Left - 25, ellipse.Margin.Top - 5, ellipse.Margin.Right, ellipse.Margin.Bottom);
+                        label.Margin = new Thickness(ellipse.Margin.Left - 33, ellipse.Margin.Top - 8, ellipse.Margin.Right, ellipse.Margin.Bottom);
                         bindingLabels[ellipse] = label;
                     }
+
+                    var Outlabel = new Label
+                    {
+                        Text = "O" + number,
+                        TextColor = Colors.GreenYellow,
+                        FontAttributes = FontAttributes.Bold,
+                        FontSize = 16,
+                        VerticalOptions = SelectedEllipse.VerticalOptions,
+                        HorizontalOptions = SelectedEllipse.HorizontalOptions
+                    };
+
+                    // Получаем Grid, в котором находится Ellipse
+                    var Outgrid = SelectedEllipse.Parent as Grid;
+
+                    if (Outgrid != null)
+                    {
+                        // Добавляем Label в Grid
+                        Outgrid.Children.Add(Outlabel);
+                        Outlabel.Margin = new Thickness(SelectedEllipse.Margin.Left - 33, SelectedEllipse.Margin.Top - 8, SelectedEllipse.Margin.Right, SelectedEllipse.Margin.Bottom);
+                        bindingLabels[SelectedEllipse] = Outlabel;
+                    }
+
+                    number++;
+                    SelectedEllipse = null;
                 }
             }
             else
