@@ -67,7 +67,6 @@ namespace DigitalSchema
             {
                 _switch4 = value;
                 OnPropertyChanged();
-                //Reverce();
             }
         }
 
@@ -80,6 +79,9 @@ namespace DigitalSchema
             InitializeComponent();
             BindingContext = this;
             number = 0;
+
+            UM11UI.EllipseTapped += OnEllipseTapped;
+            UM11UI.ExitEllipseTapped += OnExitEllipseTapped;
 
             ChipOne.EllipseTapped += OnEllipseTapped;
             ChipOne.ExitEllipseTapped += OnExitEllipseTapped;
@@ -105,8 +107,14 @@ namespace DigitalSchema
             Chip3OrTwo2.EllipseTapped += OnEllipseTapped;
             Chip3OrTwo2.ExitEllipseTapped += OnExitEllipseTapped;
             Chip3OrTwo2.ColorChanged += OnEllipseColorChanged;
-        }
 
+            ChipTT1.EllipseTapped += OnEllipseTapped;
+            ChipTT1.ExitEllipseTapped += OnExitEllipseTapped;
+            ChipTT1.ColorChanged += OnEllipseColorChanged;
+            Chip4AndTwo1.EllipseTapped += OnEllipseTapped;
+            Chip4AndTwo1.ExitEllipseTapped += OnExitEllipseTapped;
+            Chip4AndTwo1.ColorChanged += OnEllipseColorChanged;
+        }
         private void OnEllipseColorChanged(object sender, Color newColor)
         {
             foreach (var pair in Commutation)
@@ -165,7 +173,7 @@ namespace DigitalSchema
                     {
                         // Добавляем Label в Grid
                         Outgrid.Children.Add(Outlabel);
-                        Outlabel.Margin = new Thickness(SelectedEllipse.Margin.Left - 33, SelectedEllipse.Margin.Top - 8, SelectedEllipse.Margin.Right, SelectedEllipse.Margin.Bottom);
+                        Outlabel.Margin = new Thickness(SelectedEllipse.Margin.Left, SelectedEllipse.Margin.Top - 8, SelectedEllipse.Margin.Right-33, SelectedEllipse.Margin.Bottom);
                         bindingLabels[SelectedEllipse] = Outlabel;
                     }
 
@@ -188,6 +196,5 @@ namespace DigitalSchema
                 }
             }
         }
-
     }
 }

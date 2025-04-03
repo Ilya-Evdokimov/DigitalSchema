@@ -34,24 +34,11 @@
                     <Switch IsToggled="False" Grid.Column="1" Grid.Row="2"/>
                     <Switch IsToggled="False" Grid.Column="1" Grid.Row="3"/>
                 </Grid>
-                <VerticalStackLayout>
-                    <HorizontalStackLayout>
-                        <Ellipse Fill="Snow" WidthRequest="40" HeightRequest="40"></Ellipse>
-                        <Ellipse Fill="Snow" WidthRequest="40" HeightRequest="40"></Ellipse>
-                        <Ellipse Fill="Snow" WidthRequest="40" HeightRequest="40"></Ellipse>
-                        <Ellipse Fill="Snow" WidthRequest="40" HeightRequest="40"></Ellipse>
-                        <Label Text="A 1-4"/>
-                    </HorizontalStackLayout>
-                    <HorizontalStackLayout>
-                        <Ellipse Fill="Snow" WidthRequest="40" HeightRequest="40"></Ellipse>
-                        <Ellipse Fill="Snow" WidthRequest="40" HeightRequest="40"></Ellipse>
-                        <Ellipse Fill="Snow" WidthRequest="40" HeightRequest="40"></Ellipse>
-                        <Ellipse Fill="Snow" WidthRequest="40" HeightRequest="40"></Ellipse>
-                        <Label Text="B 1-4"/>
-                    </HorizontalStackLayout>
-                </VerticalStackLayout>
+                <local:UM11 x:Name="UM11UI"/>
                 <Label Text="Режим редактирования:"/>
                 <Switch IsToggled="{Binding Editing, Mode=TwoWay}"/>
+                <Button Text="_/\_"></Button>
+                <!--="OnButtonPressedSync" Released="OnButtonReleasedSync"-->
             </VerticalStackLayout>
         </ScrollView>
         
