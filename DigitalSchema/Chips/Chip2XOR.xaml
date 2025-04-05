@@ -31,31 +31,51 @@
 
             <!--Выходы-->
             <Ellipse Stroke="#D4D4D4"
+                     Fill="{Binding OutputValues01, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
          WidthRequest="10" 
          HeightRequest="10" 
          HorizontalOptions="End" 
          VerticalOptions="Center"
-         Margin="0,25,-15,0"/>
+         Margin="0,25,-15,0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
             <Ellipse Stroke="#D4D4D4" 
+                     Fill="{Binding OutputValues01, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
          WidthRequest="10" 
          HeightRequest="10" 
          HorizontalOptions="End" 
          VerticalOptions="Center"
-         Margin="0,0,-15,25"/>
+         Margin="0,0,-15,25">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
 
             <!--Входы-->
             <Ellipse Stroke="#D4D4D4"
+                     Fill="{Binding InputValues_011, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
          WidthRequest="10" 
          HeightRequest="10" 
          HorizontalOptions="Start" 
          VerticalOptions="Center"
-         Margin="-15,25,0,0"/>
+         Margin="-15,25,0,0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
             <Ellipse Stroke="#D4D4D4" 
+                     Fill="{Binding InputValues_021, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
          WidthRequest="10" 
          HeightRequest="10" 
          HorizontalOptions="Start" 
          VerticalOptions="Center"
-         Margin="-15,0,0,25"/>
+         Margin="-15,0,0,25">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
 
         </Grid>
         <Grid HeightRequest="70">
@@ -76,31 +96,51 @@
 
             <!--Выходы-->
             <Ellipse Stroke="#D4D4D4"
+                     Fill="{Binding OutputValues02, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
          WidthRequest="10" 
          HeightRequest="10" 
          HorizontalOptions="End" 
          VerticalOptions="Center"
-         Margin="0,25,-15,0"/>
+         Margin="0,25,-15,0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
             <Ellipse Stroke="#D4D4D4" 
+                     Fill="{Binding OutputValues02, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
          WidthRequest="10" 
          HeightRequest="10" 
          HorizontalOptions="End" 
          VerticalOptions="Center"
-         Margin="0,0,-15,25"/>
+         Margin="0,0,-15,25">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
 
             <!--Входы-->
             <Ellipse Stroke="#D4D4D4"
+                     Fill="{Binding InputValues_012, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
          WidthRequest="10" 
          HeightRequest="10" 
          HorizontalOptions="Start" 
          VerticalOptions="Center"
-         Margin="-15,25,0,0"/>
+         Margin="-15,25,0,0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
             <Ellipse Stroke="#D4D4D4" 
+                     Fill="{Binding InputValues_022, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
          WidthRequest="10" 
          HeightRequest="10" 
          HorizontalOptions="Start" 
          VerticalOptions="Center"
-         Margin="-15,0,0,25"/>
+         Margin="-15,0,0,25">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
 
         </Grid>
         <Grid HeightRequest="70">
@@ -121,31 +161,51 @@
 
             <!--Выходы-->
             <Ellipse Stroke="#D4D4D4"
+                     Fill="{Binding OutputValues03, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
          WidthRequest="10" 
          HeightRequest="10" 
          HorizontalOptions="End" 
          VerticalOptions="Center"
-         Margin="0,25,-15,0"/>
+         Margin="0,25,-15,0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
             <Ellipse Stroke="#D4D4D4" 
+                     Fill="{Binding OutputValues03, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
          WidthRequest="10" 
          HeightRequest="10" 
          HorizontalOptions="End" 
          VerticalOptions="Center"
-         Margin="0,0,-15,25"/>
+         Margin="0,0,-15,25">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
 
             <!--Входы-->
             <Ellipse Stroke="#D4D4D4"
+                     Fill="{Binding InputValues_013, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
          WidthRequest="10" 
          HeightRequest="10" 
          HorizontalOptions="Start" 
          VerticalOptions="Center"
-         Margin="-15,25,0,0"/>
+         Margin="-15,25,0,0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
             <Ellipse Stroke="#D4D4D4" 
+                     Fill="{Binding InputValues_023, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
          WidthRequest="10" 
          HeightRequest="10" 
          HorizontalOptions="Start" 
          VerticalOptions="Center"
-         Margin="-15,0,0,25"/>
+         Margin="-15,0,0,25">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
 
         </Grid>
         <Grid HeightRequest="70">
@@ -166,31 +226,51 @@
 
             <!--Выходы-->
             <Ellipse Stroke="#D4D4D4"
+                     Fill="{Binding OutputValues04, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
          WidthRequest="10" 
          HeightRequest="10" 
          HorizontalOptions="End" 
          VerticalOptions="Center"
-         Margin="0,25,-15,0"/>
+         Margin="0,25,-15,0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
             <Ellipse Stroke="#D4D4D4" 
+                     Fill="{Binding OutputValues04, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
          WidthRequest="10" 
          HeightRequest="10" 
          HorizontalOptions="End" 
          VerticalOptions="Center"
-         Margin="0,0,-15,25"/>
+         Margin="0,0,-15,25">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
 
             <!--Входы-->
             <Ellipse Stroke="#D4D4D4"
+                     Fill="{Binding InputValues_014, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
          WidthRequest="10" 
          HeightRequest="10" 
          HorizontalOptions="Start" 
          VerticalOptions="Center"
-         Margin="-15,25,0,0"/>
+         Margin="-15,25,0,0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
             <Ellipse Stroke="#D4D4D4" 
+                     Fill="{Binding InputValues_024, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
          WidthRequest="10" 
          HeightRequest="10" 
          HorizontalOptions="Start" 
          VerticalOptions="Center"
-         Margin="-15,0,0,25"/>
+         Margin="-15,0,0,25">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
 
         </Grid>
     </VerticalStackLayout>

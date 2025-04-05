@@ -13,31 +13,9 @@
         </Grid.ColumnDefinitions>
         <ScrollView Grid.Column="0" BackgroundColor="#2E3137">
             <VerticalStackLayout>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition ></ColumnDefinition>
-                        <ColumnDefinition ></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Switch IsToggled="{Binding Switch1, Mode=TwoWay}" Grid.Column="0" Grid.Row="0"/>
-                    <Switch IsToggled="{Binding Switch2, Mode=TwoWay}" Grid.Column="0" Grid.Row="1"/>
-                    <Switch IsToggled="{Binding Switch3, Mode=TwoWay}" Grid.Column="0" Grid.Row="2"/>
-                    <Switch IsToggled="{Binding Switch4, Mode=TwoWay}" Grid.Column="0" Grid.Row="3"/>
-                    <Switch IsToggled="False" Grid.Column="1" Grid.Row="0"/>
-                    <Switch IsToggled="False" Grid.Column="1" Grid.Row="1"/>
-                    <Switch IsToggled="False" Grid.Column="1" Grid.Row="2"/>
-                    <Switch IsToggled="False" Grid.Column="1" Grid.Row="3"/>
-                </Grid>
                 <local:UM11 x:Name="UM11UI"/>
                 <Label Text="Режим редактирования:"/>
                 <Switch IsToggled="{Binding Editing, Mode=TwoWay}"/>
-                <Button Text="_/\_"></Button>
                 <!--="OnButtonPressedSync" Released="OnButtonReleasedSync"-->
             </VerticalStackLayout>
         </ScrollView>
@@ -138,7 +116,7 @@
 
                 <!-- Вторая часть - Пятый (1) столбец микропроцессоров -->
 
-                <local:Chip2XOR Margin="50" x:Name="Chip2XOR"
+                <local:Chip2XOR Margin="50" x:Name="Chip2XOR1"
                        AbsoluteLayout.LayoutBounds="1200, 400, AutoSize, AutoSize"
                        AbsoluteLayout.LayoutFlags="None"/>
                 

@@ -82,6 +82,7 @@ namespace DigitalSchema
 
             UM11UI.EllipseTapped += OnEllipseTapped;
             UM11UI.ExitEllipseTapped += OnExitEllipseTapped;
+            UM11UI.ColorChanged += OnEllipseColorChanged;
 
             ChipOne.EllipseTapped += OnEllipseTapped;
             ChipOne.ExitEllipseTapped += OnExitEllipseTapped;
@@ -114,6 +115,10 @@ namespace DigitalSchema
             Chip4AndTwo1.EllipseTapped += OnEllipseTapped;
             Chip4AndTwo1.ExitEllipseTapped += OnExitEllipseTapped;
             Chip4AndTwo1.ColorChanged += OnEllipseColorChanged;
+
+            Chip2XOR1.EllipseTapped += OnEllipseTapped;
+            Chip2XOR1.ExitEllipseTapped += OnExitEllipseTapped;
+            Chip2XOR1.ColorChanged += OnEllipseColorChanged;
         }
         private void OnEllipseColorChanged(object sender, Color newColor)
         {
