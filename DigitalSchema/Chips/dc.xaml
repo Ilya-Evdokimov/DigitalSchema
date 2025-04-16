@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DigitalSchema.Chips"
+             xmlns:converters="clr-namespace:DigitalSchema.Converters"
+             x:Class="DigitalSchema.Chips.dc"
+             x:DataType="local:dc">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <converters:ColorToBrushConverter x:Key="ColorToBrushConverter" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <VerticalStackLayout>
+        <Grid HeightRequest="400">
+            <Image Source="decoder.png" Aspect="AspectFill" Grid.ColumnSpan="999" Grid.RowSpan="999" />
+            <!--Входы первого декодера-->
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="35, 114, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="35, 141, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="35, 218, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="35, 245, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="35, 317, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="35, 344, 0, 0">
+            </Ellipse>
+            <!--Выводы первого декодера 1 4 -->
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="215, 84, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="215, 115, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="215, 149, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="215, 181, 0, 0">
+            </Ellipse>
+            <!--Выводы первого декодера 1 4 -->
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="215, 244, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="215, 276, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="215, 310, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="215, 341, 0, 0">
+            </Ellipse>
+            <!--Входы второго декодера -->
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="309, 119, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="309, 150, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="309, 182, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="309, 275, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="309, 304, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="309, 337, 0, 0">
+            </Ellipse>
+            <!--Выходы Второго декодера -->
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="483, 99, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="483, 131, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="483, 163, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="483, 195, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="483, 229, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="483, 262, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="483, 294, 0, 0">
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                    Fill="Red"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="483, 328, 0, 0">
+            </Ellipse>
+        </Grid>
+    </VerticalStackLayout>
+</ContentView>

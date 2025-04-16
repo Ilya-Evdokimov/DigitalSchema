@@ -6,10 +6,10 @@ namespace DigitalSchema.Chips
 {
     public partial class NewPage1 : ContentView, INotifyPropertyChanged
     {
-        private Color _InputValues_01 = Colors.Transparent;
-        private Color _InputValues_02 = Colors.Transparent;
-        private Color _InputValues_03 = Colors.Transparent;
-        private Color _InputValues_04 = Colors.Transparent;
+        private Color _InputValues_01 = Colors.Red;
+        private Color _InputValues_02 = Colors.Red;
+        private Color _InputValues_03 = Colors.Red;
+        private Color _InputValues_04 = Colors.Red;
         private Color _OutputValues;
 
         public Color InputValues_01
@@ -85,27 +85,6 @@ namespace DigitalSchema.Chips
             if (sender is Ellipse ellipse)
             {
                 EllipseTapped?.Invoke(this, ellipse);
-            }
-
-            if (e is TappedEventArgs tapEventArgs && tapEventArgs.Parameter is string propertyName)
-            {
-                switch (propertyName)
-                {
-                    case "s_InputValues_01":
-                        InputValues_01 = InputValues_01 == Colors.Transparent ? Colors.Red : Colors.Transparent;
-                        break;
-                    case "s_InputValues_02":
-                        InputValues_02 = InputValues_02 == Colors.Transparent ? Colors.Red : Colors.Transparent;
-                        break;
-                    case "s_InputValues_03":
-                        InputValues_03 = InputValues_03 == Colors.Transparent ? Colors.Red : Colors.Transparent;
-                        break;
-                    case "s_InputValues_04":
-                        InputValues_04 = InputValues_04 == Colors.Transparent ? Colors.Red : Colors.Transparent;
-                        break;
-                    default:
-                        break;
-                }
             }
         }
 

@@ -11,274 +11,416 @@
             <converters:ColorToBrushConverter x:Key="ColorToBrushConverter" />
         </ResourceDictionary>
     </ContentView.Resources>
-    
+
     <VerticalStackLayout>
+        <Label Text="Переключатели:" FontSize="Medium"/>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition ></ColumnDefinition>
-                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
-            <Switch IsToggled="{Binding Switch1, Mode=TwoWay}" Grid.Column="0" Grid.Row="0"/>
-            <Switch IsToggled="{Binding Switch2, Mode=TwoWay}" Grid.Column="0" Grid.Row="1"/>
-            <Switch IsToggled="{Binding Switch3, Mode=TwoWay}" Grid.Column="0" Grid.Row="2"/>
-            <Switch IsToggled="{Binding Switch4, Mode=TwoWay}" Grid.Column="0" Grid.Row="3"/>
 
-            <Switch IsToggled="{Binding Switch5, Mode=TwoWay}" Grid.Column="1" Grid.Row="0"/>
-            <Switch IsToggled="{Binding Switch6, Mode=TwoWay}" Grid.Column="1" Grid.Row="1"/>
-            <Switch IsToggled="{Binding Switch7, Mode=TwoWay}" Grid.Column="1" Grid.Row="2"/>
-            <Switch IsToggled="{Binding Switch8, Mode=TwoWay}" Grid.Column="1" Grid.Row="3"/>
-        </Grid>
-        <Grid HeightRequest="90" WidthRequest="190">
-            <!--{Binding InputValues_01, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}-->
+            <!-- Row 0 -->
+            <Switch IsToggled="{Binding Switch1, Mode=TwoWay}" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
+                     AutomationId="B1"
                  Fill="{Binding Button_01A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
-                 HorizontalOptions="Start" 
-                 VerticalOptions="Start"
-                 Margin="30,0,0,0">
+                 Grid.Column="1" Grid.Row="0"
+                     Margin="-20,0,0,0"
+                 VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
-            </Ellipse>
-            
-            <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding Button_02A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-                     WidthRequest="13" 
-                     HeightRequest="13" 
-                     HorizontalOptions="Start" 
-                     VerticalOptions="Start"
-                     Margin="70,0,0,0">
-                <Ellipse.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
-                </Ellipse.GestureRecognizers>
-            </Ellipse>
 
-            <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding Button_03A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-                     WidthRequest="13" 
-                     HeightRequest="13" 
-                     HorizontalOptions="Start" 
-                     VerticalOptions="Start"
-                     Margin="110,0,0,0">
-                <Ellipse.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
-                </Ellipse.GestureRecognizers>
-            </Ellipse>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1.2" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
 
-            <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding Button_04A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-                     WidthRequest="13" 
-                     HeightRequest="13" 
-                     HorizontalOptions="Start" 
-                     VerticalOptions="Start"
-                     Margin="150,0,0,0">
-                <Ellipse.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
-                </Ellipse.GestureRecognizers>
             </Ellipse>
-            <!---->
             <Ellipse Stroke="#D4D4D4"
+                     AutomationId="B1"
                  Fill="{Binding Button_01B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
-                 HorizontalOptions="Start" 
-                 VerticalOptions="Start"
-                 Margin="30,20,0,0">
+                 Grid.Column="2" Grid.Row="0"
+                     Margin="25,0,0,0"
+                 VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1.2" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
             </Ellipse>
 
+            <!-- Row 1 -->
+            <Switch IsToggled="{Binding Switch2, Mode=TwoWay}" Grid.Column="0" Grid.Row="1" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding Button_02B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-                     WidthRequest="13" 
-                     HeightRequest="13" 
-                     HorizontalOptions="Start" 
-                     VerticalOptions="Start"
-                     Margin="70,20,0,0">
+                     AutomationId="B2"
+                 Fill="{Binding Button_02A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                 WidthRequest="13" 
+                 HeightRequest="13" 
+                 Grid.Column="1" Grid.Row="1"
+                     Margin="-20,0,0,0"
+                 VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1.2" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                     AutomationId="B2"
+                 Fill="{Binding Button_02B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                 WidthRequest="13" 
+                 HeightRequest="13" 
+                 Grid.Column="2" Grid.Row="1"
+                     Margin="25,0,0,0"
+                 VerticalOptions="Center">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1.2" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
             </Ellipse>
 
+            <!-- Row 2 -->
+            <Switch IsToggled="{Binding Switch3, Mode=TwoWay}" Grid.Column="0" Grid.Row="2" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding Button_03B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-                     WidthRequest="13" 
-                     HeightRequest="13" 
-                     HorizontalOptions="Start" 
-                     VerticalOptions="Start"
-                     Margin="110,20,0,0">
+                     AutomationId="B3"
+                 Fill="{Binding Button_03A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                 WidthRequest="13" 
+                 HeightRequest="13" 
+                 Grid.Column="1" Grid.Row="2"
+                 Margin="-20,0,0,0"
+                 VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1.2" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                     AutomationId="B3"
+                 Fill="{Binding Button_03B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                 WidthRequest="13" 
+                 HeightRequest="13" 
+                 Grid.Column="2" Grid.Row="2"
+                 Margin="25,0,0,0"
+                 VerticalOptions="Center">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1.2" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
             </Ellipse>
 
+            <!-- Row 3 -->
+            <Switch IsToggled="{Binding Switch4, Mode=TwoWay}" Grid.Column="0" Grid.Row="3" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding Button_04B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-                     WidthRequest="13" 
-                     HeightRequest="13" 
-                     HorizontalOptions="Start" 
-                     VerticalOptions="Start"
-                     Margin="150,20,0,0">
+                     AutomationId="B4"
+                 Fill="{Binding Button_04A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                 WidthRequest="13" 
+                 HeightRequest="13" 
+                 Grid.Column="1" Grid.Row="3"
+                 Margin="-20,0,0,0"
+                 VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1.2" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
             </Ellipse>
-            <!---->
+            <Ellipse Stroke="#D4D4D4"
+                     AutomationId="B4"
+                 Fill="{Binding Button_04B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                 WidthRequest="13" 
+                 HeightRequest="13" 
+                 Grid.Column="2" Grid.Row="3"
+                 Margin="25,0,0,0"
+                 VerticalOptions="Center">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1.2" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Ellipse>
+        </Grid>
+
+        <!-- Second Grid for Switches 5-8 -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!-- Row 0 -->
+            <Switch IsToggled="{Binding Switch5, Mode=TwoWay}" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
                  Fill="{Binding Button_05A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     AutomationId="B5"
                  WidthRequest="13" 
                  HeightRequest="13" 
-                 HorizontalOptions="Start" 
-                 VerticalOptions="Start"
-                 Margin="30,40,0,0">
+                 Grid.Column="1" Grid.Row="0"
+                 Margin="-20,0,0,0"
+                 VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
             </Ellipse>
-
-            <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding Button_06A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-                     WidthRequest="13" 
-                     HeightRequest="13" 
-                     HorizontalOptions="Start" 
-                     VerticalOptions="Start"
-                     Margin="70,40,0,0">
-                <Ellipse.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
-                </Ellipse.GestureRecognizers>
-            </Ellipse>
-
-            <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding Button_07A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-                     WidthRequest="13" 
-                     HeightRequest="13" 
-                     HorizontalOptions="Start" 
-                     VerticalOptions="Start"
-                     Margin="110,40,0,0">
-                <Ellipse.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
-                </Ellipse.GestureRecognizers>
-            </Ellipse>
-
-            <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding Button_08A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-                     WidthRequest="13" 
-                     HeightRequest="13" 
-                     HorizontalOptions="Start" 
-                     VerticalOptions="Start"
-                     Margin="150,40,0,0">
-                <Ellipse.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
-                </Ellipse.GestureRecognizers>
-            </Ellipse>
-            <!---->
             <Ellipse Stroke="#D4D4D4"
                  Fill="{Binding Button_05B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     AutomationId="B5"
                  WidthRequest="13" 
                  HeightRequest="13" 
-                 HorizontalOptions="Start" 
-                 VerticalOptions="Start"
-                 Margin="30,60,0,0">
+                 Grid.Column="2" Grid.Row="0"
+                 Margin="25,0,0,0"
+                 VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
             </Ellipse>
 
+            <!-- Row 1 -->
+            <Switch IsToggled="{Binding Switch6, Mode=TwoWay}" Grid.Column="0" Grid.Row="1" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding Button_06B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-                     WidthRequest="13" 
-                     HeightRequest="13" 
-                     HorizontalOptions="Start" 
-                     VerticalOptions="Start"
-                     Margin="70,60,0,0">
+                     AutomationId="B6"
+                 Fill="{Binding Button_06A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                 WidthRequest="13" 
+                 HeightRequest="13" 
+                 Grid.Column="1" Grid.Row="1"
+                 Margin="-20,0,0,0"
+                 VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
             </Ellipse>
-
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding Button_07B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-                     WidthRequest="13" 
-                     HeightRequest="13" 
-                     HorizontalOptions="Start" 
-                     VerticalOptions="Start"
-                     Margin="110,60,0,0">
+                     AutomationId="B6"
+                 Fill="{Binding Button_06B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                 WidthRequest="13" 
+                 HeightRequest="13" 
+                 Grid.Column="2" Grid.Row="1"
+                 Margin="25,0,0,0"
+                 VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
             </Ellipse>
 
+            <!-- Row 2 -->
+            <Switch IsToggled="{Binding Switch7, Mode=TwoWay}" Grid.Column="0" Grid.Row="2" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding Button_08B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-                     WidthRequest="13" 
-                     HeightRequest="13" 
-                     HorizontalOptions="Start" 
-                     VerticalOptions="Start"
-                     Margin="150,60,0,0">
+                     AutomationId="B7"
+                 Fill="{Binding Button_07A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                 WidthRequest="13" 
+                 HeightRequest="13" 
+                 Grid.Column="1" Grid.Row="2"
+                 Margin="-20,0,0,0"
+                 VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
             </Ellipse>
-            <!---->
+            <Ellipse Stroke="#D4D4D4"
+                     AutomationId="B7"
+                 Fill="{Binding Button_07B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                 WidthRequest="13" 
+                 HeightRequest="13" 
+                 Grid.Column="2" Grid.Row="2"
+                 Margin="25,0,0,0"
+                 VerticalOptions="Center">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
 
+            <!-- Row 3 -->
+            <Switch IsToggled="{Binding Switch8, Mode=TwoWay}" Grid.Column="0" Grid.Row="3" VerticalOptions="Center"/>
+            <Ellipse Stroke="#D4D4D4"
+                     AutomationId="B8"
+                 Fill="{Binding Button_08A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                 WidthRequest="13" 
+                 HeightRequest="13" 
+                 Grid.Column="1" Grid.Row="3"
+                 Margin="-20,0,0,0"
+                 VerticalOptions="Center">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                     AutomationId="B8"
+                 Fill="{Binding Button_08B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                 WidthRequest="13" 
+                 HeightRequest="13" 
+                 Grid.Column="2" Grid.Row="3"
+                 Margin="25,0,0,0"
+                 VerticalOptions="Center">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
         </Grid>
+        <Label Text="Светодиоды:" FontSize="Medium"/>
         <Grid>
             <HorizontalStackLayout>
-                <Ellipse Margin="10" WidthRequest="20" HeightRequest="20" Stroke="White" Fill="{Binding Diod_08, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}">
+                <Ellipse AutomationId="D1" Margin="10" WidthRequest="20" HeightRequest="20" Stroke="White" Fill="{Binding Diod_08, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}">
                     <Ellipse.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnEllipseTapped"/>
                     </Ellipse.GestureRecognizers>
                 </Ellipse>
-                <Ellipse Margin="10" WidthRequest="20" HeightRequest="20" Stroke="White" Fill="{Binding Diod_07, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}">
+                <Ellipse AutomationId="D2" Margin="10" WidthRequest="20" HeightRequest="20" Stroke="White" Fill="{Binding Diod_07, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}">
                     <Ellipse.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnEllipseTapped"/>
                     </Ellipse.GestureRecognizers>
                 </Ellipse>
-                <Ellipse Margin="10" WidthRequest="20" HeightRequest="20" Stroke="White" Fill="{Binding Diod_06, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}">
+                <Ellipse AutomationId="D3" Margin="10" WidthRequest="20" HeightRequest="20" Stroke="White" Fill="{Binding Diod_06, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}">
                     <Ellipse.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnEllipseTapped"/>
                     </Ellipse.GestureRecognizers>
                 </Ellipse>
-                <Ellipse Margin="10" WidthRequest="20" HeightRequest="20" Stroke="White" Fill="{Binding Diod_05, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}">
+                <Ellipse AutomationId="D4" Margin="10" WidthRequest="20" HeightRequest="20" Stroke="White" Fill="{Binding Diod_05, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}">
                     <Ellipse.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnEllipseTapped"/>
                     </Ellipse.GestureRecognizers>
                 </Ellipse>
-                <Label Text="A 1-4"/>
+                <Label Text="D 1-4"/>
             </HorizontalStackLayout>
         </Grid>
         <Grid>
             <HorizontalStackLayout>
-                <Ellipse Margin="10" WidthRequest="20" HeightRequest="20" Stroke="White" Fill="{Binding Diod_04, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}">
+                <Ellipse AutomationId="D5" Margin="10" WidthRequest="20" HeightRequest="20" Stroke="White" Fill="{Binding Diod_04, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}">
                     <Ellipse.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnEllipseTapped"/>
                     </Ellipse.GestureRecognizers>
                 </Ellipse>
-                <Ellipse Margin="10" WidthRequest="20" HeightRequest="20" Stroke="White" Fill="{Binding Diod_03, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}">
+                <Ellipse AutomationId="D6" Margin="10" WidthRequest="20" HeightRequest="20" Stroke="White" Fill="{Binding Diod_03, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}">
                     <Ellipse.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnEllipseTapped"/>
                     </Ellipse.GestureRecognizers>
                 </Ellipse>
-                <Ellipse Margin="10" WidthRequest="20" HeightRequest="20" Stroke="White" Fill="{Binding Diod_02, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}">
+                <Ellipse AutomationId="D7" Margin="10" WidthRequest="20" HeightRequest="20" Stroke="White" Fill="{Binding Diod_02, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}">
                     <Ellipse.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnEllipseTapped"/>
                     </Ellipse.GestureRecognizers>
                 </Ellipse>
-                <Ellipse Margin="10" WidthRequest="20" HeightRequest="20" Stroke="White" Fill="{Binding Diod_01, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}">
+                <Ellipse AutomationId="D8" Margin="10" WidthRequest="20" HeightRequest="20" Stroke="White" Fill="{Binding Diod_01, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}">
                     <Ellipse.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnEllipseTapped"/>
                     </Ellipse.GestureRecognizers>
                 </Ellipse>
-                <Label Text="B 1-4"/>
+                <Label Text="D 5-8"/>
             </HorizontalStackLayout>
         </Grid>
         <HorizontalStackLayout>

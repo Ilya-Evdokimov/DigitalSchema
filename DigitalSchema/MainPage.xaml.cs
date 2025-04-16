@@ -3,6 +3,9 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using DigitalSchema.Models;
 using Microsoft.Maui.Controls.Shapes;
+using static System.Net.Mime.MediaTypeNames;
+using System.Data.Common;
+using System.Collections.ObjectModel;
 
 namespace DigitalSchema
 {
@@ -10,6 +13,7 @@ namespace DigitalSchema
     {
         public Dictionary<Ellipse, Ellipse> Commutation = new Dictionary<Ellipse, Ellipse>(); // Невизуальная часть привязки
         public Dictionary<Ellipse, Label> bindingLabels = new Dictionary<Ellipse, Label>(); // Визуальная часть привязки
+
         public Ellipse? SelectedEllipse { get; set; }
 
         private int number;
@@ -19,60 +23,34 @@ namespace DigitalSchema
             get => _editing;
             set
             {
+                SelectedEllipse = null;
                 _editing = value;
                 OnPropertyChanged();
             }
         }
-
-        private bool _switch1;
-        private bool _switch2;
-        private bool _switch3;
-        private bool _switch4;
-        private bool _switch5;
-        private bool _switch6;
-        private bool _switch7;
-        private bool _switch8;
-
-        public bool Switch1
+        private void OnPickerSelectedIndexChanged(object sender, EventArgs e)
         {
-            get => _switch1;
-            set
+            var picker = (Picker)sender;
+            if (picker.SelectedIndex != -1)
             {
-                _switch1 = value;
-                OnPropertyChanged();
+                switch(picker.SelectedIndex)
+                {
+                    case 0:
+                        {
+                            decoder.IsVisible = true;
+                            break;
+                        }
+                    default:
+                        {
+                            decoder.IsVisible = false;
+                            break;
+                        }
+                }
             }
-        }
-        public bool Switch2
-        {
-            get => _switch2;
-            set
+            else
             {
-                _switch2 = value;
-                OnPropertyChanged();
+                decoder.IsVisible = false;
             }
-        }
-        public bool Switch3
-        {
-            get => _switch3;
-            set
-            {
-                _switch3 = value;
-                OnPropertyChanged();
-            }
-        }
-        public bool Switch4
-        {
-            get => _switch4;
-            set
-            {
-                _switch4 = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public void Reverce()
-        {
-            //ChipOne.InputValues_01 = ChipOne.InputValues_01 == Colors.Transparent ? Colors.Red : Colors.Transparent;
         }
         public MainPage()
         {
@@ -112,6 +90,16 @@ namespace DigitalSchema
             ChipTT1.EllipseTapped += OnEllipseTapped;
             ChipTT1.ExitEllipseTapped += OnExitEllipseTapped;
             ChipTT1.ColorChanged += OnEllipseColorChanged;
+            ChipTT2.EllipseTapped += OnEllipseTapped;
+            ChipTT2.ExitEllipseTapped += OnExitEllipseTapped;
+            ChipTT2.ColorChanged += OnEllipseColorChanged;
+            ChipTT3.EllipseTapped += OnEllipseTapped;
+            ChipTT3.ExitEllipseTapped += OnExitEllipseTapped;
+            ChipTT3.ColorChanged += OnEllipseColorChanged;
+            ChipTT4.EllipseTapped += OnEllipseTapped;
+            ChipTT4.ExitEllipseTapped += OnExitEllipseTapped;
+            ChipTT4.ColorChanged += OnEllipseColorChanged;
+
             Chip4AndTwo1.EllipseTapped += OnEllipseTapped;
             Chip4AndTwo1.ExitEllipseTapped += OnExitEllipseTapped;
             Chip4AndTwo1.ColorChanged += OnEllipseColorChanged;
@@ -119,6 +107,17 @@ namespace DigitalSchema
             Chip2XOR1.EllipseTapped += OnEllipseTapped;
             Chip2XOR1.ExitEllipseTapped += OnExitEllipseTapped;
             Chip2XOR1.ColorChanged += OnEllipseColorChanged;
+
+            Chip2AND1.EllipseTapped += OnEllipseTapped;
+            Chip2AND1.ExitEllipseTapped += OnExitEllipseTapped;
+            Chip2AND1.ColorChanged += OnEllipseColorChanged;
+
+            ChipKE1.EllipseTapped += OnEllipseTapped;
+            ChipKE1.ExitEllipseTapped += OnExitEllipseTapped;
+            ChipKE1.ColorChanged += OnEllipseColorChanged;
+            ChipKE2.EllipseTapped += OnEllipseTapped;
+            ChipKE2.ExitEllipseTapped += OnExitEllipseTapped;
+            ChipKE2.ColorChanged += OnEllipseColorChanged;
         }
         private void OnEllipseColorChanged(object sender, Color newColor)
         {
@@ -139,46 +138,55 @@ namespace DigitalSchema
                     ellipse.Fill = SelectedEllipse.Fill;
                     Commutation[SelectedEllipse] = ellipse;
 
-                    // Создаем новый Label
-                    var label = new Label
-                    {
-                        Text = "I"+number, 
-                        TextColor = Colors.GreenYellow,
-                        FontAttributes = FontAttributes.Bold,
-                        FontSize = 16,
-                        VerticalOptions = ellipse.VerticalOptions,
-                        HorizontalOptions = ellipse.HorizontalOptions
-                    };
 
                     // Получаем Grid, в котором находится Ellipse
                     var grid = ellipse.Parent as Grid;
 
                     if (grid != null)
-                    {
+                    {                        
+                        string labelText = SelectedEllipse.WidthRequest >= 12 ? SelectedEllipse.AutomationId : ">" + number;
+                        Color labelColor = SelectedEllipse.WidthRequest >= 12 ? Colors.Red : Colors.GreenYellow;
+
+                        var label = new Label
+                        {
+                            Text = labelText,
+                            TextColor = labelColor,
+                            FontAttributes = FontAttributes.Bold,
+                            FontSize = 14,
+                            VerticalOptions = ellipse.VerticalOptions,
+                            HorizontalOptions = ellipse.HorizontalOptions
+                        };
                         // Добавляем Label в Grid
                         grid.Children.Add(label);
-                        label.Margin = new Thickness(ellipse.Margin.Left - 33, ellipse.Margin.Top - 8, ellipse.Margin.Right, ellipse.Margin.Bottom);
+                        label.Margin = new Thickness(ellipse.Margin.Left - 26, ellipse.Margin.Top - 8, ellipse.Margin.Right, ellipse.Margin.Bottom);
                         bindingLabels[ellipse] = label;
                     }
 
-                    var Outlabel = new Label
-                    {
-                        Text = "O" + number,
-                        TextColor = Colors.GreenYellow,
-                        FontAttributes = FontAttributes.Bold,
-                        FontSize = 16,
-                        VerticalOptions = SelectedEllipse.VerticalOptions,
-                        HorizontalOptions = SelectedEllipse.HorizontalOptions
-                    };
-
-                    // Получаем Grid, в котором находится Ellipse
                     var Outgrid = SelectedEllipse.Parent as Grid;
 
                     if (Outgrid != null)
                     {
+                        string outLabelText = ellipse.WidthRequest >= 13 ? ellipse.AutomationId : ">" + number;
+                        if(SelectedEllipse.HeightRequest == 13) { outLabelText = SelectedEllipse.AutomationId; }
+                        var Outlabel = new Label
+                        {
+                            Text = outLabelText,
+                            TextColor = Colors.GreenYellow,
+                            FontAttributes = FontAttributes.Bold,
+                            FontSize = 14,
+                            VerticalOptions = SelectedEllipse.VerticalOptions,
+                            HorizontalOptions = SelectedEllipse.HorizontalOptions
+                        };
+
                         // Добавляем Label в Grid
                         Outgrid.Children.Add(Outlabel);
-                        Outlabel.Margin = new Thickness(SelectedEllipse.Margin.Left, SelectedEllipse.Margin.Top - 8, SelectedEllipse.Margin.Right-33, SelectedEllipse.Margin.Bottom);
+                        Outlabel.Margin = new Thickness(SelectedEllipse.Margin.Left, SelectedEllipse.Margin.Top - 8, SelectedEllipse.Margin.Right - 26, SelectedEllipse.Margin.Bottom);
+                        if (SelectedEllipse.WidthRequest == 13) 
+                        { 
+                            Grid.SetColumn(Outlabel, Grid.GetColumn(SelectedEllipse));
+                            Grid.SetRow(Outlabel, Grid.GetRow(SelectedEllipse));
+                            Outlabel.Margin = new Thickness(SelectedEllipse.Margin.Left-20, SelectedEllipse.Margin.Top - 8, SelectedEllipse.Margin.Right - 26, SelectedEllipse.Margin.Bottom);
+                        }
                         bindingLabels[SelectedEllipse] = Outlabel;
                     }
 
@@ -194,6 +202,13 @@ namespace DigitalSchema
         {
             if (Editing == true)
             {
+                bool isInDictionary = Commutation.ContainsKey(ellipse) || Commutation.ContainsValue(ellipse);
+
+                if (isInDictionary)
+                {
+                    var connectedEllipse = Commutation[ellipse] ?? Commutation.FirstOrDefault(x => x.Value == ellipse).Value;
+                    
+                }
                 if (SelectedEllipse == null)
                 {
                     //DisplayAlert("Уведомление", $"Нажат Ellipse", "OK");

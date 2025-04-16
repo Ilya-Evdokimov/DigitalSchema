@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace DigitalSchema.Chips;
 
-public partial class Chip2XOR : ContentView, INotifyPropertyChanged
+public partial class Chip2And : ContentView, INotifyPropertyChanged
 {
     private Color _InputValues_011 = Colors.Red;
     private Color _InputValues_021 = Colors.Red;
@@ -26,7 +26,7 @@ public partial class Chip2XOR : ContentView, INotifyPropertyChanged
         {
             _InputValues_011 = value;
             OnPropertyChanged();
-            ProcessedValues_Chip2XOR();
+            ProcessedValues_Chip2AND();
         }
     }
     public Color InputValues_021
@@ -36,7 +36,7 @@ public partial class Chip2XOR : ContentView, INotifyPropertyChanged
         {
             _InputValues_021 = value;
             OnPropertyChanged();
-            ProcessedValues_Chip2XOR();
+            ProcessedValues_Chip2AND();
         }
     }
     public Color InputValues_012
@@ -46,7 +46,7 @@ public partial class Chip2XOR : ContentView, INotifyPropertyChanged
         {
             _InputValues_012 = value;
             OnPropertyChanged();
-            ProcessedValues_Chip2XOR();
+            ProcessedValues_Chip2AND();
         }
     }
     public Color InputValues_022
@@ -56,7 +56,7 @@ public partial class Chip2XOR : ContentView, INotifyPropertyChanged
         {
             _InputValues_022 = value;
             OnPropertyChanged();
-            ProcessedValues_Chip2XOR();
+            ProcessedValues_Chip2AND();
         }
     }
     public Color InputValues_013
@@ -66,7 +66,7 @@ public partial class Chip2XOR : ContentView, INotifyPropertyChanged
         {
             _InputValues_013 = value;
             OnPropertyChanged();
-            ProcessedValues_Chip2XOR();
+            ProcessedValues_Chip2AND();
         }
     }
     public Color InputValues_023
@@ -76,7 +76,7 @@ public partial class Chip2XOR : ContentView, INotifyPropertyChanged
         {
             _InputValues_023 = value;
             OnPropertyChanged();
-            ProcessedValues_Chip2XOR();
+            ProcessedValues_Chip2AND();
         }
     }
     public Color InputValues_014
@@ -86,7 +86,7 @@ public partial class Chip2XOR : ContentView, INotifyPropertyChanged
         {
             _InputValues_014 = value;
             OnPropertyChanged();
-            ProcessedValues_Chip2XOR();
+            ProcessedValues_Chip2AND();
         }
     }
     public Color InputValues_024
@@ -96,7 +96,7 @@ public partial class Chip2XOR : ContentView, INotifyPropertyChanged
         {
             _InputValues_024 = value;
             OnPropertyChanged();
-            ProcessedValues_Chip2XOR();
+            ProcessedValues_Chip2AND();
         }
     }
 
@@ -170,23 +170,23 @@ public partial class Chip2XOR : ContentView, INotifyPropertyChanged
             ExitEllipseTapped?.Invoke(this, ellipse);
         }
     }
-    public void ProcessedValues_Chip2XOR()
+    public void ProcessedValues_Chip2AND()
     {
-        int outputValue = DigitalConverter(InputValues_011) != DigitalConverter(InputValues_021) ? 0 : 1;
-        OutputValues01 = outputValue == 1 ? Colors.Transparent : Colors.Red;
-        outputValue = DigitalConverter(InputValues_012) != DigitalConverter(InputValues_022) ? 0 : 1;
-        OutputValues02 = outputValue == 1 ? Colors.Transparent : Colors.Red;
-        outputValue = DigitalConverter(InputValues_013) != DigitalConverter(InputValues_023) ? 0 : 1;
-        OutputValues03 = outputValue == 1 ? Colors.Transparent : Colors.Red;
-        outputValue = DigitalConverter(InputValues_014) != DigitalConverter(InputValues_024) ? 0 : 1;
-        OutputValues04 = outputValue == 1 ? Colors.Transparent : Colors.Red;
+        int outputValue = DigitalConverter(InputValues_011) * DigitalConverter(InputValues_021);
+        OutputValues01 = outputValue == 0 ? Colors.Transparent : Colors.Red;
+        outputValue = DigitalConverter(InputValues_012) * DigitalConverter(InputValues_022);
+        OutputValues02 = outputValue == 0 ? Colors.Transparent : Colors.Red;
+        outputValue = DigitalConverter(InputValues_013) * DigitalConverter(InputValues_023);
+        OutputValues03 = outputValue == 0 ? Colors.Transparent : Colors.Red;
+        outputValue = DigitalConverter(InputValues_014) * DigitalConverter(InputValues_024);
+        OutputValues04 = outputValue == 0 ? Colors.Transparent : Colors.Red;
     }
 
-    public Chip2XOR()
-	{
-		InitializeComponent();
+    public Chip2And()
+    {
+        InitializeComponent();
         BindingContext = this;
-        ProcessedValues_Chip2XOR();
+        ProcessedValues_Chip2AND();
     }
     public int DigitalConverter(Color inputValues)
     {

@@ -16,6 +16,17 @@
                 <local:UM11 x:Name="UM11UI"/>
                 <Label Text="Режим редактирования:"/>
                 <Switch IsToggled="{Binding Editing, Mode=TwoWay}"/>
+                <Label Text="Выбор сменной платы:"/>
+                <Picker 
+                    x:Name="MyPicker" 
+                    Title="Выберите элемент"
+                    SelectedIndexChanged="OnPickerSelectedIndexChanged">
+                    <Picker.Items>
+                        <x:String>Декодер</x:String>
+                        <x:String>Мультиплексор</x:String>
+                        <x:String>Счетчик</x:String>
+                    </Picker.Items>
+                </Picker>
                 <!--="OnButtonPressedSync" Released="OnButtonReleasedSync"-->
             </VerticalStackLayout>
         </ScrollView>
@@ -41,32 +52,10 @@
                 <local:NewPage1 Margin="50" x:Name="ChipTwo"
                         AbsoluteLayout.LayoutBounds="0, 600, AutoSize, AutoSize"
                         AbsoluteLayout.LayoutFlags="None"/>
-                
+
                 <local:ChipTT Margin="50" x:Name="ChipTT1"
                         AbsoluteLayout.LayoutBounds="0, 800, AutoSize, AutoSize"
                         AbsoluteLayout.LayoutFlags="None"/>
-
-                <Ellipse Stroke="#D4D4D4"
-                         WidthRequest="10" 
-                         HeightRequest="10"
-                         AbsoluteLayout.LayoutBounds="120, 1230, AutoSize, AutoSize"
-                         AbsoluteLayout.LayoutFlags="None"/>
-                <Ellipse Stroke="#D4D4D4"
-                         WidthRequest="10" 
-                         HeightRequest="10"
-                         AbsoluteLayout.LayoutBounds="150, 1230, AutoSize, AutoSize"
-                         AbsoluteLayout.LayoutFlags="None"/>
-                <Ellipse Stroke="#D4D4D4"
-                         WidthRequest="10" 
-                         HeightRequest="10"
-                         AbsoluteLayout.LayoutBounds="180, 1230, AutoSize, AutoSize"
-                         AbsoluteLayout.LayoutFlags="None"/>
-                <Ellipse Stroke="#D4D4D4"
-                         WidthRequest="10" 
-                         HeightRequest="10"
-                         Margin="0,0,0,50"
-                         AbsoluteLayout.LayoutBounds="210, 1230, AutoSize, AutoSize"
-                         AbsoluteLayout.LayoutFlags="None"/>
 
                 <!-- Второй столбец микропроцессоров -->
                 
@@ -116,6 +105,10 @@
 
                 <!-- Вторая часть - Пятый (1) столбец микропроцессоров -->
 
+                <local:dc Margin="5" x:Name="decoder"
+                       AbsoluteLayout.LayoutBounds="1200, 0, 800, 500"
+                       AbsoluteLayout.LayoutFlags="None" IsVisible="False"/>
+
                 <local:Chip2XOR Margin="50" x:Name="Chip2XOR1"
                        AbsoluteLayout.LayoutBounds="1200, 400, AutoSize, AutoSize"
                        AbsoluteLayout.LayoutFlags="None"/>
@@ -126,6 +119,20 @@
 
                 <local:ChipSmalTT Margin="50" x:Name="ChipSTT2"
                        AbsoluteLayout.LayoutBounds="1200, 1000, AutoSize, AutoSize"
+                       AbsoluteLayout.LayoutFlags="None"/>
+
+                <!-- Вторая часть - Шестой (2) столбец микропроцессоров -->
+
+                <local:Chip2And Margin="50" x:Name="Chip2AND1"
+                       AbsoluteLayout.LayoutBounds="1500, 400, AutoSize, AutoSize"
+                       AbsoluteLayout.LayoutFlags="None"/>
+
+                <local:ChipSmalTT Margin="50" x:Name="ChipSTT3"
+                       AbsoluteLayout.LayoutBounds="1500, 800, AutoSize, AutoSize"
+                       AbsoluteLayout.LayoutFlags="None"/>
+
+                <local:ChipSmalTT Margin="50" x:Name="ChipSTT4"
+                       AbsoluteLayout.LayoutBounds="1500, 1000, AutoSize, AutoSize"
                        AbsoluteLayout.LayoutFlags="None"/>
 
             </AbsoluteLayout>
