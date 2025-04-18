@@ -39,7 +39,27 @@
                 <!-- Первый столбец микропроцессоров -->
                 <local:ChipAndKE Margin="50" x:Name="ChipKE1"
                          AbsoluteLayout.LayoutBounds="0, 0, AutoSize, AutoSize"
-                         AbsoluteLayout.LayoutFlags="None"/>
+                         AbsoluteLayout.LayoutFlags="None">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <!-- Стандартный вид -->
+                                    <Setter Property="BackgroundColor" Value="Transparent"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="PointerOver">
+                                <VisualState.Setters>
+                                    <!-- Вид при наведении -->
+                                    <Setter Property="BackgroundColor" Value="#20000000"/>
+                                    <!-- Полупрозрачный черный -->
+                                    <Setter Property="Scale" Value="1.05"/>
+                                    <!-- Необязательное увеличение -->
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </local:ChipAndKE>
 
                 <local:ChipAndKE Margin="50" x:Name="ChipKE2" 
                          AbsoluteLayout.LayoutBounds="0, 200, AutoSize, AutoSize"

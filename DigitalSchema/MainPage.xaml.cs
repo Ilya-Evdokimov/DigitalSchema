@@ -62,6 +62,10 @@ namespace DigitalSchema
             UM11UI.ExitEllipseTapped += OnExitEllipseTapped;
             UM11UI.ColorChanged += OnEllipseColorChanged;
 
+            ChipAndOrKE1.EllipseTapped += OnEllipseTapped;
+            ChipAndOrKE1.ExitEllipseTapped += OnExitEllipseTapped;
+            ChipAndOrKE1.ColorChanged += OnEllipseColorChanged;
+
             ChipOne.EllipseTapped += OnEllipseTapped;
             ChipOne.ExitEllipseTapped += OnExitEllipseTapped;
             ChipOne.ColorChanged += OnEllipseColorChanged;
@@ -134,7 +138,7 @@ namespace DigitalSchema
             {
                 if (SelectedEllipse != null)
                 {
-
+                    if(Commutation.ContainsKey(ellipse) ||  Commutation.ContainsKey(SelectedEllipse)) { return; }
                     ellipse.Fill = SelectedEllipse.Fill;
                     Commutation[SelectedEllipse] = ellipse;
 

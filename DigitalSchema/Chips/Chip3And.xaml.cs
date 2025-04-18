@@ -6,17 +6,17 @@ namespace DigitalSchema.Chips;
 
 public partial class Chip3And : ContentView, INotifyPropertyChanged
 {
-    private Color _InputValues_01_01 = Colors.Transparent;
-    private Color _InputValues_02_01 = Colors.Transparent;
-    private Color _InputValues_03_01 = Colors.Transparent;
+    private Color _InputValues_01_01 = Colors.Red;
+    private Color _InputValues_02_01 = Colors.Red;
+    private Color _InputValues_03_01 = Colors.Red;
     private Color _OutputValues_01;
-    private Color _InputValues_01_02 = Colors.Transparent;
-    private Color _InputValues_02_02 = Colors.Transparent;
-    private Color _InputValues_03_02 = Colors.Transparent;
+    private Color _InputValues_01_02 = Colors.Red;
+    private Color _InputValues_02_02 = Colors.Red;
+    private Color _InputValues_03_02 = Colors.Red;
     private Color _OutputValues_02;
-    private Color _InputValues_01_03 = Colors.Transparent;
-    private Color _InputValues_02_03 = Colors.Transparent;
-    private Color _InputValues_03_03 = Colors.Transparent;
+    private Color _InputValues_01_03 = Colors.Red;
+    private Color _InputValues_02_03 = Colors.Red;
+    private Color _InputValues_03_03 = Colors.Red;
     private Color _OutputValues_03;
 
     public Color InputValues_01_01
@@ -189,6 +189,7 @@ public partial class Chip3And : ContentView, INotifyPropertyChanged
 	{
 		InitializeComponent();
         BindingContext = this;
+        ProcessedValues_Chip3And();
     }
 
     public event PropertyChangedEventHandler PropertyChanged;

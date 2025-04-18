@@ -88,7 +88,7 @@ public partial class ChipAndKE : ContentView, INotifyPropertyChanged
     public void ProcessedValues_ChipAndKE()
     {
         int outputValue = DigitalConverter(InputValues_01) * DigitalConverter(InputValues_02) * DigitalConverter(InputValues_03) * DigitalConverter(InputValues_04);
-        OutputValues = outputValue == 1 ? Colors.Transparent : Colors.Red;      
+        OutputValues = outputValue == 0 ? Colors.Transparent : Colors.Red;      
     }
 
     public ChipAndKE()

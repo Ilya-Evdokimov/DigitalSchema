@@ -277,6 +277,20 @@
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1.2" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
                  Fill="{Binding Button_05B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
@@ -289,6 +303,20 @@
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1.2" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
             </Ellipse>
 
             <!-- Row 1 -->
@@ -304,6 +332,20 @@
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1.2" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
                      AutomationId="B6"
@@ -316,6 +358,20 @@
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1.2" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
             </Ellipse>
 
             <!-- Row 2 -->
@@ -331,6 +387,20 @@
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1.2" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
                      AutomationId="B7"
@@ -343,6 +413,20 @@
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1.2" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
             </Ellipse>
 
             <!-- Row 3 -->
@@ -358,6 +442,20 @@
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1.2" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
                      AutomationId="B8"
@@ -370,6 +468,20 @@
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1.2" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
             </Ellipse>
         </Grid>
         <Label Text="Светодиоды:" FontSize="Medium"/>
