@@ -81,10 +81,10 @@ public partial class Chip3And : ContentView, INotifyPropertyChanged
     }
     public Color InputValues_01_03
     {
-        get => _InputValues_01_01;
+        get => _InputValues_01_03;
         set
         {
-            _InputValues_01_01 = value;
+            _InputValues_01_03 = value;
             OnPropertyChanged();
             ProcessedValues_Chip3And();
         }

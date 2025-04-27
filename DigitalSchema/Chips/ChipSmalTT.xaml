@@ -47,57 +47,97 @@
 
         <!-- Входы -->
         
-        <Ellipse Stroke="#D4D4D4" 
+        <Ellipse Stroke="#D4D4D4"
+                 Fill="{Binding InputValues_S, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
      WidthRequest="10" 
      HeightRequest="10" 
      HorizontalOptions="Start" 
      VerticalOptions="Start"
-     Margin="-15,15,0,0"/>
+     Margin="-15,15,0,0">
+            <Ellipse.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnEllipseTapped"/>
+            </Ellipse.GestureRecognizers>
+        </Ellipse>
         <Ellipse Stroke="#D4D4D4" 
+                 Fill="{Binding InputValues_C, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
      WidthRequest="10" 
      HeightRequest="10" 
      HorizontalOptions="Start" 
      VerticalOptions="Center"
-     Margin="-15,30,0,0"/>
+     Margin="-15,30,0,0">
+            <Ellipse.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnEllipseTapped"/>
+            </Ellipse.GestureRecognizers>
+        </Ellipse>
         <Ellipse Stroke="#D4D4D4"  
+                 Fill="{Binding InputValues_D, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
      WidthRequest="10" 
      HeightRequest="10" 
      HorizontalOptions="Start" 
      VerticalOptions="Center"
-     Margin="-15,0,0,30"/>
+     Margin="-15,0,0,30">
+            <Ellipse.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnEllipseTapped"/>
+            </Ellipse.GestureRecognizers>
+        </Ellipse>
         <Ellipse Stroke="#D4D4D4" 
+                 Fill="{Binding InputValues_R, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
      WidthRequest="10" 
      HeightRequest="10" 
      HorizontalOptions="Start" 
      VerticalOptions="End"
-     Margin="-15,0,0,15"/>
+     Margin="-15,0,0,15">
+            <Ellipse.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnEllipseTapped"/>
+            </Ellipse.GestureRecognizers>
+        </Ellipse>
 
         <!-- Выходы -->
         
-        <Ellipse Stroke="#D4D4D4"  
+        <Ellipse Stroke="#D4D4D4" 
+                  Fill="{Binding OutputValues, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
      WidthRequest="10" 
      HeightRequest="10" 
      HorizontalOptions="End" 
      VerticalOptions="Start"
-     Margin="0,15,-15,0"/>
+     Margin="0,15,-15,0">
+            <Ellipse.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+            </Ellipse.GestureRecognizers>
+        </Ellipse>
         <Ellipse Stroke="#D4D4D4" 
+                  Fill="{Binding OutputValues, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
      WidthRequest="10" 
      HeightRequest="10" 
      HorizontalOptions="End" 
      VerticalOptions="Center"
-     Margin="0,0,-15,30"/>
+     Margin="0,0,-15,30">
+            <Ellipse.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+            </Ellipse.GestureRecognizers>
+        </Ellipse>
         <Ellipse Stroke="#D4D4D4"  
+                  Fill="{Binding OutputValues_Inv, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
     WidthRequest="10" 
     HeightRequest="10" 
     HorizontalOptions="End" 
     VerticalOptions="Center"
-    Margin="0,30,-15,0"/>
+    Margin="0,30,-15,0">
+            <Ellipse.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+            </Ellipse.GestureRecognizers>
+        </Ellipse>
          <Ellipse Stroke="#D4D4D4" 
+                   Fill="{Binding OutputValues_Inv, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
     WidthRequest="10" 
     HeightRequest="10" 
     HorizontalOptions="End" 
     VerticalOptions="End"
-    Margin="0,0,-15,15"/>
+    Margin="0,0,-15,15">
+            <Ellipse.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+            </Ellipse.GestureRecognizers>
+        </Ellipse>
 
         <!-- Инверсии -->
 

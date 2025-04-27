@@ -6,13 +6,19 @@ using Microsoft.Maui.Controls.Shapes;
 using static System.Net.Mime.MediaTypeNames;
 using System.Data.Common;
 using System.Collections.ObjectModel;
+using System.Timers;
 
 namespace DigitalSchema
 {
     public partial class MainPage : ContentPage, INotifyPropertyChanged
     {
-        public Dictionary<Ellipse, Ellipse> Commutation = new Dictionary<Ellipse, Ellipse>(); // Невизуальная часть привязки
+
+        // Таймер для обновления
+        private System.Timers.Timer _timer;
+
+        public Dictionary<Ellipse, List<Ellipse>> Commutation = new Dictionary<Ellipse, List<Ellipse>>();
         public Dictionary<Ellipse, Label> bindingLabels = new Dictionary<Ellipse, Label>(); // Визуальная часть привязки
+        
 
         public Ellipse? SelectedEllipse { get; set; }
 
@@ -25,6 +31,10 @@ namespace DigitalSchema
             {
                 SelectedEllipse = null;
                 _editing = value;
+                foreach (var labelPair in bindingLabels)
+                {
+                    labelPair.Value.TextColor = Colors.GreenYellow;
+                }
                 OnPropertyChanged();
             }
         }
@@ -57,6 +67,7 @@ namespace DigitalSchema
             InitializeComponent();
             BindingContext = this;
             number = 0;
+            StartUpdatingEllipses();
 
             UM11UI.EllipseTapped += OnEllipseTapped;
             UM11UI.ExitEllipseTapped += OnExitEllipseTapped;
@@ -122,102 +133,324 @@ namespace DigitalSchema
             ChipKE2.EllipseTapped += OnEllipseTapped;
             ChipKE2.ExitEllipseTapped += OnExitEllipseTapped;
             ChipKE2.ColorChanged += OnEllipseColorChanged;
+
+            ChipSTT3.EllipseTapped += OnEllipseTapped;
+            ChipSTT3.ExitEllipseTapped += OnExitEllipseTapped;
+            ChipSTT3.ColorChanged += OnEllipseColorChanged;
+            ChipSTT1.EllipseTapped += OnEllipseTapped;
+            ChipSTT1.ExitEllipseTapped += OnExitEllipseTapped;
+            ChipSTT1.ColorChanged += OnEllipseColorChanged;
+            ChipSTT2.EllipseTapped += OnEllipseTapped;
+            ChipSTT2.ExitEllipseTapped += OnExitEllipseTapped;
+            ChipSTT2.ColorChanged += OnEllipseColorChanged;
+            ChipSTT4.EllipseTapped += OnEllipseTapped;
+            ChipSTT4.ExitEllipseTapped += OnExitEllipseTapped;
+            ChipSTT4.ColorChanged += OnEllipseColorChanged;
         }
-        private void OnEllipseColorChanged(object sender, Color newColor)
+
+        public void StartUpdatingEllipses()
+        {
+            _timer = new System.Timers.Timer(1000); // 1 секунда
+            _timer.Elapsed += UpdateEllipseColors;
+            _timer.AutoReset = true;
+            _timer.Enabled = true;
+        }
+
+        private void UpdateEllipseColors(object sender, ElapsedEventArgs e)
         {
             foreach (var pair in Commutation)
             {
-                pair.Value.Fill = pair.Key.Fill;
+                foreach (var connectedEllipse in pair.Value)
+                {
+                    connectedEllipse.Fill = pair.Key.Fill;
+                }
             }
-            return;
         }
 
-        private void OnEllipseTapped(object sender, Ellipse ellipse) 
+        private void OnEllipseColorChanged(object sender, Color newColor)
+        {
+            // Обновляем цвет всех связанных эллипсов
+            foreach (var pair in Commutation)
+            {
+                foreach (var connectedEllipse in pair.Value)
+                {
+                    connectedEllipse.Fill = pair.Key.Fill;
+                }
+            }
+        }
+
+        private void OnEllipseTapped(object sender, Ellipse ellipse)
         {
             if (Editing == true)
             {
                 if (SelectedEllipse != null)
                 {
-                    if(Commutation.ContainsKey(ellipse) ||  Commutation.ContainsKey(SelectedEllipse)) { return; }
-                    ellipse.Fill = SelectedEllipse.Fill;
-                    Commutation[SelectedEllipse] = ellipse;
-
-
-                    // Получаем Grid, в котором находится Ellipse
-                    var grid = ellipse.Parent as Grid;
-
-                    if (grid != null)
-                    {                        
-                        string labelText = SelectedEllipse.WidthRequest >= 12 ? SelectedEllipse.AutomationId : ">" + number;
-                        Color labelColor = SelectedEllipse.WidthRequest >= 12 ? Colors.Red : Colors.GreenYellow;
-
-                        var label = new Label
-                        {
-                            Text = labelText,
-                            TextColor = labelColor,
-                            FontAttributes = FontAttributes.Bold,
-                            FontSize = 14,
-                            VerticalOptions = ellipse.VerticalOptions,
-                            HorizontalOptions = ellipse.HorizontalOptions
-                        };
-                        // Добавляем Label в Grid
-                        grid.Children.Add(label);
-                        label.Margin = new Thickness(ellipse.Margin.Left - 26, ellipse.Margin.Top - 8, ellipse.Margin.Right, ellipse.Margin.Bottom);
-                        bindingLabels[ellipse] = label;
-                    }
-
-                    var Outgrid = SelectedEllipse.Parent as Grid;
-
-                    if (Outgrid != null)
+                    // Проверяем, что эллипсы уже связаны
+                    if (IsAlreadyConnected(SelectedEllipse, ellipse))
                     {
-                        string outLabelText = ellipse.WidthRequest >= 13 ? ellipse.AutomationId : ">" + number;
-                        if(SelectedEllipse.HeightRequest == 13) { outLabelText = SelectedEllipse.AutomationId; }
-                        var Outlabel = new Label
-                        {
-                            Text = outLabelText,
-                            TextColor = Colors.GreenYellow,
-                            FontAttributes = FontAttributes.Bold,
-                            FontSize = 14,
-                            VerticalOptions = SelectedEllipse.VerticalOptions,
-                            HorizontalOptions = SelectedEllipse.HorizontalOptions
-                        };
-
-                        // Добавляем Label в Grid
-                        Outgrid.Children.Add(Outlabel);
-                        Outlabel.Margin = new Thickness(SelectedEllipse.Margin.Left, SelectedEllipse.Margin.Top - 8, SelectedEllipse.Margin.Right - 26, SelectedEllipse.Margin.Bottom);
-                        if (SelectedEllipse.WidthRequest == 13) 
-                        { 
-                            Grid.SetColumn(Outlabel, Grid.GetColumn(SelectedEllipse));
-                            Grid.SetRow(Outlabel, Grid.GetRow(SelectedEllipse));
-                            Outlabel.Margin = new Thickness(SelectedEllipse.Margin.Left-20, SelectedEllipse.Margin.Top - 8, SelectedEllipse.Margin.Right - 26, SelectedEllipse.Margin.Bottom);
-                        }
-                        bindingLabels[SelectedEllipse] = Outlabel;
+                        // Удаляем связь и метки
+                        RemoveConnection(SelectedEllipse, ellipse);
+                        ellipse.Fill = Colors.Red;
+                        SelectedEllipse = null;
+                        return;
                     }
 
-                    number++;
+                    // Устанавливаем цвет
+                    ellipse.Fill = SelectedEllipse.Fill;
+
+                    // Определяем номер соединения
+                    int connectionNumber = number;
+
+                    // Если у исходного эллипса уже есть соединения, берем их номер
+                    if (Commutation.ContainsKey(SelectedEllipse) && Commutation[SelectedEllipse].Count > 0)
+                    {
+                        connectionNumber = GetExistingConnectionNumber(SelectedEllipse);
+                    }
+                    else
+                    {
+                        // Если это новое соединение, увеличиваем номер
+                        number++;
+                    }
+
+                    // Добавляем связь в словарь
+                    if (!Commutation.ContainsKey(SelectedEllipse))
+                    {
+                        Commutation[SelectedEllipse] = new List<Ellipse>();
+                    }
+                    Commutation[SelectedEllipse].Add(ellipse);
+
+                    // Создаем метки
+                    CreateConnectionLabels(SelectedEllipse, ellipse, connectionNumber);
+
                     SelectedEllipse = null;
                 }
             }
             else
             {
+                UpdateLabelColors(ellipse);
             }
         }
-        private void OnExitEllipseTapped(object sender, Ellipse ellipse) 
+
+        private void RemoveConnection(Ellipse source, Ellipse target)
+        {
+            // Удаляем связь из словаря
+            if (Commutation.ContainsKey(source) && Commutation[source].Contains(target))
+            {
+                Commutation[source].Remove(target);
+                if (Commutation[source].Count == 0)
+                {
+                    Commutation.Remove(source);
+                    //number--;
+                    //target.Fill = Colors.Red;
+                    }
+            }
+
+            // Проверяем обратные связи
+            foreach (var pair in Commutation.ToList())
+            {
+                if (pair.Value.Contains(source) && pair.Key == target)
+                {
+                    pair.Value.Remove(source);
+                    if (pair.Value.Count == 0)
+                    {
+                        Commutation.Remove(pair.Key);
+                    }
+                }
+            }
+
+            // Удаляем метки
+            RemoveConnectionLabels(source, target);
+        }
+
+        private void RemoveConnectionLabels(Ellipse source, Ellipse target)
+        {
+            // Удаляем метку у целевого эллипса
+            if (bindingLabels.TryGetValue(target, out Label targetLabel))
+            {
+                var targetGrid = target.Parent as Grid;
+                targetGrid?.Children.Remove(targetLabel);
+                bindingLabels.Remove(target);
+            }
+
+            // Удаляем метку у исходного эллипса, если у него больше нет связей
+            if (!Commutation.ContainsKey(source) || Commutation[source].Count == 0)
+            {
+                if (bindingLabels.TryGetValue(source, out Label sourceLabel))
+                {
+                    var sourceGrid = source.Parent as Grid;
+                    sourceGrid?.Children.Remove(sourceLabel);
+                    bindingLabels.Remove(source);
+                }
+            }
+        }
+
+        // Остальные методы остаются без изменений
+        private int GetExistingConnectionNumber(Ellipse source)
+        {
+            // Проверяем метку у исходного эллипса
+            if (bindingLabels.TryGetValue(source, out Label label))
+            {
+                if (label.Text.StartsWith(">"))
+                {
+                    if (int.TryParse(label.Text.Substring(1), out int num))
+                    {
+                        return num;
+                    }
+                }
+            }
+
+            // Проверяем метки у связанных эллипсов
+            if (Commutation.ContainsKey(source))
+            {
+                foreach (var connectedEllipse in Commutation[source])
+                {
+                    if (bindingLabels.TryGetValue(connectedEllipse, out Label connectedLabel))
+                    {
+                        if (connectedLabel.Text.StartsWith(">"))
+                        {
+                            if (int.TryParse(connectedLabel.Text.Substring(1), out int num))
+                            {
+                                return num;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return number; // возвращаем текущий номер, если не нашли
+        }
+
+        private bool IsAlreadyConnected(Ellipse source, Ellipse target)
+        {
+            // Проверяем, есть ли уже связь между этими эллипсами
+            if (Commutation.ContainsKey(source) && Commutation[source].Contains(target))
+                return true;
+            return false;
+        }
+
+        private void CreateConnectionLabels(Ellipse source, Ellipse target, int connectionNumber)
+        {
+            // Метка у целевого эллипса
+            var grid = target.Parent as Grid;
+            if (grid != null)
+            {
+                string labelText = source.WidthRequest >= 12 ? source.AutomationId : ">" + connectionNumber;
+                Color labelColor = source.WidthRequest >= 12 ? Colors.Red : Colors.GreenYellow;
+
+                var label = new Label
+                {
+                    Text = labelText,
+                    TextColor = labelColor,
+                    FontAttributes = FontAttributes.Bold,
+                    FontSize = 14,
+                    VerticalOptions = target.VerticalOptions,
+                    HorizontalOptions = target.HorizontalOptions
+                };
+
+                grid.Children.Add(label);
+                label.Margin = new Thickness(target.Margin.Left - 26, target.Margin.Top - 8, target.Margin.Right, target.Margin.Bottom);
+                bindingLabels[target] = label;
+            }
+
+            // Метка у исходного эллипса создается только если это первая связь
+            if (!Commutation.ContainsKey(source) || Commutation[source].Count <= 1)
+            {
+                var Outgrid = source.Parent as Grid;
+                if (Outgrid != null)
+                {
+                    string outLabelText = target.WidthRequest >= 13 ? target.AutomationId : ">" + connectionNumber;
+                    if (source.HeightRequest == 13) { outLabelText = source.AutomationId; }
+
+                    var Outlabel = new Label
+                    {
+                        Text = outLabelText,
+                        TextColor = Colors.GreenYellow,
+                        FontAttributes = FontAttributes.Bold,
+                        FontSize = 14,
+                        VerticalOptions = source.VerticalOptions,
+                        HorizontalOptions = source.HorizontalOptions
+                    };
+
+                    Outgrid.Children.Add(Outlabel);
+                    Outlabel.Margin = new Thickness(source.Margin.Left, source.Margin.Top - 8, source.Margin.Right - 26, source.Margin.Bottom);
+
+                    if (source.WidthRequest == 13)
+                    {
+                        Grid.SetColumn(Outlabel, Grid.GetColumn(source));
+                        Grid.SetRow(Outlabel, Grid.GetRow(source));
+                        Outlabel.Margin = new Thickness(source.Margin.Left - 20, source.Margin.Top - 8, source.Margin.Right - 26, source.Margin.Bottom);
+                    }
+
+                    bindingLabels[source] = Outlabel;
+                }
+            }
+        }
+
+        private void UpdateLabelColors(Ellipse selectedEllipse)
+        {
+            // Сначала делаем все метки зелеными
+            foreach (var labelPair in bindingLabels)
+            {
+                labelPair.Value.TextColor = Colors.GreenYellow;
+            }
+
+            // Затем делаем метки связанные с выбранным эллипсом красными
+            if (Commutation.ContainsKey(selectedEllipse))
+            {
+                // Метки у связанных эллипсов
+                foreach (var connectedEllipse in Commutation[selectedEllipse])
+                {
+                    if (bindingLabels.TryGetValue(connectedEllipse, out Label label))
+                    {
+                        label.TextColor = Colors.Red;
+                    }
+                }
+
+                // Метка у самого эллипса
+                if (bindingLabels.TryGetValue(selectedEllipse, out Label mainLabel))
+                {
+                    mainLabel.TextColor = Colors.Red;
+                }
+            }
+
+            // Проверяем обратные связи (где этот эллипс является целевым)
+            foreach (var pair in Commutation)
+            {
+                if (pair.Value.Contains(selectedEllipse))
+                {
+                    if (bindingLabels.TryGetValue(pair.Key, out Label sourceLabel))
+                    {
+                        sourceLabel.TextColor = Colors.Red;
+                    }
+
+                    if (bindingLabels.TryGetValue(selectedEllipse, out Label targetLabel))
+                    {
+                        targetLabel.TextColor = Colors.Red;
+                    }
+                }
+            }
+        }
+        private void OnExitEllipseTapped(object sender, Ellipse ellipse)
         {
             if (Editing == true)
             {
-                bool isInDictionary = Commutation.ContainsKey(ellipse) || Commutation.ContainsValue(ellipse);
+                // Проверяем, есть ли этот эллипс в каких-либо связях
+                bool isConnected = Commutation.ContainsKey(ellipse) ||
+                                  Commutation.Any(pair => pair.Value.Contains(ellipse));
 
-                if (isInDictionary)
+                if (isConnected)
                 {
-                    var connectedEllipse = Commutation[ellipse] ?? Commutation.FirstOrDefault(x => x.Value == ellipse).Value;
-                    
+                    // Можно добавить обработку удаления связей, если нужно
                 }
+
                 if (SelectedEllipse == null)
                 {
-                    //DisplayAlert("Уведомление", $"Нажат Ellipse", "OK");
                     SelectedEllipse = ellipse;
                 }
+            }
+            else
+            {
+                UpdateLabelColors(ellipse);
             }
         }
     }

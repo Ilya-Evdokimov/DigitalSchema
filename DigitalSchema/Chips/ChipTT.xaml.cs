@@ -15,8 +15,8 @@ public partial class ChipTT : ContentView, INotifyPropertyChanged
     private Color _InputValues_J2 = Colors.Red;
     private Color _InputValues_J3 = Colors.Red;
     private Color _InputValues_R = Colors.Red;
-    private Color _OutputValues;
-    private Color _OutputValues_Inv;
+    private Color _OutputValues = Colors.Transparent;
+    private Color _OutputValues_Inv = Colors.Red;
 
     public Color InputValues_S
     {

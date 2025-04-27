@@ -6,14 +6,14 @@ namespace DigitalSchema.Chips;
 
 public partial class Chip4AndTwo : ContentView, INotifyPropertyChanged
 {
-    private Color _InputValues_011 = Colors.Transparent;
-    private Color _InputValues_021 = Colors.Transparent;
-    private Color _InputValues_012 = Colors.Transparent;
-    private Color _InputValues_022 = Colors.Transparent;
-    private Color _InputValues_013 = Colors.Transparent;
-    private Color _InputValues_023 = Colors.Transparent;
-    private Color _InputValues_014 = Colors.Transparent;
-    private Color _InputValues_024 = Colors.Transparent;
+    private Color _InputValues_011 = Colors.Red;
+    private Color _InputValues_021 = Colors.Red;
+    private Color _InputValues_012 = Colors.Red;
+    private Color _InputValues_022 = Colors.Red;
+    private Color _InputValues_013 = Colors.Red;
+    private Color _InputValues_023 = Colors.Red;
+    private Color _InputValues_014 = Colors.Red;
+    private Color _InputValues_024 = Colors.Red;
     private Color _OutputValues01;
     private Color _OutputValues02;
     private Color _OutputValues03;
