@@ -146,6 +146,10 @@ namespace DigitalSchema
             ChipSTT4.EllipseTapped += OnEllipseTapped;
             ChipSTT4.ExitEllipseTapped += OnExitEllipseTapped;
             ChipSTT4.ColorChanged += OnEllipseColorChanged;
+
+            decoder.EllipseTapped += OnEllipseTapped;
+            decoder.ExitEllipseTapped += OnExitEllipseTapped;
+            decoder.ColorChanged += OnEllipseColorChanged;
         }
 
         public void StartUpdatingEllipses()
@@ -185,6 +189,14 @@ namespace DigitalSchema
             {
                 if (SelectedEllipse != null)
                 {
+                    bool isConnected = Commutation.ContainsKey(ellipse) ||
+                                 Commutation.Any(pair => pair.Value.Contains(ellipse));
+
+                    if (isConnected)
+                    {
+                        DisplayAlert("Ошибка", "Данный контакт уже занят!", "OK");
+                        return;
+                    }
                     // Проверяем, что эллипсы уже связаны
                     if (IsAlreadyConnected(SelectedEllipse, ellipse))
                     {
