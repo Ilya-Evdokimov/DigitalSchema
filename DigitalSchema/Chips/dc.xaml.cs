@@ -14,14 +14,32 @@ public partial class dc : ContentView, INotifyPropertyChanged
     private Color _One_one = Colors.Red;
     private Color _Two_one = Colors.Red;
 
-    private Color _Out1_1 = Colors.Red;
-    private Color _Out2_1 = Colors.Red;
-    private Color _Out3_1 = Colors.Red;
-    private Color _Out4_1 = Colors.Red;
-    private Color _Out5_1 = Colors.Red;
-    private Color _Out6_1 = Colors.Red;
-    private Color _Out7_1 = Colors.Red;
-    private Color _Out8_1 = Colors.Red;
+    private Color _Out1_1 = Colors.Transparent;
+    private Color _Out2_1 = Colors.Transparent;
+    private Color _Out3_1 = Colors.Transparent;
+    private Color _Out4_1 = Colors.Transparent;
+    private Color _Out5_1 = Colors.Transparent;
+    private Color _Out6_1 = Colors.Transparent;
+    private Color _Out7_1 = Colors.Transparent;
+    private Color _Out8_1 = Colors.Transparent;
+
+    // Второй декодер
+    private Color _RD1_2 = Colors.Red;
+    private Color _RD2_2 = Colors.Red;
+    private Color _RD3_2 = Colors.Red;
+
+    private Color _One_2 = Colors.Red;
+    private Color _Two_2 = Colors.Red;
+    private Color _Thr_2 = Colors.Red;
+
+    private Color _Out1_2 = Colors.Transparent;
+    private Color _Out2_2 = Colors.Transparent;
+    private Color _Out3_2 = Colors.Transparent;
+    private Color _Out4_2 = Colors.Transparent;
+    private Color _Out5_2 = Colors.Transparent;
+    private Color _Out6_2 = Colors.Transparent;
+    private Color _Out7_2 = Colors.Transparent;
+    private Color _Out8_2 = Colors.Transparent;
 
     public Color RD1_one
     {
@@ -86,6 +104,72 @@ public partial class dc : ContentView, INotifyPropertyChanged
             _Two_one = value;
             OnPropertyChanged();
             ProcessedValues_DC_one();
+        }
+    }
+    // Второй декодер 
+    public Color RD1_2
+    {
+        get => _RD1_2;
+        set
+        {
+            _RD1_2 = value;
+            OnPropertyChanged();
+            ProcessedValue_DC_two();
+        }
+    }
+
+    public Color RD2_2
+    {
+        get => _RD2_2;
+        set
+        {
+            _RD2_2 = value;
+            OnPropertyChanged();
+            ProcessedValue_DC_two();
+        }
+    }
+
+    public Color RD3_2
+    {
+        get => _RD3_2;
+        set
+        {
+            _RD3_2 = value;
+            OnPropertyChanged();
+            ProcessedValue_DC_two();
+        }
+    }
+
+    public Color One_2
+    {
+        get => _One_2;
+        set
+        {
+            _One_2 = value;
+            OnPropertyChanged();
+            ProcessedValue_DC_two();
+        }
+    }
+
+    public Color Two_2
+    {
+        get => _Two_2;
+        set
+        {
+            _Two_2 = value;
+            OnPropertyChanged();
+            ProcessedValue_DC_two();
+        }
+    }
+
+    public Color Thr_2
+    {
+        get => _Thr_2;
+        set
+        {
+            _Thr_2 = value;
+            OnPropertyChanged();
+            ProcessedValue_DC_two();
         }
     }
     // ========== {Выводы} ========== 
@@ -177,89 +261,245 @@ public partial class dc : ContentView, INotifyPropertyChanged
             ColorChanged?.Invoke(this, value);
         }
     }
-    public void ProcessedValues_DC_one()
+
+    // Второй декодер
+    public Color Out1_2
     {
-        if(DigitalConverter(RD1_one) == 0 && DigitalConverter(RD2_one) == 1)
+        get => _Out1_2;
+        set
         {
-            int res = DigitalConverter(One_one) + DigitalConverter(Two_one);
-            switch (res)
+            _Out1_2 = value;
+            OnPropertyChanged();
+            ColorChanged?.Invoke(this, value);
+        }
+    }
+
+    public Color Out2_2
+    {
+        get => _Out2_2;
+        set
+        {
+            _Out2_2 = value;
+            OnPropertyChanged();
+            ColorChanged?.Invoke(this, value);
+        }
+    }
+
+    public Color Out3_2
+    {
+        get => _Out3_2;
+        set
+        {
+            _Out3_2 = value;
+            OnPropertyChanged();
+            ColorChanged?.Invoke(this, value);
+        }
+    }
+
+    public Color Out4_2
+    {
+        get => _Out4_2;
+        set
+        {
+            _Out4_2 = value;
+            OnPropertyChanged();
+            ColorChanged?.Invoke(this, value);
+        }
+    }
+
+    public Color Out5_2
+    {
+        get => _Out5_2;
+        set
+        {
+            _Out5_2 = value;
+            OnPropertyChanged();
+            ColorChanged?.Invoke(this, value);
+        }
+    }
+
+    public Color Out6_2
+    {
+        get => _Out6_2;
+        set
+        {
+            _Out6_2 = value;
+            OnPropertyChanged();
+            ColorChanged?.Invoke(this, value);
+        }
+    }
+
+    public Color Out7_2
+    {
+        get => _Out7_2;
+        set
+        {
+            _Out7_2 = value;
+            OnPropertyChanged();
+            ColorChanged?.Invoke(this, value);
+        }
+    }
+
+    public Color Out8_2
+    {
+        get => _Out8_2;
+        set
+        {
+            _Out8_2 = value;
+            OnPropertyChanged();
+            ColorChanged?.Invoke(this, value);
+        }
+    }
+
+    // Конец
+    public void ProcessedValue_DC_two()
+    {
+        if(DigitalConverter(RD1_2) == 1 && DigitalConverter(RD2_2) == 0 && DigitalConverter(RD3_2) == 0)
+        {
+            Out1_2 = Colors.Transparent;
+            Out2_2 = Colors.Transparent;
+            Out3_2 = Colors.Transparent;
+            Out4_2 = Colors.Transparent;
+            Out5_2 = Colors.Transparent;
+            Out6_2 = Colors.Transparent;
+            Out7_2 = Colors.Transparent;
+            Out8_2 = Colors.Transparent;
+            string binaryWord = $"{DigitalConverter(One_2)}{DigitalConverter(Two_2)}{DigitalConverter(Thr_2)}";
+            switch(binaryWord)
             {
-                case 0:
+                case "000":
                     {
-                        Out1_1 = Colors.Red;
-                        Out2_1 = Colors.Transparent;
-                        Out3_1 = Colors.Transparent;
-                        Out4_1 = Colors.Transparent;
+                        Out1_2 = Colors.Red;
                         break;
                     }
-                case 1:
+                case "001":
                     {
-                        if (DigitalConverter(One_one) == 0)
-                        {
-                            Out1_1 = Colors.Transparent;
-                            Out2_1 = Colors.Red;
-                            Out3_1 = Colors.Transparent;
-                            Out4_1 = Colors.Transparent;
-                        }
-                        else
-                        {
-                            Out1_1 = Colors.Transparent;
-                            Out2_1 = Colors.Transparent;
-                            Out3_1 = Colors.Red;
-                            Out4_1 = Colors.Transparent;
-                        }
+                        Out2_2 = Colors.Red;
                         break;
                     }
-                case 2:
+                case "010":
                     {
-                        Out1_1 = Colors.Transparent;
-                        Out2_1 = Colors.Transparent;
-                        Out3_1 = Colors.Transparent;
-                        Out4_1 = Colors.Red;
+                        Out3_2 = Colors.Red;
+                        break;
+                    }
+                case "011":
+                    {
+                        Out4_2 = Colors.Red;
+                        break;
+                    }
+                case "100":
+                    {
+                        Out5_2 = Colors.Red;
+                        break;
+                    }
+                case "101":
+                    {
+                        Out6_2 = Colors.Red;
+                        break;
+                    }
+                case "110":
+                    {
+                        Out7_2 = Colors.Red;
+                        break;
+                    }
+                case "111":
+                    {
+                        Out8_2 = Colors.Red;
                         break;
                     }
             }
         }
-        if (DigitalConverter(RD3_one) == 0 && DigitalConverter(RD4_one) == 0)
+        return;
+    }
+
+    public void ProcessedValues_DC_one()
+    {
+        int res = DigitalConverter(One_one) + DigitalConverter(Two_one);
+        if (res == 0)
         {
-            int res = DigitalConverter(One_one) + DigitalConverter(Two_one);
-            switch (res)
+            if (DigitalConverter(RD1_one) == 0 && DigitalConverter(RD2_one) == 1)
             {
-                case 0:
-                    {
-                        Out5_1 = Colors.Red;
-                        Out6_1 = Colors.Transparent;
-                        Out7_1 = Colors.Transparent;
-                        Out8_1 = Colors.Transparent;
-                        break;
-                    }
-                case 1:
-                    {
-                        if (DigitalConverter(One_one) == 0)
-                        {
-                            Out5_1 = Colors.Transparent;
-                            Out6_1 = Colors.Red;
-                            Out7_1 = Colors.Transparent;
-                            Out8_1 = Colors.Transparent;
-                        }
-                        else
-                        {
-                            Out5_1 = Colors.Transparent;
-                            Out6_1 = Colors.Transparent;
-                            Out7_1 = Colors.Red;
-                            Out8_1 = Colors.Transparent;
-                        }
-                        break;
-                    }
-                case 2:
-                    {
-                        Out5_1 = Colors.Transparent;
-                        Out6_1 = Colors.Transparent;
-                        Out7_1 = Colors.Transparent;
-                        Out8_1 = Colors.Red;
-                        break;
-                    }
+                Out1_1 = Colors.Red;
+                Out2_1 = Colors.Transparent;
+                Out3_1 = Colors.Transparent;
+                Out4_1 = Colors.Transparent;
             }
+            if (DigitalConverter(RD3_one) == 0 && DigitalConverter(RD4_one) == 0)
+            {
+                Out5_1 = Colors.Red;
+                Out6_1 = Colors.Transparent;
+                Out7_1 = Colors.Transparent;
+                Out8_1 = Colors.Transparent;
+            }
+        }
+        else if (res == 1)
+        {
+            if (DigitalConverter(One_one) == 0)
+            {
+                if (DigitalConverter(RD1_one) == 0 && DigitalConverter(RD2_one) == 1)
+                {
+                    Out1_1 = Colors.Transparent;
+                    Out2_1 = Colors.Red;
+                    Out3_1 = Colors.Transparent;
+                    Out4_1 = Colors.Transparent;
+                }
+                if (DigitalConverter(RD3_one) == 0 && DigitalConverter(RD4_one) == 0)
+                {
+                    Out5_1 = Colors.Transparent;
+                    Out6_1 = Colors.Red;
+                    Out7_1 = Colors.Transparent;
+                    Out8_1 = Colors.Transparent;
+                }
+            }
+            else
+            {
+                if (DigitalConverter(RD1_one) == 0 && DigitalConverter(RD2_one) == 1)
+                {
+                    Out1_1 = Colors.Transparent;
+                    Out2_1 = Colors.Transparent;
+                    Out3_1 = Colors.Red;
+                    Out4_1 = Colors.Transparent;
+                }
+                if (DigitalConverter(RD3_one) == 0 && DigitalConverter(RD4_one) == 0)
+                {
+                    Out5_1 = Colors.Transparent;
+                    Out6_1 = Colors.Transparent;
+                    Out7_1 = Colors.Red;
+                    Out8_1 = Colors.Transparent;
+                }
+            }
+        }
+        else if (res == 2)
+        {
+            if (DigitalConverter(RD1_one) == 0 && DigitalConverter(RD2_one) == 1)
+            { 
+                Out1_1 = Colors.Transparent;
+                Out2_1 = Colors.Transparent;
+                Out3_1 = Colors.Transparent;
+                Out4_1 = Colors.Red;
+            }
+            if (DigitalConverter(RD3_one) == 0 && DigitalConverter(RD4_one) == 0)
+            {
+                Out5_1 = Colors.Transparent;
+                Out6_1 = Colors.Transparent;
+                Out7_1 = Colors.Transparent;
+                Out8_1 = Colors.Red;
+            }
+
+        }
+        if (DigitalConverter(RD1_one) != 0 || DigitalConverter(RD2_one) != 1)
+        {
+            Out1_1 = Colors.Transparent;
+            Out2_1 = Colors.Transparent;
+            Out3_1 = Colors.Transparent;
+            Out4_1 = Colors.Transparent;
+        }
+        if (DigitalConverter(RD3_one) != 0 || DigitalConverter(RD4_one) != 0)
+        {
+            Out5_1 = Colors.Transparent;
+            Out6_1 = Colors.Transparent;
+            Out7_1 = Colors.Transparent;
+            Out8_1 = Colors.Transparent;
         }
         return;
     }
@@ -272,6 +512,7 @@ public partial class dc : ContentView, INotifyPropertyChanged
 		InitializeComponent();
         BindingContext = this;
         ProcessedValues_DC_one();
+        ProcessedValue_DC_two();
     }
 
     public event EventHandler<Ellipse> ExitEllipseTapped;

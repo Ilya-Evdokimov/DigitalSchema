@@ -189,14 +189,6 @@ namespace DigitalSchema
             {
                 if (SelectedEllipse != null)
                 {
-                    bool isConnected = Commutation.ContainsKey(ellipse) ||
-                                 Commutation.Any(pair => pair.Value.Contains(ellipse));
-
-                    if (isConnected)
-                    {
-                        DisplayAlert("Ошибка", "Данный контакт уже занят!", "OK");
-                        return;
-                    }
                     // Проверяем, что эллипсы уже связаны
                     if (IsAlreadyConnected(SelectedEllipse, ellipse))
                     {
@@ -206,7 +198,14 @@ namespace DigitalSchema
                         SelectedEllipse = null;
                         return;
                     }
+                    bool isConnected = Commutation.ContainsKey(ellipse) ||
+                                 Commutation.Any(pair => pair.Value.Contains(ellipse));
 
+                    if (isConnected)
+                    {
+                        DisplayAlert("Ошибка", "Данный контакт уже занят!", "OK");
+                        return;
+                    }
                     // Устанавливаем цвет
                     ellipse.Fill = SelectedEllipse.Fill;
 
@@ -384,7 +383,7 @@ namespace DigitalSchema
                     };
 
                     Outgrid.Children.Add(Outlabel);
-                    Outlabel.Margin = new Thickness(source.Margin.Left, source.Margin.Top - 8, source.Margin.Right - 26, source.Margin.Bottom);
+                    Outlabel.Margin = new Thickness(source.Margin.Left+20, source.Margin.Top - 8, source.Margin.Right - 26, source.Margin.Bottom);
 
                     if (source.WidthRequest == 13)
                     {
