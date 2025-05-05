@@ -152,6 +152,26 @@ namespace DigitalSchema
             decoder.ColorChanged += OnEllipseColorChanged;
         }
 
+        private void ClearAll(object sender, System.EventArgs e)
+        {
+
+            // Clear all connections
+            Commutation.Clear();
+
+            // Remove all binding labels from UI and dictionary
+            foreach (var labelPair in bindingLabels)
+            {
+                if (labelPair.Key.Parent is Grid parentGrid)
+                {
+                    parentGrid.Children.Remove(labelPair.Value);
+                }
+            }
+            bindingLabels.Clear();
+
+            SelectedEllipse = null;
+            number = 0;
+            return;
+        }
         public void StartUpdatingEllipses()
         {
             _timer = new System.Timers.Timer(1000); // 1 секунда

@@ -27,7 +27,7 @@
                         <x:String>Счетчик</x:String>
                     </Picker.Items>
                 </Picker>
-                <Button Text="Очистить" WidthRequest="150" Margin="0, 30, 0, 0"></Button>
+                <Button Text="Очистить" WidthRequest="150" Margin="0, 30, 0, 0" Clicked="ClearAll"></Button>
                 <!--="OnButtonPressedSync" Released="OnButtonReleasedSync"-->
             </VerticalStackLayout>
         </ScrollView>
