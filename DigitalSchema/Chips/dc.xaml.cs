@@ -41,6 +41,24 @@ public partial class dc : ContentView, INotifyPropertyChanged
     private Color _Out7_2 = Colors.Transparent;
     private Color _Out8_2 = Colors.Transparent;
 
+    // Третий декодер
+    private Color _RD1_3 = Colors.Red;
+    private Color _RD2_3 = Colors.Red;
+    private Color _RD3_3 = Colors.Red;
+
+    private Color _One_3 = Colors.Red;
+    private Color _Two_3 = Colors.Red;
+    private Color _Thr_3 = Colors.Red;
+
+    private Color _Out1_3 = Colors.Transparent;
+    private Color _Out2_3 = Colors.Transparent;
+    private Color _Out3_3 = Colors.Transparent;
+    private Color _Out4_3 = Colors.Transparent;
+    private Color _Out5_3 = Colors.Transparent;
+    private Color _Out6_3 = Colors.Transparent;
+    private Color _Out7_3 = Colors.Transparent;
+    private Color _Out8_3 = Colors.Transparent;
+
     public Color RD1_one
     {
         get => _RD1_one;
@@ -172,6 +190,74 @@ public partial class dc : ContentView, INotifyPropertyChanged
             ProcessedValue_DC_two();
         }
     }
+
+    // Третий декодер 
+    public Color RD1_3
+    {
+        get => _RD1_3;
+        set
+        {
+            _RD1_3 = value;
+            OnPropertyChanged();
+            ProcessedValue_DC_thr();
+        }
+    }
+
+    public Color RD2_3
+    {
+        get => _RD2_3;
+        set
+        {
+            _RD2_3 = value;
+            OnPropertyChanged();
+            ProcessedValue_DC_thr();
+        }
+    }
+
+    public Color RD3_3
+    {
+        get => _RD3_3;
+        set
+        {
+            _RD3_3 = value;
+            OnPropertyChanged();
+            ProcessedValue_DC_thr();
+        }
+    }
+
+    public Color One_3
+    {
+        get => _One_3;
+        set
+        {
+            _One_3 = value;
+            OnPropertyChanged();
+            ProcessedValue_DC_thr();
+        }
+    }
+
+    public Color Two_3
+    {
+        get => _Two_3;
+        set
+        {
+            _Two_3 = value;
+            OnPropertyChanged();
+            ProcessedValue_DC_thr();
+        }
+    }
+
+    public Color Thr_3
+    {
+        get => _Thr_3;
+        set
+        {
+            _Thr_3 = value;
+            OnPropertyChanged();
+            ProcessedValue_DC_thr();
+        }
+    }
+
     // ========== {Выводы} ========== 
     public event EventHandler<Color> ColorChanged;
     public Color Out1_1
@@ -351,6 +437,95 @@ public partial class dc : ContentView, INotifyPropertyChanged
         }
     }
 
+    // Второй декодер
+    public Color Out1_3
+    {
+        get => _Out1_3;
+        set
+        {
+            _Out1_3 = value;
+            OnPropertyChanged();
+            ColorChanged?.Invoke(this, value);
+        }
+    }
+
+    public Color Out2_3
+    {
+        get => _Out2_3;
+        set
+        {
+            _Out2_3 = value;
+            OnPropertyChanged();
+            ColorChanged?.Invoke(this, value);
+        }
+    }
+
+    public Color Out3_3
+    {
+        get => _Out3_3;
+        set
+        {
+            _Out3_3 = value;
+            OnPropertyChanged();
+            ColorChanged?.Invoke(this, value);
+        }
+    }
+
+    public Color Out4_3
+    {
+        get => _Out4_3;
+        set
+        {
+            _Out4_3 = value;
+            OnPropertyChanged();
+            ColorChanged?.Invoke(this, value);
+        }
+    }
+
+    public Color Out5_3
+    {
+        get => _Out5_3;
+        set
+        {
+            _Out5_3 = value;
+            OnPropertyChanged();
+            ColorChanged?.Invoke(this, value);
+        }
+    }
+
+    public Color Out6_3
+    {
+        get => _Out6_3;
+        set
+        {
+            _Out6_3 = value;
+            OnPropertyChanged();
+            ColorChanged?.Invoke(this, value);
+        }
+    }
+
+    public Color Out7_3
+    {
+        get => _Out7_3;
+        set
+        {
+            _Out7_3 = value;
+            OnPropertyChanged();
+            ColorChanged?.Invoke(this, value);
+        }
+    }
+
+    public Color Out8_3
+    {
+        get => _Out8_3;
+        set
+        {
+            _Out8_3 = value;
+            OnPropertyChanged();
+            ColorChanged?.Invoke(this, value);
+        }
+    }
+
     // Конец
     public void ProcessedValue_DC_two()
     {
@@ -405,6 +580,65 @@ public partial class dc : ContentView, INotifyPropertyChanged
                 case "111":
                     {
                         Out8_2 = Colors.Red;
+                        break;
+                    }
+            }
+        }
+        return;
+    }
+    public void ProcessedValue_DC_thr()
+    {
+        if (DigitalConverter(RD1_3) == 1 && DigitalConverter(RD2_3) == 0 && DigitalConverter(RD3_3) == 0)
+        {
+            Out1_3 = Colors.Transparent;
+            Out2_3 = Colors.Transparent;
+            Out3_3 = Colors.Transparent;
+            Out4_3 = Colors.Transparent;
+            Out5_3 = Colors.Transparent;
+            Out6_3 = Colors.Transparent;
+            Out7_3 = Colors.Transparent;
+            Out8_3 = Colors.Transparent;
+            string binaryWord = $"{DigitalConverter(One_3)}{DigitalConverter(Two_3)}{DigitalConverter(Thr_3)}";
+            switch (binaryWord)
+            {
+                case "000":
+                    {
+                        Out1_3 = Colors.Red;
+                        break;
+                    }
+                case "001":
+                    {
+                        Out2_3 = Colors.Red;
+                        break;
+                    }
+                case "010":
+                    {
+                        Out3_3 = Colors.Red;
+                        break;
+                    }
+                case "011":
+                    {
+                        Out4_3 = Colors.Red;
+                        break;
+                    }
+                case "100":
+                    {
+                        Out5_3 = Colors.Red;
+                        break;
+                    }
+                case "101":
+                    {
+                        Out6_3 = Colors.Red;
+                        break;
+                    }
+                case "110":
+                    {
+                        Out7_3 = Colors.Red;
+                        break;
+                    }
+                case "111":
+                    {
+                        Out8_3 = Colors.Red;
                         break;
                     }
             }
@@ -513,6 +747,7 @@ public partial class dc : ContentView, INotifyPropertyChanged
         BindingContext = this;
         ProcessedValues_DC_one();
         ProcessedValue_DC_two();
+        ProcessedValue_DC_thr();
     }
 
     public event EventHandler<Ellipse> ExitEllipseTapped;

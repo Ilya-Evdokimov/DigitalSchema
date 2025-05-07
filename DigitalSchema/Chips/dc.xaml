@@ -328,6 +328,164 @@
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
             </Ellipse>
+
+            <!--Входы Третьего декодера -->
+            <Ellipse Stroke="#D4D4D4"
+                     Fill="{Binding One_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="567, 119, 0, 0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                     Fill="{Binding Two_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="567, 150, 0, 0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                     Fill="{Binding Thr_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="567, 182, 0, 0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                     Fill="{Binding RD1_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="567, 275, 0, 0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                     Fill="{Binding RD2_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="567, 304, 0, 0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+                     Fill="{Binding RD3_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    WidthRequest="10" 
+                    HeightRequest="10" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                     Margin="567, 337, 0, 0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
+
+            <!--Выходы Третьего декодера -->
+            <Ellipse Stroke="#D4D4D4"
+         Fill="{Binding Out1_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+        WidthRequest="10" 
+        HeightRequest="10" 
+        HorizontalOptions="Start" 
+        VerticalOptions="Start"
+         Margin="743, 99, 0, 0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+        Fill="{Binding Out2_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+        WidthRequest="10" 
+        HeightRequest="10" 
+        HorizontalOptions="Start" 
+        VerticalOptions="Start"
+         Margin="743, 131, 0, 0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+        Fill="{Binding Out3_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+        WidthRequest="10" 
+        HeightRequest="10" 
+        HorizontalOptions="Start" 
+        VerticalOptions="Start"
+         Margin="743, 163, 0, 0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+        Fill="{Binding Out4_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+        WidthRequest="10" 
+        HeightRequest="10" 
+        HorizontalOptions="Start" 
+        VerticalOptions="Start"
+         Margin="743, 195, 0, 0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+        Fill="{Binding Out5_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+        WidthRequest="10" 
+        HeightRequest="10" 
+        HorizontalOptions="Start" 
+        VerticalOptions="Start"
+         Margin="743, 229, 0, 0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+        Fill="{Binding Out6_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+        WidthRequest="10" 
+        HeightRequest="10" 
+        HorizontalOptions="Start" 
+        VerticalOptions="Start"
+         Margin="743, 262, 0, 0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+        Fill="{Binding Out7_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+        WidthRequest="10" 
+        HeightRequest="10" 
+        HorizontalOptions="Start" 
+        VerticalOptions="Start"
+         Margin="743, 294, 0, 0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
+            <Ellipse Stroke="#D4D4D4"
+        Fill="{Binding Out8_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+        WidthRequest="10" 
+        HeightRequest="10" 
+        HorizontalOptions="Start" 
+        VerticalOptions="Start"
+         Margin="743, 328, 0, 0">
+                <Ellipse.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
+                </Ellipse.GestureRecognizers>
+            </Ellipse>
         </Grid>
     </VerticalStackLayout>
 </ContentView>
