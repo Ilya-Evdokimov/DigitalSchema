@@ -130,6 +130,10 @@
                        AbsoluteLayout.LayoutBounds="1200, 0, 800, 500"
                        AbsoluteLayout.LayoutFlags="None" IsVisible="False"/>
 
+                <local:multplex Margin="5" x:Name="mss"
+                       AbsoluteLayout.LayoutBounds="1200, 0, 800, 500"
+                       AbsoluteLayout.LayoutFlags="None" IsVisible="False"/>
+
                 <local:Chip2XOR Margin="50" x:Name="Chip2XOR1"
                        AbsoluteLayout.LayoutBounds="1200, 400, AutoSize, AutoSize"
                        AbsoluteLayout.LayoutFlags="None"/>

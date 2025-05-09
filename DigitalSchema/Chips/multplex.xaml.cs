@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace DigitalSchema.Chips;
 
-public partial class dc : ContentView, INotifyPropertyChanged
+public partial class multplex : ContentView, INotifyPropertyChanged
 {
     private Color _RD1_one = Colors.Red;
     private Color _RD2_one = Colors.Red;
@@ -529,7 +529,7 @@ public partial class dc : ContentView, INotifyPropertyChanged
     // Конец
     public void ProcessedValue_DC_two()
     {
-        if(DigitalConverter(RD1_2) == 1 && DigitalConverter(RD2_2) == 0 && DigitalConverter(RD3_2) == 0)
+        if (DigitalConverter(RD1_2) == 1 && DigitalConverter(RD2_2) == 0 && DigitalConverter(RD3_2) == 0)
         {
             Out1_2 = Colors.Red;
             Out2_2 = Colors.Red;
@@ -540,7 +540,7 @@ public partial class dc : ContentView, INotifyPropertyChanged
             Out7_2 = Colors.Red;
             Out8_2 = Colors.Red;
             string binaryWord = $"{DigitalConverter(One_2)}{DigitalConverter(Two_2)}{DigitalConverter(Thr_2)}";
-            switch(binaryWord)
+            switch (binaryWord)
             {
                 case "000":
                     {
@@ -706,7 +706,7 @@ public partial class dc : ContentView, INotifyPropertyChanged
         else if (res == 2)
         {
             if (DigitalConverter(RD1_one) == 0 && DigitalConverter(RD2_one) == 1)
-            { 
+            {
                 Out1_1 = Colors.Red;
                 Out2_1 = Colors.Red;
                 Out3_1 = Colors.Red;
@@ -741,9 +741,9 @@ public partial class dc : ContentView, INotifyPropertyChanged
     {
         return inputValues == Colors.Transparent ? 0 : 1;
     }
-    public dc()
-	{
-		InitializeComponent();
+    public multplex()
+    {
+        InitializeComponent();
         BindingContext = this;
         ProcessedValues_DC_one();
         ProcessedValue_DC_two();

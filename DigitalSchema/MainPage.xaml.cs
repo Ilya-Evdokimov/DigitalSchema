@@ -48,11 +48,13 @@ namespace DigitalSchema
                     case 0:
                         {
                             decoder.IsVisible = true;
+                            mss.IsVisible = false;
                             break;
                         }
                     default:
                         {
                             decoder.IsVisible = false;
+                            mss.IsVisible = true;
                             break;
                         }
                 }
@@ -150,6 +152,10 @@ namespace DigitalSchema
             decoder.EllipseTapped += OnEllipseTapped;
             decoder.ExitEllipseTapped += OnExitEllipseTapped;
             decoder.ColorChanged += OnEllipseColorChanged;
+
+            mss.EllipseTapped += OnEllipseTapped;
+            mss.ExitEllipseTapped += OnExitEllipseTapped;
+            mss.ColorChanged += OnEllipseColorChanged;
         }
 
         private void ClearAll(object sender, System.EventArgs e)

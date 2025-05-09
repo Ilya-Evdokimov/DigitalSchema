@@ -58,6 +58,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\decoder.png" />
+	  <None Remove="Resources\Images\ms.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -95,6 +96,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Chips\dc.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Chips\multplex.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Chips\NewPage1.xaml">
