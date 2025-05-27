@@ -30,7 +30,7 @@
             <!-- Row 0 -->
             <Switch IsToggled="{Binding Switch1, Mode=TwoWay}" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
-                     AutomationId="B1"
+                     AutomationId="SB1"
                  Fill="{Binding Button_01A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
@@ -58,7 +58,7 @@
 
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     AutomationId="B1"
+                     AutomationId="SB1"
                  Fill="{Binding Button_01B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
@@ -87,7 +87,7 @@
             <!-- Row 1 -->
             <Switch IsToggled="{Binding Switch2, Mode=TwoWay}" Grid.Column="0" Grid.Row="1" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
-                     AutomationId="B2"
+                     AutomationId="SB2"
                  Fill="{Binding Button_02A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
@@ -113,7 +113,7 @@
                 </VisualStateManager.VisualStateGroups>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     AutomationId="B2"
+                     AutomationId="SB2"
                  Fill="{Binding Button_02B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
@@ -142,7 +142,7 @@
             <!-- Row 2 -->
             <Switch IsToggled="{Binding Switch3, Mode=TwoWay}" Grid.Column="0" Grid.Row="2" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
-                     AutomationId="B3"
+                     AutomationId="SB3"
                  Fill="{Binding Button_03A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
@@ -168,7 +168,7 @@
                 </VisualStateManager.VisualStateGroups>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     AutomationId="B3"
+                     AutomationId="SB3"
                  Fill="{Binding Button_03B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
@@ -197,7 +197,7 @@
             <!-- Row 3 -->
             <Switch IsToggled="{Binding Switch4, Mode=TwoWay}" Grid.Column="0" Grid.Row="3" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
-                     AutomationId="B4"
+                     AutomationId="SB4"
                  Fill="{Binding Button_04A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
@@ -223,7 +223,7 @@
                 </VisualStateManager.VisualStateGroups>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     AutomationId="B4"
+                     AutomationId="SB4"
                  Fill="{Binding Button_04B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
@@ -268,7 +268,7 @@
             <Switch IsToggled="{Binding Switch5, Mode=TwoWay}" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
                  Fill="{Binding Button_05A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-                     AutomationId="B5"
+                     AutomationId="SB5"
                  WidthRequest="13" 
                  HeightRequest="13" 
                  Grid.Column="1" Grid.Row="0"
@@ -294,7 +294,7 @@
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
                  Fill="{Binding Button_05B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-                     AutomationId="B5"
+                     AutomationId="SB5"
                  WidthRequest="13" 
                  HeightRequest="13" 
                  Grid.Column="2" Grid.Row="0"
@@ -322,7 +322,7 @@
             <!-- Row 1 -->
             <Switch IsToggled="{Binding Switch6, Mode=TwoWay}" Grid.Column="0" Grid.Row="1" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
-                     AutomationId="B6"
+                     AutomationId="SB6"
                  Fill="{Binding Button_06A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
@@ -348,7 +348,7 @@
                 </VisualStateManager.VisualStateGroups>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     AutomationId="B6"
+                     AutomationId="SB6"
                  Fill="{Binding Button_06B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
@@ -377,7 +377,7 @@
             <!-- Row 2 -->
             <Switch IsToggled="{Binding Switch7, Mode=TwoWay}" Grid.Column="0" Grid.Row="2" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
-                     AutomationId="B7"
+                     AutomationId="SB7"
                  Fill="{Binding Button_07A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
@@ -403,7 +403,7 @@
                 </VisualStateManager.VisualStateGroups>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     AutomationId="B7"
+                     AutomationId="SB7"
                  Fill="{Binding Button_07B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
@@ -432,7 +432,7 @@
             <!-- Row 3 -->
             <Switch IsToggled="{Binding Switch8, Mode=TwoWay}" Grid.Column="0" Grid.Row="3" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
-                     AutomationId="B8"
+                     AutomationId="SB8"
                  Fill="{Binding Button_08A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
@@ -458,7 +458,7 @@
                 </VisualStateManager.VisualStateGroups>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     AutomationId="B8"
+                     AutomationId="SB8"
                  Fill="{Binding Button_08B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 

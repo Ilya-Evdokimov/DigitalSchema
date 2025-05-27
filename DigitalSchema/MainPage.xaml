@@ -62,9 +62,8 @@
                     </VisualStateManager.VisualStateGroups>
                 </local:ChipAndKE>
 
-                <local:ChipAndKE Margin="50" x:Name="ChipKE2" 
-                         AbsoluteLayout.LayoutBounds="0, 200, AutoSize, AutoSize"
-                         AbsoluteLayout.LayoutFlags="None"/>
+                <!--<local:ChipAndKE Margin="50" x:Name="ChipKE2" AbsoluteLayout.LayoutBounds="0, 200, AutoSize, AutoSize"
+                         AbsoluteLayout.LayoutFlags="None"/> -->
                 
                 <local:NewPage1 Margin="50" x:Name="ChipOne"
                         AbsoluteLayout.LayoutBounds="0, 400, AutoSize, AutoSize"

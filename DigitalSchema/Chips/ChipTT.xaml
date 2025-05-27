@@ -96,7 +96,7 @@
                 </Border>
 
             </VerticalStackLayout>
-            
+
             <Border Stroke="#D4D4D4" 
            Padding="10"
            Margin="1,0,0,0"
@@ -113,13 +113,6 @@
             VerticalOptions="Center"/>
             </Border>
         </HorizontalStackLayout>
-
-        <Ellipse Fill="#D4D4D4" 
-             WidthRequest="10" 
-             HeightRequest="10" 
-             HorizontalOptions="End" 
-             VerticalOptions="End"
-             Margin="0,0,-4,25"/>
 
         <Ellipse Fill="#D4D4D4" 
              WidthRequest="10" 
@@ -257,18 +250,6 @@
         </Ellipse>
 
         <!--Выводы-->
-        <Ellipse Stroke="#D4D4D4"
-                 Fill="{Binding OutputValues, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-                 WidthRequest="10" 
-                 HeightRequest="10" 
-                 HorizontalOptions="End" 
-                 VerticalOptions="Start"
-                 Margin="0,25,-15,0">
-            <Ellipse.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
-            </Ellipse.GestureRecognizers>
-        </Ellipse>
-
         <Ellipse Stroke="#D4D4D4"  
                  Fill="{Binding OutputValues, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="10" 
@@ -276,18 +257,6 @@
                  HorizontalOptions="End" 
                  VerticalOptions="Start"
                  Margin="0,50,-15,0">
-            <Ellipse.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
-            </Ellipse.GestureRecognizers>
-        </Ellipse>
-
-        <Ellipse Stroke="#D4D4D4" 
-                 Fill="{Binding OutputValues_Inv, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-                 WidthRequest="10" 
-                 HeightRequest="10" 
-                 HorizontalOptions="End" 
-                 VerticalOptions="End"
-                 Margin="0,0,-15,25">
             <Ellipse.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
             </Ellipse.GestureRecognizers>

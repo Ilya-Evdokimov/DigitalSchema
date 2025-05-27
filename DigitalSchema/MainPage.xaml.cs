@@ -29,6 +29,7 @@ namespace DigitalSchema
             get => _editing;
             set
             {
+                if (SelectedEllipse != null) SelectedEllipse.Stroke = Colors.White;
                 SelectedEllipse = null;
                 _editing = value;
                 foreach (var labelPair in bindingLabels)
@@ -132,9 +133,9 @@ namespace DigitalSchema
             ChipKE1.EllipseTapped += OnEllipseTapped;
             ChipKE1.ExitEllipseTapped += OnExitEllipseTapped;
             ChipKE1.ColorChanged += OnEllipseColorChanged;
-            ChipKE2.EllipseTapped += OnEllipseTapped;
-            ChipKE2.ExitEllipseTapped += OnExitEllipseTapped;
-            ChipKE2.ColorChanged += OnEllipseColorChanged;
+            //ChipKE2.EllipseTapped += OnEllipseTapped;
+            //ChipKE2.ExitEllipseTapped += OnExitEllipseTapped;
+            //ChipKE2.ColorChanged += OnEllipseColorChanged;
 
             ChipSTT3.EllipseTapped += OnEllipseTapped;
             ChipSTT3.ExitEllipseTapped += OnExitEllipseTapped;
@@ -160,12 +161,15 @@ namespace DigitalSchema
 
         private void ClearAll(object sender, System.EventArgs e)
         {
-
-            // Clear all connections
+            Ellipse[] ellipsesArray = Commutation.Values.SelectMany(list => list).ToArray();
             Commutation.Clear();
+            foreach (Ellipse ellipse in ellipsesArray)
+            {
+                ellipse.Fill = Colors.Red;
+            }
 
-            // Remove all binding labels from UI and dictionary
-            foreach (var labelPair in bindingLabels)
+                // Remove all binding labels from UI and dictionary
+                foreach (var labelPair in bindingLabels)
             {
                 if (labelPair.Key.Parent is Grid parentGrid)
                 {
@@ -221,6 +225,7 @@ namespace DigitalSchema
                         // Удаляем связь и метки
                         RemoveConnection(SelectedEllipse, ellipse);
                         ellipse.Fill = Colors.Red;
+                        SelectedEllipse.Stroke = Colors.White;
                         SelectedEllipse = null;
                         return;
                     }
@@ -234,6 +239,7 @@ namespace DigitalSchema
                     }
                     // Устанавливаем цвет
                     ellipse.Fill = SelectedEllipse.Fill;
+                    SelectedEllipse.Stroke = Colors.White;
 
                     // Определяем номер соединения
                     int connectionNumber = number;
@@ -477,12 +483,12 @@ namespace DigitalSchema
 
                 if (isConnected)
                 {
-                    // Можно добавить обработку удаления связей, если нужно
                 }
 
                 if (SelectedEllipse == null)
                 {
                     SelectedEllipse = ellipse;
+                    SelectedEllipse.Stroke = Colors.Blue;
                 }
             }
             else

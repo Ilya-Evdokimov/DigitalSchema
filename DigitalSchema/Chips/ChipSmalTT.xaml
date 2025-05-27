@@ -93,18 +93,6 @@
         </Ellipse>
 
         <!-- Выходы -->
-        
-        <Ellipse Stroke="#D4D4D4" 
-                  Fill="{Binding OutputValues, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-     WidthRequest="10" 
-     HeightRequest="10" 
-     HorizontalOptions="End" 
-     VerticalOptions="Start"
-     Margin="0,15,-15,0">
-            <Ellipse.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
-            </Ellipse.GestureRecognizers>
-        </Ellipse>
         <Ellipse Stroke="#D4D4D4" 
                   Fill="{Binding OutputValues, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
      WidthRequest="10" 
@@ -116,17 +104,7 @@
                 <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
             </Ellipse.GestureRecognizers>
         </Ellipse>
-        <Ellipse Stroke="#D4D4D4"  
-                  Fill="{Binding OutputValues_Inv, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-    WidthRequest="10" 
-    HeightRequest="10" 
-    HorizontalOptions="End" 
-    VerticalOptions="Center"
-    Margin="0,30,-15,0">
-            <Ellipse.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
-            </Ellipse.GestureRecognizers>
-        </Ellipse>
+
          <Ellipse Stroke="#D4D4D4" 
                    Fill="{Binding OutputValues_Inv, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
     WidthRequest="10" 
@@ -154,12 +132,6 @@
     VerticalOptions="End"
     Margin="-4,0,0,15"/>
 
-        <Ellipse Fill="#D4D4D4"  
-    WidthRequest="10" 
-    HeightRequest="10" 
-    HorizontalOptions="End" 
-    VerticalOptions="Center"
-    Margin="0,30,-4,0"/>
         <Ellipse Fill="#D4D4D4" 
     WidthRequest="10" 
     HeightRequest="10" 

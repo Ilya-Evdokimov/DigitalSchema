@@ -539,7 +539,7 @@ public partial class dc : ContentView, INotifyPropertyChanged
             Out6_2 = Colors.Red;
             Out7_2 = Colors.Red;
             Out8_2 = Colors.Red;
-            string binaryWord = $"{DigitalConverter(One_2)}{DigitalConverter(Two_2)}{DigitalConverter(Thr_2)}";
+            string binaryWord = $"{DigitalConverter(Thr_2)}{DigitalConverter(Two_2)}{DigitalConverter(One_2)}";
             switch(binaryWord)
             {
                 case "000":
@@ -598,7 +598,7 @@ public partial class dc : ContentView, INotifyPropertyChanged
             Out6_3 = Colors.Red;
             Out7_3 = Colors.Red;
             Out8_3 = Colors.Red;
-            string binaryWord = $"{DigitalConverter(One_3)}{DigitalConverter(Two_3)}{DigitalConverter(Thr_3)}";
+            string binaryWord = $"{DigitalConverter(Thr_3)}{DigitalConverter(Two_3)}{DigitalConverter(One_3)}";
             switch (binaryWord)
             {
                 case "000":
@@ -668,7 +668,7 @@ public partial class dc : ContentView, INotifyPropertyChanged
         }
         else if (res == 1)
         {
-            if (DigitalConverter(One_one) == 0)
+            if (DigitalConverter(One_one) == 1)
             {
                 if (DigitalConverter(RD1_one) == 0 && DigitalConverter(RD2_one) == 1)
                 {
