@@ -16,6 +16,7 @@
         <Label Text="Переключатели:" FontSize="Medium"/>
         <Grid>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
@@ -28,15 +29,16 @@
             </Grid.RowDefinitions>
 
             <!-- Row 0 -->
-            <Switch IsToggled="{Binding Switch1, Mode=TwoWay}" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
+            <Label Text="SB1:" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" Margin="0,0,10,0"/>
+            <Switch IsToggled="{Binding Switch1, Mode=TwoWay}" Grid.Column="1" Grid.Row="0" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
-                     AutomationId="SB1"
-                 Fill="{Binding Button_01A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-                 WidthRequest="13" 
-                 HeightRequest="13" 
-                 Grid.Column="1" Grid.Row="0"
-                     Margin="-20,0,0,0"
-                 VerticalOptions="Center">
+                 AutomationId="SB1"
+             Fill="{Binding Button_01A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+             WidthRequest="13" 
+             HeightRequest="13" 
+             Grid.Column="2" Grid.Row="0"
+                 Margin="-20,0,0,0"
+             VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
@@ -55,16 +57,15 @@
                         </VisualState>
                     </VisualStateGroup>
                 </VisualStateManager.VisualStateGroups>
-
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     AutomationId="SB1"
-                 Fill="{Binding Button_01B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
-                 WidthRequest="13" 
-                 HeightRequest="13" 
-                 Grid.Column="2" Grid.Row="0"
-                     Margin="25,0,0,0"
-                 VerticalOptions="Center">
+                 AutomationId="SB1"
+             Fill="{Binding Button_01B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+             WidthRequest="13" 
+             HeightRequest="13" 
+             Grid.Column="3" Grid.Row="0"
+                 Margin="25,0,0,0"
+             VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnExitEllipseTapped"/>
                 </Ellipse.GestureRecognizers>
@@ -85,13 +86,14 @@
             </Ellipse>
 
             <!-- Row 1 -->
-            <Switch IsToggled="{Binding Switch2, Mode=TwoWay}" Grid.Column="0" Grid.Row="1" VerticalOptions="Center"/>
+            <Label Text="SB2:" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Margin="0,0,10,0"/>
+            <Switch IsToggled="{Binding Switch2, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
                      AutomationId="SB2"
                  Fill="{Binding Button_02A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
-                 Grid.Column="1" Grid.Row="1"
+                 Grid.Column="2" Grid.Row="1"
                      Margin="-20,0,0,0"
                  VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
@@ -117,7 +119,7 @@
                  Fill="{Binding Button_02B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
-                 Grid.Column="2" Grid.Row="1"
+                 Grid.Column="3" Grid.Row="1"
                      Margin="25,0,0,0"
                  VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
@@ -140,13 +142,14 @@
             </Ellipse>
 
             <!-- Row 2 -->
-            <Switch IsToggled="{Binding Switch3, Mode=TwoWay}" Grid.Column="0" Grid.Row="2" VerticalOptions="Center"/>
+            <Label Text="SB3:" Grid.Column="0" Grid.Row="2" VerticalOptions="Center" Margin="0,0,10,0"/>
+            <Switch IsToggled="{Binding Switch3, Mode=TwoWay}" Grid.Column="1" Grid.Row="2" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
                      AutomationId="SB3"
                  Fill="{Binding Button_03A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
-                 Grid.Column="1" Grid.Row="2"
+                 Grid.Column="2" Grid.Row="2"
                  Margin="-20,0,0,0"
                  VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
@@ -172,7 +175,7 @@
                  Fill="{Binding Button_03B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
-                 Grid.Column="2" Grid.Row="2"
+                 Grid.Column="3" Grid.Row="2"
                  Margin="25,0,0,0"
                  VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
@@ -195,13 +198,14 @@
             </Ellipse>
 
             <!-- Row 3 -->
-            <Switch IsToggled="{Binding Switch4, Mode=TwoWay}" Grid.Column="0" Grid.Row="3" VerticalOptions="Center"/>
+            <Label Text="SB4:" Grid.Column="0" Grid.Row="3" VerticalOptions="Center" Margin="0,0,10,0"/>
+            <Switch IsToggled="{Binding Switch4, Mode=TwoWay}" Grid.Column="1" Grid.Row="3" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
                      AutomationId="SB4"
                  Fill="{Binding Button_04A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
-                 Grid.Column="1" Grid.Row="3"
+                 Grid.Column="2" Grid.Row="3"
                  Margin="-20,0,0,0"
                  VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
@@ -227,7 +231,7 @@
                  Fill="{Binding Button_04B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
-                 Grid.Column="2" Grid.Row="3"
+                 Grid.Column="3" Grid.Row="3"
                  Margin="25,0,0,0"
                  VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
@@ -253,6 +257,7 @@
         <!-- Second Grid for Switches 5-8 -->
         <Grid>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
@@ -265,13 +270,14 @@
             </Grid.RowDefinitions>
 
             <!-- Row 0 -->
-            <Switch IsToggled="{Binding Switch5, Mode=TwoWay}" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
+            <Label Text="SB5:" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" Margin="0,0,10,0"/>
+            <Switch IsToggled="{Binding Switch5, Mode=TwoWay}" Grid.Column="1" Grid.Row="0" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
                  Fill="{Binding Button_05A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                      AutomationId="SB5"
                  WidthRequest="13" 
                  HeightRequest="13" 
-                 Grid.Column="1" Grid.Row="0"
+                 Grid.Column="2" Grid.Row="0"
                  Margin="-20,0,0,0"
                  VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
@@ -297,7 +303,7 @@
                      AutomationId="SB5"
                  WidthRequest="13" 
                  HeightRequest="13" 
-                 Grid.Column="2" Grid.Row="0"
+                 Grid.Column="3" Grid.Row="0"
                  Margin="25,0,0,0"
                  VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
@@ -320,13 +326,14 @@
             </Ellipse>
 
             <!-- Row 1 -->
-            <Switch IsToggled="{Binding Switch6, Mode=TwoWay}" Grid.Column="0" Grid.Row="1" VerticalOptions="Center"/>
+            <Label Text="SB6:" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Margin="0,0,10,0"/>
+            <Switch IsToggled="{Binding Switch6, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
                      AutomationId="SB6"
                  Fill="{Binding Button_06A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
-                 Grid.Column="1" Grid.Row="1"
+                 Grid.Column="2" Grid.Row="1"
                  Margin="-20,0,0,0"
                  VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
@@ -352,7 +359,7 @@
                  Fill="{Binding Button_06B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
-                 Grid.Column="2" Grid.Row="1"
+                 Grid.Column="3" Grid.Row="1"
                  Margin="25,0,0,0"
                  VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
@@ -375,13 +382,14 @@
             </Ellipse>
 
             <!-- Row 2 -->
-            <Switch IsToggled="{Binding Switch7, Mode=TwoWay}" Grid.Column="0" Grid.Row="2" VerticalOptions="Center"/>
+            <Label Text="SB7:" Grid.Column="0" Grid.Row="2" VerticalOptions="Center" Margin="0,0,10,0"/>
+            <Switch IsToggled="{Binding Switch7, Mode=TwoWay}" Grid.Column="1" Grid.Row="2" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
                      AutomationId="SB7"
                  Fill="{Binding Button_07A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
-                 Grid.Column="1" Grid.Row="2"
+                 Grid.Column="2" Grid.Row="2"
                  Margin="-20,0,0,0"
                  VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
@@ -407,7 +415,7 @@
                  Fill="{Binding Button_07B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
-                 Grid.Column="2" Grid.Row="2"
+                 Grid.Column="3" Grid.Row="2"
                  Margin="25,0,0,0"
                  VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
@@ -430,13 +438,14 @@
             </Ellipse>
 
             <!-- Row 3 -->
-            <Switch IsToggled="{Binding Switch8, Mode=TwoWay}" Grid.Column="0" Grid.Row="3" VerticalOptions="Center"/>
+            <Label Text="SB8:" Grid.Column="0" Grid.Row="3" VerticalOptions="Center" Margin="0,0,10,0"/>
+            <Switch IsToggled="{Binding Switch8, Mode=TwoWay}" Grid.Column="1" Grid.Row="3" VerticalOptions="Center"/>
             <Ellipse Stroke="#D4D4D4"
                      AutomationId="SB8"
                  Fill="{Binding Button_08A, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
-                 Grid.Column="1" Grid.Row="3"
+                 Grid.Column="2" Grid.Row="3"
                  Margin="-20,0,0,0"
                  VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>
@@ -462,7 +471,7 @@
                  Fill="{Binding Button_08B, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="13" 
                  HeightRequest="13" 
-                 Grid.Column="2" Grid.Row="3"
+                 Grid.Column="3" Grid.Row="3"
                  Margin="25,0,0,0"
                  VerticalOptions="Center">
                 <Ellipse.GestureRecognizers>

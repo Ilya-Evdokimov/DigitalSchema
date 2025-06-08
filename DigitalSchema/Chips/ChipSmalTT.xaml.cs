@@ -9,8 +9,10 @@ public partial class ChipSmalTT : ContentView, INotifyPropertyChanged
     private Color _InputValues_S = Colors.Red;
     private Color _InputValues_R = Colors.Red;
     private Color _InputValues_D = Colors.Red;
-    private Color _InputValues_C = Colors.Transparent;
-    private Color _OutputValues = Colors.Transparent;
+    private Color _InputValues_C = Colors.Red;
+    private Color _InputValues_OldC = Colors.Red;
+
+    private Color _OutputValues = Colors.Red;
     private Color _OutputValues_Inv = Colors.Red;
 
     public Color InputValues_S
@@ -48,6 +50,7 @@ public partial class ChipSmalTT : ContentView, INotifyPropertyChanged
         get => _InputValues_C;
         set
         {
+            _InputValues_OldC = _InputValues_C;
             _InputValues_C = value;
             OnPropertyChanged();
             ProcessedValues_ChipTT();
@@ -77,9 +80,37 @@ public partial class ChipSmalTT : ContentView, INotifyPropertyChanged
 
     public void ProcessedValues_ChipTT()
     {
-        if (DigitalConverter(InputValues_C) == 1 && DigitalConverter(InputValues_S) == 1 && DigitalConverter(InputValues_R) == 1)
+        bool C = DigitalConverter(InputValues_C) == 1;  // Тактовый сигнал
+        bool S = DigitalConverter(InputValues_S) == 1;  // Установка (Set)
+        bool R = DigitalConverter(InputValues_R) == 1;  // Сброс (Reset)
+        bool D = DigitalConverter(InputValues_D) == 1;  // Вход данных
+
+        // 1. Обработка асинхронных входов (S и R имеют приоритет)
+        if (S && !R)
         {
-            if(DigitalConverter(InputValues_D) == 1)
+            // Асинхронная установка (Q=1, !Q=0)
+            OutputValues = Colors.Red;
+            OutputValues_Inv = Colors.Transparent;
+        }
+        else if (!S && R)
+        {
+            // Асинхронный сброс (Q=0, !Q=1)
+            OutputValues = Colors.Transparent;
+            OutputValues_Inv = Colors.Red;
+        }
+        else if (S && R)
+        {
+            // НЕОПРЕДЕЛЁННОЕ СОСТОЯНИЕ (S=1, R=1)
+            // В реальной схеме это приводит к конфликту выходов
+            // Визуализируем это серым цветом или другим индикатором
+            OutputValues = Colors.Red;
+            OutputValues_Inv = Colors.Red;
+        }
+        // 2. Синхронная работа (если нет асинхронных воздействий)
+        else if (C)
+        {
+            // Работа по тактовому сигналу (D-триггер)
+            if (D)
             {
                 OutputValues = Colors.Red;
                 OutputValues_Inv = Colors.Transparent;
@@ -90,19 +121,7 @@ public partial class ChipSmalTT : ContentView, INotifyPropertyChanged
                 OutputValues_Inv = Colors.Red;
             }
         }
-        else if (DigitalConverter(InputValues_C) == 0)
-        {
-            if (DigitalConverter(InputValues_S) == 0 && DigitalConverter(InputValues_R) == 1)
-            {
-                OutputValues = Colors.Red;
-                OutputValues_Inv = Colors.Transparent;
-            }
-            else if (DigitalConverter(InputValues_S) == 1 && DigitalConverter(InputValues_R) == 0)
-            {
-                OutputValues_Inv = Colors.Red;
-                OutputValues = Colors.Transparent;
-            }
-        }
+        // 3. Если C=0 - состояние сохраняется (не меняем выходы)
     }
 
     public int DigitalConverter(Color inputValues)

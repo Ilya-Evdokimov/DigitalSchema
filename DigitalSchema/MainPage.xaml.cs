@@ -169,7 +169,7 @@ namespace DigitalSchema
             }
 
                 // Remove all binding labels from UI and dictionary
-                foreach (var labelPair in bindingLabels)
+            foreach (var labelPair in bindingLabels)
             {
                 if (labelPair.Key.Parent is Grid parentGrid)
                 {
@@ -401,7 +401,7 @@ namespace DigitalSchema
                 var Outgrid = source.Parent as Grid;
                 if (Outgrid != null)
                 {
-                    string outLabelText = target.WidthRequest >= 13 ? target.AutomationId : ">" + connectionNumber;
+                    string outLabelText = target.WidthRequest >= 13 ? target.AutomationId : ">" + connectionNumber; 
                     if (source.HeightRequest == 13) { outLabelText = source.AutomationId; }
 
                     var Outlabel = new Label
@@ -422,6 +422,7 @@ namespace DigitalSchema
                         Grid.SetColumn(Outlabel, Grid.GetColumn(source));
                         Grid.SetRow(Outlabel, Grid.GetRow(source));
                         Outlabel.Margin = new Thickness(source.Margin.Left - 20, source.Margin.Top - 8, source.Margin.Right - 26, source.Margin.Bottom);
+                        Outlabel.IsVisible = false;
                     }
 
                     bindingLabels[source] = Outlabel;
