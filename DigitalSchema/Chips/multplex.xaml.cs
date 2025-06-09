@@ -6,734 +6,571 @@ namespace DigitalSchema.Chips;
 
 public partial class multplex : ContentView, INotifyPropertyChanged
 {
-    private Color _RD1_one = Colors.Red;
-    private Color _RD2_one = Colors.Red;
-    private Color _RD3_one = Colors.Red;
-    private Color _RD4_one = Colors.Red;
+    private Color _LD0 = Colors.Red;
+    private Color _LD1 = Colors.Red;
+    private Color _LD2 = Colors.Red;
+    private Color _LD3 = Colors.Red;
 
-    private Color _One_one = Colors.Red;
-    private Color _Two_one = Colors.Red;
+    private Color _L1 = Colors.Red;
+    private Color _L2 = Colors.Red;
 
-    private Color _Out1_1 = Colors.Red;
-    private Color _Out2_1 = Colors.Red;
-    private Color _Out3_1 = Colors.Red;
-    private Color _Out4_1 = Colors.Red;
-    private Color _Out5_1 = Colors.Red;
-    private Color _Out6_1 = Colors.Red;
-    private Color _Out7_1 = Colors.Red;
-    private Color _Out8_1 = Colors.Red;
+    private Color _LD4 = Colors.Red;
+    private Color _LD5 = Colors.Red;
+    private Color _LD6 = Colors.Red;
+    private Color _LD7 = Colors.Red;
+    private Color _LERD1 = Colors.Red;
+    private Color _LERD2 = Colors.Red;
+    private Color _LOut0 = Colors.Red;
+    private Color _LOut1 = Colors.Red;
 
-    // Второй декодер
-    private Color _RD1_2 = Colors.Red;
-    private Color _RD2_2 = Colors.Red;
-    private Color _RD3_2 = Colors.Red;
+    // Второй мультиплексор
+    private Color _M1 = Colors.Red;
+    private Color _M2 = Colors.Red;
+    private Color _M3 = Colors.Red;
 
-    private Color _One_2 = Colors.Red;
-    private Color _Two_2 = Colors.Red;
-    private Color _Thr_2 = Colors.Red;
+    private Color _MOut = Colors.Red;
+    private Color _MOut_inv = Colors.Red;
 
-    private Color _Out1_2 = Colors.Red;
-    private Color _Out2_2 = Colors.Red;
-    private Color _Out3_2 = Colors.Red;
-    private Color _Out4_2 = Colors.Red;
-    private Color _Out5_2 = Colors.Red;
-    private Color _Out6_2 = Colors.Red;
-    private Color _Out7_2 = Colors.Red;
-    private Color _Out8_2 = Colors.Red;
+    private Color _MD0 = Colors.Red;
+    private Color _MD1 = Colors.Red;
+    private Color _MD2 = Colors.Red;
+    private Color _MD3 = Colors.Red;
+    private Color _MD4 = Colors.Red;
+    private Color _MD5 = Colors.Red;
+    private Color _MD6 = Colors.Red;
+    private Color _MD7 = Colors.Red;
 
-    // Третий декодер
-    private Color _RD1_3 = Colors.Red;
-    private Color _RD2_3 = Colors.Red;
-    private Color _RD3_3 = Colors.Red;
+    // Третий мультиплексор
+    private Color _Inp0 = Colors.Red;
+    private Color _Inp1 = Colors.Red;
+    private Color _Inp2 = Colors.Red;
+    private Color _Inp3 = Colors.Red;
+    private Color _Inp4 = Colors.Red;
+    private Color _Inp5 = Colors.Red;
+    private Color _Inp6 = Colors.Red;
+    private Color _Inp7 = Colors.Red;
 
-    private Color _One_3 = Colors.Red;
-    private Color _Two_3 = Colors.Red;
-    private Color _Thr_3 = Colors.Red;
+    private Color _RERD = Colors.Red;
+    private Color _RA = Colors.Red;
+    private Color _REZ = Colors.Red;
 
-    private Color _Out1_3 = Colors.Red;
-    private Color _Out2_3 = Colors.Red;
-    private Color _Out3_3 = Colors.Red;
-    private Color _Out4_3 = Colors.Red;
-    private Color _Out5_3 = Colors.Red;
-    private Color _Out6_3 = Colors.Red;
-    private Color _Out7_3 = Colors.Red;
-    private Color _Out8_3 = Colors.Red;
+    private Color _Z0 = Colors.Red;
+    private Color _Z1 = Colors.Red;
+    private Color _Z2 = Colors.Red;
+    private Color _Z3 = Colors.Red;
 
-    public Color RD1_one
+    public Color LD0
     {
-        get => _RD1_one;
+        get => _LD0;
         set
         {
-            _RD1_one = value;
+            _LD0 = value;
             OnPropertyChanged();
-            ProcessedValues_DC_one();
+            ProcessedValue_MS_one();
         }
     }
 
-    public Color RD2_one
+    public Color LD1
     {
-        get => _RD2_one;
+        get => _LD1;
         set
         {
-            _RD2_one = value;
+            _LD1 = value;
             OnPropertyChanged();
-            ProcessedValues_DC_one();
+            ProcessedValue_MS_one();
         }
     }
 
-    public Color RD3_one
+    public Color LD2
     {
-        get => _RD3_one;
+        get => _LD2;
         set
         {
-            _RD3_one = value;
+            _LD2 = value;
             OnPropertyChanged();
-            ProcessedValues_DC_one();
+            ProcessedValue_MS_one();
         }
     }
 
-    public Color RD4_one
+    public Color LD3
     {
-        get => _RD4_one;
+        get => _LD3;
         set
         {
-            _RD4_one = value;
+            _LD3 = value;
             OnPropertyChanged();
-            ProcessedValues_DC_one();
+            ProcessedValue_MS_one();
         }
     }
 
-    public Color One_one
+    public Color L1
     {
-        get => _One_one;
+        get => _L1;
         set
         {
-            _One_one = value;
+            _L1 = value;
             OnPropertyChanged();
-            ProcessedValues_DC_one();
+            ProcessedValue_MS_one();
         }
     }
 
-    public Color Two_one
+    public Color L2
     {
-        get => _Two_one;
+        get => _L2;
         set
         {
-            _Two_one = value;
+            _L2 = value;
             OnPropertyChanged();
-            ProcessedValues_DC_one();
-        }
-    }
-    // Второй декодер 
-    public Color RD1_2
-    {
-        get => _RD1_2;
-        set
-        {
-            _RD1_2 = value;
-            OnPropertyChanged();
-            ProcessedValue_DC_two();
+            ProcessedValue_MS_one();
         }
     }
 
-    public Color RD2_2
+    public Color LD4
     {
-        get => _RD2_2;
+        get => _LD4;
         set
         {
-            _RD2_2 = value;
+            _LD4 = value;
             OnPropertyChanged();
-            ProcessedValue_DC_two();
+            ProcessedValue_MS_one();
         }
     }
 
-    public Color RD3_2
+    public Color LD5
     {
-        get => _RD3_2;
+        get => _LD5;
         set
         {
-            _RD3_2 = value;
+            _LD5 = value;
             OnPropertyChanged();
-            ProcessedValue_DC_two();
+            ProcessedValue_MS_one();
         }
     }
 
-    public Color One_2
+    public Color LD6
     {
-        get => _One_2;
+        get => _LD6;
         set
         {
-            _One_2 = value;
+            _LD6 = value;
             OnPropertyChanged();
-            ProcessedValue_DC_two();
+            ProcessedValue_MS_one();
         }
     }
 
-    public Color Two_2
+    public Color LD7
     {
-        get => _Two_2;
+        get => _LD7;
         set
         {
-            _Two_2 = value;
+            _LD7 = value;
             OnPropertyChanged();
-            ProcessedValue_DC_two();
+            ProcessedValue_MS_one();
         }
     }
 
-    public Color Thr_2
+    public Color LERD1
     {
-        get => _Thr_2;
+        get => _LERD1;
         set
         {
-            _Thr_2 = value;
+            _LERD1 = value;
             OnPropertyChanged();
-            ProcessedValue_DC_two();
+            ProcessedValue_MS_one();
         }
     }
 
-    // Третий декодер 
-    public Color RD1_3
+    public Color LERD2
     {
-        get => _RD1_3;
+        get => _LERD2;
         set
         {
-            _RD1_3 = value;
+            _LERD2 = value;
             OnPropertyChanged();
-            ProcessedValue_DC_thr();
+            ProcessedValue_MS_one();
         }
     }
 
-    public Color RD2_3
+    public Color M1
     {
-        get => _RD2_3;
+        get => _M1;
         set
         {
-            _RD2_3 = value;
+            _M1 = value;
             OnPropertyChanged();
-            ProcessedValue_DC_thr();
+            ProcessedValue_MS_one();
         }
     }
 
-    public Color RD3_3
+    public Color M2
     {
-        get => _RD3_3;
+        get => _M2;
         set
         {
-            _RD3_3 = value;
+            _M2 = value;
             OnPropertyChanged();
-            ProcessedValue_DC_thr();
+            ProcessedValue_MS_one();
         }
     }
 
-    public Color One_3
+    public Color M3
     {
-        get => _One_3;
+        get => _M3;
         set
         {
-            _One_3 = value;
+            _M3 = value;
             OnPropertyChanged();
-            ProcessedValue_DC_thr();
+            ProcessedValue_MS_one();
         }
     }
 
-    public Color Two_3
+    public Color MD0
     {
-        get => _Two_3;
+        get => _MD0;
         set
         {
-            _Two_3 = value;
+            _MD0 = value;
             OnPropertyChanged();
-            ProcessedValue_DC_thr();
+            ProcessedValue_MS_one();
         }
     }
 
-    public Color Thr_3
+    public Color MD1
     {
-        get => _Thr_3;
+        get => _MD1;
         set
         {
-            _Thr_3 = value;
+            _MD1 = value;
             OnPropertyChanged();
-            ProcessedValue_DC_thr();
+            ProcessedValue_MS_one();
         }
     }
 
-    // ========== {Выводы} ========== 
+    public Color MD2
+    {
+        get => _MD2;
+        set
+        {
+            _MD2 = value;
+            OnPropertyChanged();
+            ProcessedValue_MS_one();
+        }
+    }
+
+    public Color MD3
+    {
+        get => _MD3;
+        set
+        {
+            _MD3 = value;
+            OnPropertyChanged();
+            ProcessedValue_MS_one();
+        }
+    }
+
+    public Color MD4
+    {
+        get => _MD4;
+        set
+        {
+            _MD4 = value;
+            OnPropertyChanged();
+            ProcessedValue_MS_one();
+        }
+    }
+
+    public Color MD5
+    {
+        get => _MD5;
+        set
+        {
+            _MD5 = value;
+            OnPropertyChanged();
+            ProcessedValue_MS_one();
+        }
+    }
+
+    public Color MD6
+    {
+        get => _MD6;
+        set
+        {
+            _MD6 = value;
+            OnPropertyChanged();
+            ProcessedValue_MS_one();
+        }
+    }
+
+    public Color MD7
+    {
+        get => _MD7;
+        set
+        {
+            _MD7 = value;
+            OnPropertyChanged();
+            ProcessedValue_MS_one();
+        }
+    }
+
+    public Color Inp0
+    {
+        get => _Inp0;
+        set
+        {
+            _Inp0 = value;
+            OnPropertyChanged();
+            ProcessedValue_MS_one();
+        }
+    }
+
+    public Color Inp1
+    {
+        get => _Inp1;
+        set
+        {
+            _Inp1 = value;
+            OnPropertyChanged();
+            ProcessedValue_MS_one();
+        }
+    }
+
+    public Color Inp2
+    {
+        get => _Inp2;
+        set
+        {
+            _Inp2 = value;
+            OnPropertyChanged();
+            ProcessedValue_MS_one();
+        }
+    }
+
+    public Color Inp3
+    {
+        get => _Inp3;
+        set
+        {
+            _Inp3 = value;
+            OnPropertyChanged();
+            ProcessedValue_MS_one();
+        }
+    }
+
+    public Color Inp4
+    {
+        get => _Inp4;
+        set
+        {
+            _Inp4 = value;
+            OnPropertyChanged();
+            ProcessedValue_MS_one();
+        }
+    }
+
+    public Color Inp5
+    {
+        get => _Inp5;
+        set
+        {
+            _Inp5 = value;
+            OnPropertyChanged();
+            ProcessedValue_MS_one();
+        }
+    }
+
+    public Color Inp6
+    {
+        get => _Inp6;
+        set
+        {
+            _Inp6 = value;
+            OnPropertyChanged();
+            ProcessedValue_MS_one();
+        }
+    }
+
+    public Color Inp7
+    {
+        get => _Inp7;
+        set
+        {
+            _Inp7 = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public Color RERD
+    {
+        get => _RERD;
+        set
+        {
+            _RERD = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public Color RA
+    {
+        get => _RA;
+        set
+        {
+            _RA = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public Color REZ
+    {
+        get => _REZ;
+        set
+        {
+            _REZ = value;
+            OnPropertyChanged();
+        }
+    }
     public event EventHandler<Color> ColorChanged;
-    public Color Out1_1
+    public Color LOut0
     {
-        get => _Out1_1;
+        get => _LOut0;
         set
         {
-            _Out1_1 = value;
+            _LOut0 = value;
             OnPropertyChanged();
             ColorChanged?.Invoke(this, value);
         }
     }
 
-    public Color Out2_1
+    public Color LOut1
     {
-        get => _Out2_1;
+        get => _LOut1;
         set
         {
-            _Out2_1 = value;
+            _LOut1 = value;
+            OnPropertyChanged();
+            ColorChanged?.Invoke(this, value);
+        }
+    }
+    public Color MOut
+    {
+        get => _MOut;
+        set
+        {
+            _MOut = value;
             OnPropertyChanged();
             ColorChanged?.Invoke(this, value);
         }
     }
 
-    public Color Out3_1
+    public Color MOut_inv
     {
-        get => _Out3_1;
+        get => _MOut_inv;
         set
         {
-            _Out3_1 = value;
+            _MOut_inv = value;
+            OnPropertyChanged();
+            ColorChanged?.Invoke(this, value);
+        }
+    }
+    public Color Z0
+    {
+        get => _Z0;
+        set
+        {
+            _Z0 = value;
             OnPropertyChanged();
             ColorChanged?.Invoke(this, value);
         }
     }
 
-    public Color Out4_1
+    public Color Z1
     {
-        get => _Out4_1;
+        get => _Z1;
         set
         {
-            _Out4_1 = value;
+            _Z1 = value;
             OnPropertyChanged();
             ColorChanged?.Invoke(this, value);
         }
     }
 
-    public Color Out5_1
+    public Color Z2
     {
-        get => _Out5_1;
+        get => _Z2;
         set
         {
-            _Out5_1 = value;
+            _Z2 = value;
             OnPropertyChanged();
             ColorChanged?.Invoke(this, value);
         }
     }
 
-    public Color Out6_1
+    public Color Z3
     {
-        get => _Out6_1;
+        get => _Z3;
         set
         {
-            _Out6_1 = value;
-            OnPropertyChanged();
-            ColorChanged?.Invoke(this, value);
-        }
-    }
-
-    public Color Out7_1
-    {
-        get => _Out7_1;
-        set
-        {
-            _Out7_1 = value;
-            OnPropertyChanged();
-            ColorChanged?.Invoke(this, value);
-        }
-    }
-
-    public Color Out8_1
-    {
-        get => _Out8_1;
-        set
-        {
-            _Out8_1 = value;
-            OnPropertyChanged();
-            ColorChanged?.Invoke(this, value);
-        }
-    }
-
-    // Второй декодер
-    public Color Out1_2
-    {
-        get => _Out1_2;
-        set
-        {
-            _Out1_2 = value;
-            OnPropertyChanged();
-            ColorChanged?.Invoke(this, value);
-        }
-    }
-
-    public Color Out2_2
-    {
-        get => _Out2_2;
-        set
-        {
-            _Out2_2 = value;
-            OnPropertyChanged();
-            ColorChanged?.Invoke(this, value);
-        }
-    }
-
-    public Color Out3_2
-    {
-        get => _Out3_2;
-        set
-        {
-            _Out3_2 = value;
-            OnPropertyChanged();
-            ColorChanged?.Invoke(this, value);
-        }
-    }
-
-    public Color Out4_2
-    {
-        get => _Out4_2;
-        set
-        {
-            _Out4_2 = value;
-            OnPropertyChanged();
-            ColorChanged?.Invoke(this, value);
-        }
-    }
-
-    public Color Out5_2
-    {
-        get => _Out5_2;
-        set
-        {
-            _Out5_2 = value;
-            OnPropertyChanged();
-            ColorChanged?.Invoke(this, value);
-        }
-    }
-
-    public Color Out6_2
-    {
-        get => _Out6_2;
-        set
-        {
-            _Out6_2 = value;
-            OnPropertyChanged();
-            ColorChanged?.Invoke(this, value);
-        }
-    }
-
-    public Color Out7_2
-    {
-        get => _Out7_2;
-        set
-        {
-            _Out7_2 = value;
-            OnPropertyChanged();
-            ColorChanged?.Invoke(this, value);
-        }
-    }
-
-    public Color Out8_2
-    {
-        get => _Out8_2;
-        set
-        {
-            _Out8_2 = value;
-            OnPropertyChanged();
-            ColorChanged?.Invoke(this, value);
-        }
-    }
-
-    // Второй декодер
-    public Color Out1_3
-    {
-        get => _Out1_3;
-        set
-        {
-            _Out1_3 = value;
-            OnPropertyChanged();
-            ColorChanged?.Invoke(this, value);
-        }
-    }
-
-    public Color Out2_3
-    {
-        get => _Out2_3;
-        set
-        {
-            _Out2_3 = value;
-            OnPropertyChanged();
-            ColorChanged?.Invoke(this, value);
-        }
-    }
-
-    public Color Out3_3
-    {
-        get => _Out3_3;
-        set
-        {
-            _Out3_3 = value;
-            OnPropertyChanged();
-            ColorChanged?.Invoke(this, value);
-        }
-    }
-
-    public Color Out4_3
-    {
-        get => _Out4_3;
-        set
-        {
-            _Out4_3 = value;
-            OnPropertyChanged();
-            ColorChanged?.Invoke(this, value);
-        }
-    }
-
-    public Color Out5_3
-    {
-        get => _Out5_3;
-        set
-        {
-            _Out5_3 = value;
-            OnPropertyChanged();
-            ColorChanged?.Invoke(this, value);
-        }
-    }
-
-    public Color Out6_3
-    {
-        get => _Out6_3;
-        set
-        {
-            _Out6_3 = value;
-            OnPropertyChanged();
-            ColorChanged?.Invoke(this, value);
-        }
-    }
-
-    public Color Out7_3
-    {
-        get => _Out7_3;
-        set
-        {
-            _Out7_3 = value;
-            OnPropertyChanged();
-            ColorChanged?.Invoke(this, value);
-        }
-    }
-
-    public Color Out8_3
-    {
-        get => _Out8_3;
-        set
-        {
-            _Out8_3 = value;
+            _Z3 = value;
             OnPropertyChanged();
             ColorChanged?.Invoke(this, value);
         }
     }
 
     // Конец
-    public void ProcessedValue_DC_two()
+    public void ProcessedValue_MS_one()
     {
-        if (DigitalConverter(RD1_2) == 1 && DigitalConverter(RD2_2) == 0 && DigitalConverter(RD3_2) == 0)
+        if(DigitalConverter(LERD1) == 0)
         {
-            Out1_2 = Colors.Red;
-            Out2_2 = Colors.Red;
-            Out3_2 = Colors.Red;
-            Out4_2 = Colors.Red;
-            Out5_2 = Colors.Red;
-            Out6_2 = Colors.Red;
-            Out7_2 = Colors.Red;
-            Out8_2 = Colors.Red;
-            string binaryWord = $"{DigitalConverter(One_2)}{DigitalConverter(Two_2)}{DigitalConverter(Thr_2)}";
+            string binaryWord = $"{DigitalConverter(L1)}{DigitalConverter(L2)}";
             switch (binaryWord)
             {
-                case "000":
+                case "00":
                     {
-                        Out1_2 = Colors.Transparent;
+                        LOut0 = LD0;
                         break;
                     }
-                case "001":
+                case "01":
                     {
-                        Out2_2 = Colors.Transparent;
+                        LOut0 = LD1;
                         break;
                     }
-                case "010":
+                case "10":
                     {
-                        Out3_2 = Colors.Transparent;
+                        LOut0 = LD2;
                         break;
                     }
-                case "011":
+                case "11":
                     {
-                        Out4_2 = Colors.Transparent;
-                        break;
-                    }
-                case "100":
-                    {
-                        Out5_2 = Colors.Transparent;
-                        break;
-                    }
-                case "101":
-                    {
-                        Out6_2 = Colors.Transparent;
-                        break;
-                    }
-                case "110":
-                    {
-                        Out7_2 = Colors.Transparent;
-                        break;
-                    }
-                case "111":
-                    {
-                        Out8_2 = Colors.Transparent;
+                        LOut0 = LD3;
                         break;
                     }
             }
         }
-        return;
-    }
-    public void ProcessedValue_DC_thr()
-    {
-        if (DigitalConverter(RD1_3) == 1 && DigitalConverter(RD2_3) == 0 && DigitalConverter(RD3_3) == 0)
+        if (DigitalConverter(LERD2) == 0)
         {
-            Out1_3 = Colors.Red;
-            Out2_3 = Colors.Red;
-            Out3_3 = Colors.Red;
-            Out4_3 = Colors.Red;
-            Out5_3 = Colors.Red;
-            Out6_3 = Colors.Red;
-            Out7_3 = Colors.Red;
-            Out8_3 = Colors.Red;
-            string binaryWord = $"{DigitalConverter(One_3)}{DigitalConverter(Two_3)}{DigitalConverter(Thr_3)}";
+            string binaryWord = $"{DigitalConverter(L1)}{DigitalConverter(L2)}";
             switch (binaryWord)
             {
-                case "000":
+                case "00":
                     {
-                        Out1_3 = Colors.Transparent;
+                        LOut1 = LD4;
                         break;
                     }
-                case "001":
+                case "01":
                     {
-                        Out2_3 = Colors.Transparent;
+                        LOut1 = LD5;
                         break;
                     }
-                case "010":
+                case "10":
                     {
-                        Out3_3 = Colors.Transparent;
+                        LOut1 = LD6;
                         break;
                     }
-                case "011":
+                case "11":
                     {
-                        Out4_3 = Colors.Transparent;
-                        break;
-                    }
-                case "100":
-                    {
-                        Out5_3 = Colors.Transparent;
-                        break;
-                    }
-                case "101":
-                    {
-                        Out6_3 = Colors.Transparent;
-                        break;
-                    }
-                case "110":
-                    {
-                        Out7_3 = Colors.Transparent;
-                        break;
-                    }
-                case "111":
-                    {
-                        Out8_3 = Colors.Transparent;
+                        LOut1 = LD7;
                         break;
                     }
             }
-        }
-        return;
-    }
-
-    public void ProcessedValues_DC_one()
-    {
-        int res = DigitalConverter(One_one) + DigitalConverter(Two_one);
-        if (res == 0)
-        {
-            if (DigitalConverter(RD1_one) == 0 && DigitalConverter(RD2_one) == 1)
-            {
-                Out1_1 = Colors.Transparent;
-                Out2_1 = Colors.Red;
-                Out3_1 = Colors.Red;
-                Out4_1 = Colors.Red;
-            }
-            if (DigitalConverter(RD3_one) == 0 && DigitalConverter(RD4_one) == 0)
-            {
-                Out5_1 = Colors.Transparent;
-                Out6_1 = Colors.Red;
-                Out7_1 = Colors.Red;
-                Out8_1 = Colors.Red;
-            }
-        }
-        else if (res == 1)
-        {
-            if (DigitalConverter(One_one) == 0)
-            {
-                if (DigitalConverter(RD1_one) == 0 && DigitalConverter(RD2_one) == 1)
-                {
-                    Out1_1 = Colors.Red;
-                    Out2_1 = Colors.Transparent;
-                    Out3_1 = Colors.Red;
-                    Out4_1 = Colors.Red;
-                }
-                if (DigitalConverter(RD3_one) == 0 && DigitalConverter(RD4_one) == 0)
-                {
-                    Out5_1 = Colors.Red;
-                    Out6_1 = Colors.Transparent;
-                    Out7_1 = Colors.Red;
-                    Out8_1 = Colors.Red;
-                }
-            }
-            else
-            {
-                if (DigitalConverter(RD1_one) == 0 && DigitalConverter(RD2_one) == 1)
-                {
-                    Out1_1 = Colors.Red;
-                    Out2_1 = Colors.Red;
-                    Out3_1 = Colors.Transparent;
-                    Out4_1 = Colors.Red;
-                }
-                if (DigitalConverter(RD3_one) == 0 && DigitalConverter(RD4_one) == 0)
-                {
-                    Out5_1 = Colors.Red;
-                    Out6_1 = Colors.Red;
-                    Out7_1 = Colors.Transparent;
-                    Out8_1 = Colors.Red;
-                }
-            }
-        }
-        else if (res == 2)
-        {
-            if (DigitalConverter(RD1_one) == 0 && DigitalConverter(RD2_one) == 1)
-            {
-                Out1_1 = Colors.Red;
-                Out2_1 = Colors.Red;
-                Out3_1 = Colors.Red;
-                Out4_1 = Colors.Transparent;
-            }
-            if (DigitalConverter(RD3_one) == 0 && DigitalConverter(RD4_one) == 0)
-            {
-                Out5_1 = Colors.Red;
-                Out6_1 = Colors.Red;
-                Out7_1 = Colors.Red;
-                Out8_1 = Colors.Transparent;
-            }
-
-        }
-        if (DigitalConverter(RD1_one) != 0 || DigitalConverter(RD2_one) != 1)
-        {
-            Out1_1 = Colors.Red;
-            Out2_1 = Colors.Red;
-            Out3_1 = Colors.Red;
-            Out4_1 = Colors.Red;
-        }
-        if (DigitalConverter(RD3_one) != 0 || DigitalConverter(RD4_one) != 0)
-        {
-            Out5_1 = Colors.Red;
-            Out6_1 = Colors.Red;
-            Out7_1 = Colors.Red;
-            Out8_1 = Colors.Red;
         }
         return;
     }
@@ -745,9 +582,7 @@ public partial class multplex : ContentView, INotifyPropertyChanged
     {
         InitializeComponent();
         BindingContext = this;
-        ProcessedValues_DC_one();
-        ProcessedValue_DC_two();
-        ProcessedValue_DC_thr();
+        ProcessedValue_MS_one();
     }
 
     public event EventHandler<Ellipse> ExitEllipseTapped;

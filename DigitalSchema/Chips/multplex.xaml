@@ -17,7 +17,7 @@
             <Image Source="ms.png" Aspect="AspectFill" Grid.ColumnSpan="999" Grid.RowSpan="999" />
             <!--Входы первого мультиплекора-->
             <Ellipse Stroke="#D4D4D4"
-                    Fill="{Binding RD1_one, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    Fill="{Binding LD0, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -28,7 +28,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                    Fill="{Binding RD2_one, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    Fill="{Binding LD1, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -39,7 +39,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                    Fill="{Binding One_one, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    Fill="{Binding LD2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -50,7 +50,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                    Fill="{Binding Two_one, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    Fill="{Binding LD3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -61,7 +61,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                    Fill="{Binding Two_one, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    Fill="{Binding LERD1, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -72,7 +72,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                    Fill="{Binding Two_one, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    Fill="{Binding LD4, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -83,7 +83,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                    Fill="{Binding Two_one, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    Fill="{Binding LD5, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -94,7 +94,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                    Fill="{Binding Two_one, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    Fill="{Binding LD6, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -105,7 +105,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                    Fill="{Binding Two_one, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    Fill="{Binding LD7, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -116,7 +116,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                    Fill="{Binding Two_one, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    Fill="{Binding LERD2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -127,7 +127,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                    Fill="{Binding RD3_one, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    Fill="{Binding L1, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -138,7 +138,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                    Fill="{Binding RD4_one, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    Fill="{Binding L2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -150,7 +150,7 @@
             </Ellipse>
             <!--Выводы первого мс 1 4 -->
             <Ellipse Stroke="#D4D4D4"
-                    Fill="{Binding Out2_1, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    Fill="{Binding LOut0, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -162,7 +162,7 @@
             </Ellipse>
             <!--Выводы первого мс 1 4 -->
             <Ellipse Stroke="#D4D4D4"
-                    Fill="{Binding Out6_1, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    Fill="{Binding LOut1, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -174,7 +174,7 @@
             </Ellipse>
             <!--Входы второго декодера -->
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding One_2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding MD0, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -185,7 +185,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding Two_2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding MD1, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -196,7 +196,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding Thr_2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding MD2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -207,7 +207,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding RD1_2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding MD3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -218,7 +218,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding RD2_2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding MD4, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -229,7 +229,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding RD3_2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding MD5, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -240,7 +240,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding RD3_2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding MD6, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -251,7 +251,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding RD3_2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding MD7, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -262,7 +262,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding RD3_2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding M1, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -273,7 +273,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding RD3_2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding M2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -284,7 +284,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding RD3_2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding M3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -296,7 +296,7 @@
             </Ellipse>
             <!--Выходы Второго декодера -->
             <Ellipse Stroke="#D4D4D4"
-                    Fill="{Binding Out2_2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    Fill="{Binding MOut, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -307,7 +307,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                    Fill="{Binding Out7_2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                    Fill="{Binding MOut_inv, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -319,7 +319,7 @@
             </Ellipse>
             <!--Входы Третьего мс -->
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding One_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding Inp0, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -330,7 +330,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding Two_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding Inp1, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -341,7 +341,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding Thr_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding Inp2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -352,7 +352,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding RD1_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding Inp3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -363,7 +363,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding RD2_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding Inp4, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -374,7 +374,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding RD3_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding Inp5, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -385,7 +385,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding RD3_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding Inp6, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -396,7 +396,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding RD3_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding Inp7, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -407,7 +407,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding RD3_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding RERD, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -418,7 +418,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding RD3_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding RA, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -429,7 +429,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-                     Fill="{Binding RD3_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+                     Fill="{Binding REZ, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                     WidthRequest="10" 
                     HeightRequest="10" 
                     HorizontalOptions="Start" 
@@ -441,7 +441,7 @@
             </Ellipse>
             <!--Выходы Третьего декодера -->
             <Ellipse Stroke="#D4D4D4"
-         Fill="{Binding Out1_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+         Fill="{Binding Z0, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
         WidthRequest="10" 
         HeightRequest="10" 
         HorizontalOptions="Start" 
@@ -452,7 +452,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-        Fill="{Binding Out3_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+        Fill="{Binding Z1, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
         WidthRequest="10" 
         HeightRequest="10" 
         HorizontalOptions="Start" 
@@ -463,7 +463,7 @@
                 </Ellipse.GestureRecognizers>
             </Ellipse>
             <Ellipse Stroke="#D4D4D4"
-        Fill="{Binding Out5_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+        Fill="{Binding Z2, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
         WidthRequest="10" 
         HeightRequest="10" 
         HorizontalOptions="Start" 
@@ -475,7 +475,7 @@
             </Ellipse>
 
             <Ellipse Stroke="#D4D4D4"
-        Fill="{Binding Out7_3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
+        Fill="{Binding Z3, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
         WidthRequest="10" 
         HeightRequest="10" 
         HorizontalOptions="Start" 

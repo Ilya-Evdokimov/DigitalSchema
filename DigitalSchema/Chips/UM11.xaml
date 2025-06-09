@@ -547,7 +547,7 @@
         <HorizontalStackLayout>
             <Button Text="_/\_" WidthRequest="150" Clicked="OnButtonPressed"></Button>
             <Ellipse Stroke="#D4D4D4"
-                     AutomationId="_/\_"
+                     AutomationId="C"
                      Fill="{Binding SyncSignal, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                      WidthRequest="13" 
                      HeightRequest="13"

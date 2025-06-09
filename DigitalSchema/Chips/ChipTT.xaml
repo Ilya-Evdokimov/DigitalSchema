@@ -188,6 +188,7 @@
 
         <!--C-->
         <Ellipse Stroke="#D4D4D4" 
+                 AutomationId="C"
                  Fill="{Binding InputValues_C, Converter={StaticResource ColorToBrushConverter}, Mode=TwoWay}"
                  WidthRequest="10" 
                  HeightRequest="10" 

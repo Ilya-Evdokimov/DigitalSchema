@@ -34,7 +34,7 @@
         
         <ScrollView Grid.Column="1" BackgroundColor="#343A3F" Orientation="Both">
             <AbsoluteLayout>
-                
+
                 <!--Выходы кнопок-->
                 
                 <!-- Первый столбец микропроцессоров -->

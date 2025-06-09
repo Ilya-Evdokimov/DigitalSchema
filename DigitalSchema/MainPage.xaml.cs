@@ -23,7 +23,7 @@ namespace DigitalSchema
         public Ellipse? SelectedEllipse { get; set; }
 
         private int number;
-        private bool _editing;
+        private bool _editing = true;
         public bool Editing
         {
             get => _editing;
@@ -213,6 +213,7 @@ namespace DigitalSchema
             }
         }
 
+
         private void OnEllipseTapped(object sender, Ellipse ellipse)
         {
             if (Editing == true)
@@ -235,6 +236,12 @@ namespace DigitalSchema
                     if (isConnected)
                     {
                         DisplayAlert("Ошибка", "Данный контакт уже занят!", "OK");
+                        return;
+                    }
+
+                    if(SelectedEllipse.AutomationId != "C" && ellipse.AutomationId == "C")
+                    {
+                        DisplayAlert("Ошибка", "Настоятельно рекомендуется соединить данный вход с выходом синхросигнала!", "OK");
                         return;
                     }
                     // Устанавливаем цвет
