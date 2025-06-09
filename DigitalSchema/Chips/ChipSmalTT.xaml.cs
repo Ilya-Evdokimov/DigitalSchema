@@ -81,8 +81,12 @@ public partial class ChipSmalTT : ContentView, INotifyPropertyChanged
     public void ProcessedValues_ChipTT()
     {
         bool C = DigitalConverter(InputValues_C) == 1;  // Тактовый сигнал
-        bool S = DigitalConverter(InputValues_S) == 1;  // Установка (Set)
-        bool R = DigitalConverter(InputValues_R) == 1;  // Сброс (Reset)
+        bool S;  // Установка (Set)
+        if(DigitalConverter(InputValues_S) == 1) { S = false; }
+        else { S = true; }
+        bool R;  // Сброс (Reset)
+        if (DigitalConverter(InputValues_R) == 1) { R = false; }
+        else { R = true; }
         bool D = DigitalConverter(InputValues_D) == 1;  // Вход данных
 
         // 1. Обработка асинхронных входов (S и R имеют приоритет)

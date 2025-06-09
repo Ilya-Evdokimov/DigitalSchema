@@ -1,4 +1,4 @@
-using Microsoft.Maui.Controls.Shapes;
+﻿using Microsoft.Maui.Controls.Shapes;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -10,12 +10,12 @@ public partial class ChipTT : ContentView, INotifyPropertyChanged
     private Color _InputValues_K1 = Colors.Red;
     private Color _InputValues_K2 = Colors.Red;
     private Color _InputValues_K3 = Colors.Red;
-    private Color _InputValues_C = Colors.Transparent;
+    private Color _InputValues_C = Colors.Red;
     private Color _InputValues_J1 = Colors.Red;
     private Color _InputValues_J2 = Colors.Red;
     private Color _InputValues_J3 = Colors.Red;
     private Color _InputValues_R = Colors.Red;
-    private Color _OutputValues = Colors.Transparent;
+    private Color _OutputValues = Colors.Red;
     private Color _OutputValues_Inv = Colors.Red;
 
     public Color InputValues_S
@@ -130,40 +130,72 @@ public partial class ChipTT : ContentView, INotifyPropertyChanged
         }
     }
 
+
+    private bool _currentState = false;  // Переменная для хранения состояния триггера
+    private bool _prevClockState = false;
     public void ProcessedValues_ChipTT()
     {
-        if(DigitalConverter(InputValues_C)==1 && DigitalConverter(InputValues_S) == 1 && DigitalConverter(InputValues_R) == 1)
+        bool C = DigitalConverter(InputValues_C) == 1;  // Тактовый сигнал
+        bool S = DigitalConverter(InputValues_S) != 1;  // Set (активный 0, инвертирован)
+        bool R = DigitalConverter(InputValues_R) != 1;  // Reset (активный 0, инвертирован)
+
+        // Многоразрядные входы J и K (достаточно хотя бы одного вкл.)
+        bool J = DigitalConverter(InputValues_J1) == 1 &&
+                  DigitalConverter(InputValues_J2) == 1 &&
+                  DigitalConverter(InputValues_J3) == 1;
+
+        bool K = DigitalConverter(InputValues_K1) == 1 &&
+                  DigitalConverter(InputValues_K2) == 1 &&
+                  DigitalConverter(InputValues_K3) == 1;
+
+        // 1. Проверка асинхронных входов (приоритет выше тактового сигнала)
+        if (S && R)  // S=0, R=0 (т.к. инвертированы)
         {
-            if (DigitalConverter(InputValues_J1) * DigitalConverter(InputValues_J2) * DigitalConverter(InputValues_J3) != 0) // �
-            {
-                if (DigitalConverter(InputValues_K1) * DigitalConverter(InputValues_K2) * DigitalConverter(InputValues_K3) == 0) // �
-                {
-                    OutputValues = Colors.Red;
-                    OutputValues_Inv = Colors.Transparent;
-                }
-            }
-            else
-            {
-                if (DigitalConverter(InputValues_K1) * DigitalConverter(InputValues_K2) * DigitalConverter(InputValues_K3) == 1)
-                {
-                    OutputValues_Inv = Colors.Red;
-                    OutputValues = Colors.Transparent;
-                }
-            }
+            // Недопустимое состояние (Q и !Q = 1)
+            OutputValues = Colors.Red;
+            OutputValues_Inv = Colors.Red;
+            _currentState = true;  // Неопределённое состояние
         }
-        else if (DigitalConverter(InputValues_C) == 0)
+        else if (S)  // S=0 (активный уровень)
         {
-            if(DigitalConverter(InputValues_S) == 0 && DigitalConverter(InputValues_R) == 1)
-            {
-                OutputValues = Colors.Red;
-                OutputValues_Inv = Colors.Transparent;
-            }
-            else if(DigitalConverter(InputValues_S) == 1 && DigitalConverter(InputValues_R) == 0)
-            {
-                OutputValues_Inv = Colors.Red;
-                OutputValues = Colors.Transparent;
-            }
+            // Асинхронная установка (Q=1)
+            OutputValues = Colors.Red;
+            OutputValues_Inv = Colors.Transparent;
+            _currentState = true;
         }
+        else if (R)  // R=0 (активный уровень)
+        {
+            // Асинхронный сброс (Q=0)
+            OutputValues = Colors.Transparent;
+            OutputValues_Inv = Colors.Red;
+            _currentState = false;
+        }
+        // 2. Синхронная работа (если нет асинхронных воздействий)
+        else if (C && !_prevClockState)  // Обработка фронта (0→1)
+        {
+            if (J && K)
+            {
+                // Режим T-триггера (инверсия состояния)
+                _currentState = !_currentState;
+            }
+            else if (J)
+            {
+                // Установка (Q=1)
+                _currentState = true;
+            }
+            else if (K)
+            {
+                // Сброс (Q=0)
+                _currentState = false;
+            }
+            // Если J=0 и K=0 — состояние сохраняется (_currentState не меняется)
+
+            // Обновляем выходы
+            OutputValues = _currentState ? Colors.Red : Colors.Transparent;
+            OutputValues_Inv = _currentState ? Colors.Transparent : Colors.Red;
+        }
+
+        _prevClockState = C;  // Сохраняем состояние такта для детектирования фронта
     }
     public int DigitalConverter(Color inputValues)
     {
